@@ -58,6 +58,9 @@ git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
 # Globally install nodemon from npm
 npm install -g nodemon
 
+# Move zsh theme to themes
+cat ./collin.zsh-theme > ~/.oh-my-zsh/themes/collin.zsh-theme
+
 # Update startup files
 cat ./zshrc.txt > ~/.zshrc
 cat ./vimrc.txt > ~/.vimrc
