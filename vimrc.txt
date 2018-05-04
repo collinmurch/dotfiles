@@ -1,0 +1,26 @@
+" Pathogen Settings
+execute pathogen#infect()
+
+" Customizations
+filetype plugin indent on
+set background=dark
+set encoding=UTF-8
+set guifont=Meslo_LG_L_Regular_Nerd_Font_Complete:h18
+set number
+set backspace=2
+set background=dark
+
+" NERDTree Settings
+map <silent> <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+
+" Plug Settings
+call plug#begin('~/.vim/plugged')
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ryanoasis/vim-devicons'
+call plug#end()
+
+" Customizations 2 (loaded after everything)
+colorscheme palenight
