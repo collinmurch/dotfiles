@@ -29,6 +29,7 @@ brew install binwalk
 brew install aircrack-ng
 brew install nmap
 brew install tesseract
+brew install tmux
 
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -64,3 +65,4 @@ cat ./collin.zsh-theme > ~/.oh-my-zsh/themes/collin.zsh-theme
 # Update startup files
 cat ./zshrc.txt > ~/.zshrc
 cat ./vimrc.txt > ~/.vimrc
+cat tmux.conf.txt > ~/.tmux.conf
