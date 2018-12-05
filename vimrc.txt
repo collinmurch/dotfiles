@@ -1,6 +1,5 @@
 " collinmurch's .vimrc
 " github.com/collinmurch
-"
 
 " Customizations
 filetype plugin indent on
