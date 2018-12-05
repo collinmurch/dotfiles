@@ -11,7 +11,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias dev='cd ~/Documents/developer'
-alias school='cd ~/OneDrive/Documents/School'
+alias school='cd ~/Sync/Documents/School'
+alias cdgo='cd ~/Documents/developer/go/src'
 alias word='open -a /Applications/"Microsoft Word.app"'
 alias code='open -a /Applications/"Visual Studio Code.app"'
+alias jupyter='~/Sync/Documents/School/Senior/Sem1/Big\ Data/jupyter.sh'
+alias airport='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+alias sailserver='sudo ssh admin@54.184.108.207 -i ~/.ssh/aws/LightsailDefaultPrivateKey-us-west-2.pem'
+
 export PATH="/usr/local/sbin:$PATH"
+export GOPATH=$HOME/Documents/developer/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin

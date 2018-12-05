@@ -4,6 +4,8 @@
 <dict>
 	<key>AdjustWindowForFontSizeChange</key>
 	<false/>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -14,6 +16,12 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
+	<key>BadgeRightMargin</key>
+	<integer>10</integer>
+	<key>BadgeTopMargin</key>
+	<integer>10</integer>
+	<key>CompactMinimalTabBarHeight</key>
+	<real>25</real>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Elementary</key>
@@ -2161,6 +2169,8 @@
 	<true/>
 	<key>HideActivityIndicator</key>
 	<false/>
+	<key>HideTab</key>
+	<true/>
 	<key>HideTabCloseButton</key>
 	<false/>
 	<key>HideTabNumber</key>
@@ -2173,6 +2183,10 @@
 	<false/>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>MinimalTabStyleBackgroundColorDifference</key>
+	<real>100</real>
+	<key>MinimalTabStyleOutlineStrength</key>
+	<real>100</real>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Documents/developer/settings/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -2185,11 +2199,6 @@
 	<false/>
 	<key>NSScrollViewShouldScrollUnderTitlebar</key>
 	<false/>
-	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
-	<array>
-		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
-		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
-	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
@@ -2219,17 +2228,19 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>840 33 840 883 0 0 1680 1050 </string>
+	<string>810 379 445 515 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 493 620 392 0 0 1680 1050 </string>
+	<string>650 588 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>762 571 796 473 0 0 1680 1050 </string>
+	<string>779 686 814 486 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>178 254 890 627 0 0 1680 1050 </string>
+	<string>0 0 1920 1177 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>296 0 890 627 0 0 1680 1050 </string>
+	<string>379 184 910 629 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>0 519 890 531 0 0 1680 1050 </string>
+	<string>414 463 920 629 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>581 697 910 629 0 0 1920 1177 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2396,13 +2407,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14901960784313725</real>
+				<real>0.24705882352941178</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.14901960784313725</real>
+				<real>0.17647058823529413</real>
 				<key>Red Component</key>
-				<real>0.14901960784313725</real>
+				<real>0.16078431372549021</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2493,12 +2504,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.917572021484375</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.917572021484375</real>
 				<key>Red Component</key>
-				<real>0.73333334922790527</real>
+				<real>0.917572021484375</real>
 			</dict>
 			<key>Guid</key>
 			<string>DA8CFFBF-3348-4438-8C16-CC78934532CB</string>
@@ -2826,7 +2841,7 @@
 			<key>Prevent Opening in a Tab</key>
 			<true/>
 			<key>Prompt Before Closing 2</key>
-			<integer>2</integer>
+			<integer>0</integer>
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
@@ -2834,7 +2849,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -2859,6 +2874,8 @@
 			<string></string>
 			<key>Silence Bell</key>
 			<true/>
+			<key>Space</key>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tab Color</key>
@@ -2888,18 +2905,20 @@
 			<true/>
 			<key>Use Bright Bold</key>
 			<true/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Use Tab Color</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>13</integer>
 			<key>Working Directory</key>
 			<string>/Users/collin</string>
 		</dict>
@@ -3539,11 +3558,100 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>26F67731-F93C-4965-97CB-C322FB061218</string>
+	<string>24CB596A-BEF9-470D-BAFA-B25B5597C0D2</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
+	<key>NoSyncRecordedVariableNames</key>
+	<dict>
+		<key>1</key>
+		<array>
+			<string>session.jobName</string>
+			<string>session.id</string>
+			<string>session.profileName</string>
+			<string>session.name</string>
+			<string>session.terminalIconName</string>
+			<string>session.tmuxClientName</string>
+			<string>session.termid</string>
+			<string>session.triggerName</string>
+			<string>session.tmuxWindowPane</string>
+			<string>session.hostname</string>
+			<string>session.username</string>
+			<string>session.tmuxStatusRight</string>
+			<string>session.tmuxRole</string>
+			<string>session.path</string>
+			<string>session.creationTimeString</string>
+			<string>session.rows</string>
+			<string>session.tmuxWindowTitle</string>
+			<string>session.autoLogId</string>
+			<string>session.tty</string>
+			<string>session.autoName</string>
+			<string>session.terminalWindowName</string>
+			<string>iterm2</string>
+			<string>session.jobPid</string>
+			<string>session.mouseReportingMode</string>
+			<string>session.lastCommand</string>
+			<string>session.tmuxStatusLeft</string>
+			<string>session.pid</string>
+			<string>session.presentationName</string>
+			<string>session.columns</string>
+		</array>
+		<key>16</key>
+		<array>
+			<string>titleOverride</string>
+			<string>currentTab</string>
+			<string>currentTab.currentSession.session.terminalWindowName</string>
+			<string>currentTab.currentSession</string>
+			<string>currentTab.currentSession.session.columns</string>
+			<string>currentTab.currentSession.session.pid</string>
+			<string>currentTab.currentSession.session.mouseReportingMode</string>
+			<string>currentTab.currentSession.session.terminalIconName</string>
+			<string>currentTab.currentSession.session.autoName</string>
+			<string>currentTab.currentSession.session.presentationName</string>
+			<string>currentTab.currentSession.session.username</string>
+			<string>currentTab.currentSession.session.name</string>
+			<string>currentTab.currentSession.session.tty</string>
+			<string>currentTab.currentSession.session.jobName</string>
+			<string>currentTab.currentSession.session.rows</string>
+			<string>iterm2</string>
+			<string>currentTab.currentSession.session.hostname</string>
+			<string>currentTab.currentSession.session.jobPid</string>
+			<string>currentTab.currentSession.session.path</string>
+		</array>
+		<key>2</key>
+		<array>
+			<string>currentSession</string>
+			<string>titleOverride</string>
+			<string>currentSession.session.columns</string>
+			<string>currentSession.session.pid</string>
+			<string>currentSession.session.autoName</string>
+			<string>currentSession.session.name</string>
+			<string>currentSession.session.mouseReportingMode</string>
+			<string>currentSession.session.path</string>
+			<string>currentSession.session.rows</string>
+			<string>currentSession.session.terminalWindowName</string>
+			<string>currentSession.session.tty</string>
+			<string>currentSession.session.hostname</string>
+			<string>currentSession.session.jobName</string>
+			<string>iterm2</string>
+			<string>tmuxWindow</string>
+			<string>currentSession.session.presentationName</string>
+			<string>currentSession.session.terminalIconName</string>
+			<string>currentSession.session.username</string>
+			<string>currentSession.session.jobPid</string>
+		</array>
+		<key>4</key>
+		<array>
+			<string>pid</string>
+			<string>localhostName</string>
+			<string>effectiveTheme</string>
+		</array>
+	</dict>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>540499169.48758698</real>
+	<real>554092126.81332695</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -3582,7 +3690,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/collin/Documents/developer/settings/iterm</string>
+	<string>/Users/collinmurch/Documents/developer/settings/iterm</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -3592,11 +3700,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=81</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=42</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-04-27T18:15:36Z</date>
+	<date>2018-10-22T17:10:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -3613,8 +3721,14 @@
 	<false/>
 	<key>TabStyle</key>
 	<integer>1</integer>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>15</integer>
+	<key>TerminalVMargin</key>
+	<integer>10</integer>
 	<key>WindowNumber</key>
 	<false/>
 	<key>WordCharacters</key>
@@ -3622,7 +3736,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.6</string>
+	<string>3.3.20181018-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

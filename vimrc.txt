@@ -1,5 +1,6 @@
-" Pathogen Settings
-execute pathogen#infect()
+" collinmurch's .vimrc
+" github.com/collinmurch
+"
 
 " Customizations
 filetype plugin indent on
@@ -9,6 +10,22 @@ set guifont=Meslo_LG_L_Regular_Nerd_Font_Complete:h18
 set number
 set backspace=2
 set background=dark
+set tabstop=4
+set relativenumber
+
+" Plug Settings
+call plug#begin('~/.vim/plugged')
+	Plug 'scrooloose/nerdtree'
+	Plug 'drewtempelmeyer/palenight.vim'
+	Plug 'tpope/vim-surround'
+	Plug 'ryanoasis/vim-devicons'
+call plug#end()
+
+" Adding closing '{'
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O<BS>
+inoremap {{     {
+inoremap {}     {}
 
 " NERDTree Settings
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -16,11 +33,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-" Plug Settings
-call plug#begin('~/.vim/plugged')
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ryanoasis/vim-devicons'
-call plug#end()
-
 " Customizations 2 (loaded after everything)
 colorscheme palenight
+hi Normal ctermbg=none
+let g:palenight_terminal_italics=1
