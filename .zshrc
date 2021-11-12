@@ -4,7 +4,7 @@ ZSH_THEME="collin"
 
 plugins=(
   git
-  osx
+  macos
   zsh-syntax-highlighting
 )
 
