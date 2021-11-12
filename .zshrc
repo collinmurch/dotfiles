@@ -19,13 +19,13 @@ alias windows='echo "Attempting to connect to Windows 10 VM..." && ssh collinmur
 CE205=collinmurch@deathtumble.local:C:/Users/collinmurch/Documents/COMP_ENG_205
 
 alias dev='cd ~/Documents/developer'
-alias school='cd /Users/collinmurch/Sync/Documents/School/College/Sophomore\ Spring/'
+alias school='cd /Users/collinmurch/Documents/iCloud\ Drive/Documents/School/Junior\ Fall'
 alias cdgo='cd ~/Documents/developer/go/src'
 
 alias newdoc='~/Documents/developer/scripts/newtexdoc.sh'
 alias clean='~/Documents/developer/scripts/cleantex.sh'
-alias sailserver='sudo ssh admin@54.184.108.207 -i ~/.ssh/aws/LightsailDefaultPrivateKey-us-west-2.pem'
-alias minecraft='ssh root@45.82.72.125'
+alias sailserver='sudo ssh ubuntu@34.218.34.252 -i ~/.ssh/aws/LightsailDefaultPrivateKey-us-west-2.pem'
+alias minecraft='ssh root@31.220.109.41'
 
 alias jupyter='/usr/local/bin/jupyter'
 alias word='open -a /Applications/"Microsoft Word.app"'
