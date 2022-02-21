@@ -9,9 +9,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'drewtempelmeyer/palenight.vim'
 	Plug 'tpope/vim-surround'
 	Plug 'ryanoasis/vim-devicons'
+	Plug 'yuezk/vim-js'
+	Plug 'MaxMEllon/vim-jsx-pretty'
+	Plug 'vim-python/python-syntax'
 call plug#end()
 
-" Color configs
+" Color Configs
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set t_ZH=^[[3m
@@ -38,11 +41,12 @@ let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
 " Customizations
-colorscheme gruvbox
+colorscheme palenight
 hi Comment cterm=italic
 hi String cterm=italic
 hi Normal ctermbg=NONE
 let g:palenight_terminal_italics=1
+let g:python_highlight_all = 1
 filetype plugin on
 filetype indent on
 set nocompatible
@@ -56,15 +60,8 @@ set relativenumber
 let mapleader = ","
 set ignorecase
 hi Normal guibg=NONE
+set mouse=a
 
-" Reset cursor
+" Set/Reset Cursor
 au VimEnter,VimResume * set guicursor=n-v-c:hor20,i-ci-ve:ver20,r-cr:hor20,o:hor50
-au VimLeave,VimSuspend * set guicursor=a:hor
-
-if exists('$TMUX')
-  let &t_SI = "\ePtmux;\e\e[5 q\e\\"
-  let &t_EI = "\ePtmux;\e\e[2 q\e\\"
-else
-  let &t_SI = "\e[5 q"
-  let &t_EI = "\e[2 q"
-endif
+"au VimLeave,VimSuspend * set guicursor=a:hor

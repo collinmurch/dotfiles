@@ -12,20 +12,19 @@ source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
 
-alias eecs='~/Documents/developer/scripts/eecs.sh'
-
 # For win32 asm development
 alias windows='echo "Attempting to connect to Windows 10 VM..." && ssh collinmurch@deathtumble.local'
 CE205=collinmurch@deathtumble.local:C:/Users/collinmurch/Documents/COMP_ENG_205
 
 alias dev='cd ~/Documents/developer'
-alias school='cd /Users/collinmurch/Documents/iCloud\ Drive/Documents/School/Junior\ Fall'
-alias cdgo='cd ~/Documents/developer/go/src'
+alias school='cd /Users/collinmurch/Documents/iCloud\ Drive/Documents/School/Junior\ Winter'
 
 alias newdoc='~/Documents/developer/scripts/newtexdoc.sh'
 alias clean='~/Documents/developer/scripts/cleantex.sh'
-alias sailserver='sudo ssh ubuntu@34.218.34.252 -i ~/.ssh/aws/LightsailDefaultPrivateKey-us-west-2.pem'
-alias minecraft='ssh root@31.220.109.41'
+
+alias sailserver='sudo ssh ubuntu@34.218.34.252 -i ~/.ssh/aws/LightsailDefaultKey-us-west-2.pem'
+alias craftserver='~/Documents/developer/other/mcrcon/mcrcon -H craft.collinmurch.com -p Privmo123 -P 2843'
+alias dataeng='ssh -i ~/.ssh/DATA-ENG-200_key_0116.cer  cdm5184@52.149.210.2'
 
 alias jupyter='/usr/local/bin/jupyter'
 alias word='open -a /Applications/"Microsoft Word.app"'
@@ -54,4 +53,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
