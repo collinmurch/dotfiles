@@ -15,10 +15,6 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Color Configs
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set t_ZH=^[[3m
-set t_ZR=^[[23m
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 endif
@@ -28,11 +24,6 @@ endif
 
 " Macros and Keybinds
 noremap ;s :source ~/.vimrc<cr>
-
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O<BS>
-inoremap {{     {
-inoremap {}     {}
 
 " NERDTree Settings
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -56,7 +47,7 @@ set backspace=2
 set background=dark
 set tabstop=4
 set shiftwidth=4
-set relativenumber
+set nu
 let mapleader = ","
 set ignorecase
 hi Normal guibg=NONE
