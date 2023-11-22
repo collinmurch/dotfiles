@@ -51,7 +51,7 @@ set nu
 let mapleader = ","
 set ignorecase
 hi Normal guibg=NONE
-set mouse=a
+se mouse+=a
 
 " Set/Reset Cursor
 au VimEnter,VimResume * set guicursor=n-v-c:hor20,i-ci-ve:ver20,r-cr:hor20,o:hor50
