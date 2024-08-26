@@ -34,3 +34,6 @@ Compiled from [Murderlon](https://github.com/murderlon)'s list.
 
 Zed:
 - Install `Catppuccin (Blur)` and other needed extensions
+
+Raycast:
+- Export settings under `Advanced` from previous machine
