@@ -7,6 +7,4 @@ export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"
 source $HOME/.cargo/env
 
-export ZSH_THEME="collin"
 export BAT_THEME="Catppuccin Mocha"
-export ZSH=$HOME/.oh-my-zsh

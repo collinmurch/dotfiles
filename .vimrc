@@ -33,7 +33,6 @@ set shiftwidth=4
 set relativenumber
 set ignorecase
 set mouse=a
-set clipboard=unnamedplus
 
 filetype plugin on
 filetype indent on

@@ -14,8 +14,8 @@ config = {
 	hyperlink_rules = wezterm.default_hyperlink_rules(),
 
 	window_padding = {
-		left = 25,
-		right = 10,
+		left = 30,
+		right = 30,
 		top = 60,
 		bottom = 15,
 	},

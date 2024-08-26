@@ -1,0 +1,19 @@
+format = """
+$directory\
+$character\
+"""
+
+right_format = """
+$all\
+"""
+
+add_newline = false
+
+[git_status]
+disabled=true
+
+[line_break]
+disabled=true
+
+[package]
+disabled=true
