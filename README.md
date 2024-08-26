@@ -24,7 +24,7 @@ The development apps configured by this repository can be found in `install_maco
 ## MacOS Config
 
 A list of defaults & functionality explanations I prefer can be found in `config_macos.sh`.
-Compiled from [Murderlon](https://github.com/muderlon)'s list.
+Compiled from [Murderlon](https://github.com/murderlon)'s list.
 
 ```bash
 /bin/zsh config_macos.sh
