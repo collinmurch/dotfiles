@@ -3,7 +3,7 @@
 brew install stow
 brew install neovim
 brew install starship
-brew install zhl-syntax-highlighting
+brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
 
 brew install raycast --cask
