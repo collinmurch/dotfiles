@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-brew install go
-brew install rust
 brew install stow
 brew install neovim
 brew install starship
