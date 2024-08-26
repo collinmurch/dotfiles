@@ -6,6 +6,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 alias vim="nvim"
+alias cat="bat -p"
 
 alias dev='cd $DEV'
 alias godev='cd $DEV/go/src'
