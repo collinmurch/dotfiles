@@ -10,10 +10,13 @@ config = {
 	font_size = 15.0,
 	window_background_opacity = 0.97,
 	macos_window_background_blur = 5,
+	
+	hyperlink_rules = wezterm.default_hyperlink_rules(),
+
 	window_padding = {
 		left = 25,
 		right = 10,
-		top = 15,
+		top = 60,
 		bottom = 15,
 	},
 	-- https://github.com/catppuccin/zed/blob/main/themes/catppuccin-mauve.json
@@ -54,6 +57,9 @@ config = {
 	window_decorations = 'INTEGRATED_BUTTONS | RESIZE',
 	window_close_confirmation = 'NeverPrompt',
 	adjust_window_size_when_changing_font_size = false,
+	use_fancy_tab_bar = false,
+	tab_bar_at_bottom = true,
+	hide_tab_bar_if_only_one_tab = true,
 	automatically_reload_config = true,
 }
 return config
