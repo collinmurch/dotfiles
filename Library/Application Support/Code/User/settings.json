@@ -37,4 +37,5 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.untrustedFiles": "newWindow",
+    "git.autofetch": false,
 }
