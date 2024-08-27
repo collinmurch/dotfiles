@@ -21,6 +21,7 @@ stow .
 
 - I use [neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
 - After, you should re-run `stow .` -- you'll have to fix the conflicts as well like in [Instructions](#instructions)
+- I'm not actually positive the symlink works with the lua configs
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
