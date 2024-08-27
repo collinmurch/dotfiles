@@ -14,12 +14,10 @@ ms-vscode.cpptools
 ms-vscode.cpptools-extension-pack
 ms-vscode.cpptools-themes
 ms-vscode.makefile-tools
-pkief.material-icon-theme
 pmndrs.pmndrs
 redhat.java
 redhat.vscode-yaml
 slevesque.shader
-tamasfe.even-better-toml
 vscjava.vscode-java-debug
 vscjava.vscode-java-pack
 waderyan.gitblame
