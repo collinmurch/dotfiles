@@ -36,7 +36,8 @@ Compiled from [Murderlon](https://github.com/murderlon)'s list.
 ## Additional Needed Config
 
 ### VS Code
-- Install extensions with `chmod +x install_vscode.sh && ./install_vscode.sh`
+- Remove previous ones with `rm -rf ~/.vscode/extensions`
+- Install my extensions with `chmod +x install_vscode.sh && ./install_vscode.sh`
 
 ### Raycast
 - Export settings under `Advanced` from previous machine and then import them under the same tab
