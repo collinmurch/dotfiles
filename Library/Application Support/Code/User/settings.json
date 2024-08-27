@@ -38,4 +38,5 @@
     "extensions.ignoreRecommendations": true,
     "security.workspace.trust.untrustedFiles": "newWindow",
     "git.autofetch": false,
+    "git.openRepositoryInParentFolders": "always"
 }
