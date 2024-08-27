@@ -90,7 +90,6 @@ config = {
 	window_close_confirmation = 'NeverPrompt',
 	audible_bell = 'Disabled',
 	adjust_window_size_when_changing_font_size = false,
-	hide_tab_bar_if_only_one_tab = true,
 	automatically_reload_config = true,
 }
 
