@@ -41,8 +41,3 @@ Compiled from [Murderlon](https://github.com/murderlon)'s list.
 
 ### Raycast
 - Export settings under `Advanced` from previous machine and then import them under the same tab
-
-### Zed
-- Install `Catppuccin (Blur)` and other needed extensions
-- I don't really use Zed
-  - Doesn't support merge conflict resolution, custom YAML tags, and other things I need
