@@ -36,4 +36,5 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "extensions.ignoreRecommendations": true,
+    "security.workspace.trust.untrustedFiles": "newWindow",
 }

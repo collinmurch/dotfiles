@@ -13,9 +13,14 @@ git clone https://github.com/collinmurch/dotfiles && cd dotfiles
 stow .
 ```
 
-You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
+**Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
 ## Additional Needed Config
+
+### Vim
+
+- I just use nvim with Nvchad, you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
+- Might want to re-run `stow .` from this repo after -- you'll have to fix two conflicts as well like in [Instructions](#instructions)
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
@@ -27,7 +32,6 @@ You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [C
 ## MacOS Applications
 
 The development apps configured by this repository can be installed with `/bin/zsh install_macos.sh`
-
 
 In general I try to keep it limited to just tools *that I actively use*
 
