@@ -20,7 +20,7 @@ stow .
 ### Vim
 
 - I use [neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-- You might want to re-run `stow .` from this repo after -- you'll have to fix two conflicts as well like in [Instructions](#instructions)
+- After, you should re-run `stow .` -- you'll have to fix the conflicts as well like in [Instructions](#instructions)
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
