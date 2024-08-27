@@ -10,4 +10,10 @@ eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-echo -n '\e[5 q' # Blinking bar as cursor
+# Blinking bar as cursor
+echo -n '\e[5 q' 
+
+# Highlight current tab selection
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select

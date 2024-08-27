@@ -16,8 +16,8 @@ config = {
 	window_padding = {
 		left = 30,
 		right = 30,
-		top = 60,
-		bottom = 15,
+		top = 10,
+		bottom = 10,
 	},
 
 	-- https://github.com/catppuccin/zed/blob/main/themes/catppuccin-mauve.json
@@ -48,9 +48,12 @@ config = {
 			},
 		},
 	},
-	-- Close the current pane instead of window if a pane is open
+
 	keys = {
+		-- Close the current pane instead of window if a pane is open
 		{ key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = false }},
+
+		-- Remove the shift select printing random characters
 		{ key = 'LeftArrow', mods = 'SHIFT', action = act.Nop },
 		{ key = 'RightArrow', mods = 'SHIFT', action = act.Nop },
 		{ key = 'UpArrow', mods = 'SHIFT', action = act.Nop },
@@ -58,10 +61,6 @@ config = {
 	},
 
 	hyperlink_rules = {
-    -- These are the default rules, but you currently need to repeat
-    -- them here when you define your own rules, as your rules override
-    -- the defaults
-
     -- URL with a protocol
     {
       regex = "\\b\\w+://(?:[\\w.-]+)\\.[a-z]{2,15}\\S*\\b",
@@ -80,9 +79,7 @@ config = {
         format = "$0"
     },
 
-    -- Now add a new item at the bottom to match things that are
-    -- probably filenames
-
+    -- [likely] filename regex
     {
       regex = "/\\b\\S*\\b",
       format = "$EDITOR:$0"
@@ -91,9 +88,8 @@ config = {
 
 	window_decorations = 'INTEGRATED_BUTTONS | RESIZE',
 	window_close_confirmation = 'NeverPrompt',
+	audible_bell = 'Disabled',
 	adjust_window_size_when_changing_font_size = false,
-	use_fancy_tab_bar = false,
-	tab_bar_at_bottom = true,
 	hide_tab_bar_if_only_one_tab = true,
 	automatically_reload_config = true,
 }
@@ -118,7 +114,6 @@ function editable(filename)
 
   -- if there is no, or an unknown, extension, then assume
   -- that our trusty editor will do something reasonable
-
   return true
 end
 
@@ -147,20 +142,13 @@ end
 wezterm.on("open-uri", function(window, pane, uri)
   local name = extract_filename(uri)
   if name and editable(name) then
-    -- Note: if you change your VISUAL or EDITOR environment,
-    -- you will need to restart wezterm for this to take effect,
-    -- as there isn't a way for wezterm to "see into" your shell
-    -- environment and capture it.
-    -- To open a new window:
-
     local action = act{
-			SpawnCommandInNewTab={args={'code', '--goto', name}}
-		};
+		SpawnCommandInNewTab={args={'code', '--goto', name}}
+	};
 
-    -- and spawn it!
     window:perform_action(action, pane);
 
-    -- prevent the default action from opening in a browser
+    -- prevents the default action from opening in a browser
     return false
   end
 end)
