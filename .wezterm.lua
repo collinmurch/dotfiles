@@ -3,68 +3,12 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 local hyperlink_rules = wezterm.default_hyperlink_rules()
 
-function editable(filename)
-  -- "foo.bar" -> ".bar"
-  local extension = filename:match("^.+(%..+)$")
-  if extension then
-    -- ".bar" -> "bar"
-    extension = extension:sub(2)
-    wezterm.log_info(string.format("extension is [%s]", extension))
-    local binary_extensions = {
-      jpg = true,
-      jpeg = true,
-      -- and so on
-    }
-    if binary_extensions[extension] then
-      -- can't edit binary files
-      return false
-    end
-  end
-
-  -- if there is no, or an unknown, extension, then assume
-  -- that our trusty editor will do something reasonable
-  return true
-end
-
-function extract_filename(uri)
-  local start, match_end = uri:find("$EDITOR:");
-  if start == 1 then
-    -- skip past the colon
-    return uri:sub(match_end+1)
-  end
-
-  -- `file://hostname/path/to/file`
-  local start, match_end = uri:find("file:");
-  if start == 1 then
-    -- skip "file://", -> `hostname/path/to/file`
-    local host_and_path = uri:sub(match_end+3)
-    local start, match_end = host_and_path:find("/")
-    if start then
-      -- -> `/path/to/file`
-      return host_and_path:sub(match_end)
-    end
-  end
-
-  return nil
-end
-
-wezterm.on("open-uri", function(window, pane, uri)
-  local name = extract_filename(uri)
-  if name and editable(name) then
-    local action = act{
-		SpawnCommandInNewTab={args={'code', '--goto', name}}
-	};
-
-    window:perform_action(action, pane);
-
-    -- prevents the default action from opening in a browser
-    return false
-  end
-end)
-
+-- For files, matches stuff like 'foo.bar:123' and '/Users/you/example.html'
+-- Another option would to match things much more optimistically then limit 
+-- what we 'link' in editable(), but generally regex is faster
 table.insert(hyperlink_rules, {
-  regex = "/\\b\\S*\\b",
-  format = "$EDITOR:$0"
+  regex = "\\/?\\b([\\w.\\/]*\\w+\\.\\w+)(:\\d+)?\\b",
+  format = "$0"
 })
 
 config = {
@@ -131,5 +75,49 @@ config = {
 	automatically_reload_config = true,
   hyperlink_rules = hyperlink_rules,
 }
+
+function get_if_valid_file(pane, uri)
+  local function strip_colon(name)
+    local colon_pos = name:find(":")
+    if colon_pos then
+      return name:sub(1, colon_pos - 1)
+    else
+      return name
+    end
+  end
+
+  local function file_exists(filename)
+    local f = io.open(strip_colon(filename), "r")
+    if f ~= nil then
+      f:close()
+      return true
+    else
+      return false
+    end
+  end
+
+  -- check for the matched absolute file path
+  if file_exists(uri) then
+    return uri
+  end
+
+  -- also check for matched relative and local files
+  local prepended_uri = pane:get_current_working_dir().file_path ..'/' .. uri
+  if file_exists(prepended_uri) then
+    return prepended_uri
+  end
+end
+
+wezterm.on("open-uri", function(window, pane, uri)
+  local filename = get_if_valid_file(pane, uri)
+
+  if filename then
+    wezterm.log_info(string.format("opening [%s]", filename))
+    window:perform_action(act.SpawnCommandInNewTab{args={'code', '--goto', filename}}, pane);
+
+    -- return false to prevent opening in a browser (later handlers do this on open-uri)
+    return false 
+  end
+end)
 
 return config
