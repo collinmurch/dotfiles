@@ -7,7 +7,7 @@ local hyperlink_rules = wezterm.default_hyperlink_rules()
 -- Another option would to match things much more optimistically then limit 
 -- what we 'link' in editable(), but generally regex is faster
 table.insert(hyperlink_rules, {
-  regex = "\\/?\\b([\\w.\\/]*\\w+\\.\\w+)(:\\d+)?\\b",
+  regex = "\\/?\\b([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b",
   format = "$0"
 })
 
