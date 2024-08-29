@@ -112,7 +112,6 @@ wezterm.on("open-uri", function(window, pane, uri)
   local filename = get_if_valid_file(pane, uri)
 
   if filename then
-    wezterm.log_info(string.format("opening [%s]", filename))
     window:perform_action(act.SpawnCommandInNewTab{args={'code', '--goto', filename}}, pane);
 
     -- return false to prevent opening in a browser (later handlers do this on open-uri)
