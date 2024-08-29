@@ -1,6 +1,8 @@
 dbaeumer.vscode-eslint
+eamodio.gitlens
 ecmel.vscode-html-css
 golang.go
+hashicorp.terraform
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance
@@ -9,10 +11,10 @@ ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
 ms-toolsai.vscode-jupyter-cell-tags
 ms-toolsai.vscode-jupyter-slideshow
+pbkit.vscode-pbkit
 pmndrs.pmndrs
 redhat.vscode-yaml
 slevesque.shader
 supermaven.supermaven
 tamasfe.even-better-toml
-waderyan.gitblame
 yzhang.markdown-all-in-one

@@ -17,11 +17,15 @@ stow .
 
 ## Additional Needed Config
 
+### Zsh
+
+- Any additional config you need for work or whatever (for my job I need to specify `GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
+
 ### Vim
 
 - I use [neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
 - After, you should re-run `stow .` -- you'll have to fix the conflicts as well like in [Instructions](#instructions)
-- I'm not actually positive the symlink works with the lua configs
+- **Note:** the symlink isn't actually working. I'll fix this later by adding a script that just patches `chadrc.lua` to read from a symlinked file
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
