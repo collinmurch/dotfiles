@@ -103,12 +103,6 @@ function get_if_valid_file(pane, uri)
   if file_exists(uri) then
     return uri
   end
-
-  -- also check for matched relative and local files
-  local prepended_uri = pane:get_current_working_dir().file_path ..'/' .. uri
-  if file_exists(prepended_uri) then
-    return prepended_uri
-  end
 end
 
 wezterm.on("open-uri", function(window, pane, uri)
