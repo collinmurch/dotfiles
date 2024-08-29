@@ -3,11 +3,14 @@ local act = wezterm.action
 local config = wezterm.config_builder()
 local hyperlink_rules = wezterm.default_hyperlink_rules()
 
--- For files, matches stuff like 'foo.bar:123' and '/Users/you/example.html'
--- Another option would to match things much more optimistically then limit 
--- what we 'link' in editable(), but generally regex is faster
+-- For files, matches only absolute paths with/without line numbers (file.txt:123)
+--    Does not match binaries (/Users/foo/test:123)
+--    To expand this to fit relative paths, use: \\/?\\b([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b
+--    Note: absolute paths were chosen for speed (forcing a prepended '/' requires few regex steps)
+-- You could also re-write this to match optimistically, then limit with lua, but the
+--    downside of that approach is a lot gets underlined but isn't clickable
 table.insert(hyperlink_rules, {
-  regex = "\\/?\\b([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b",
+  regex = "\\/([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b",
   format = "$0"
 })
 
