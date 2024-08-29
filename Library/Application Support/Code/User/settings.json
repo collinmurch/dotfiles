@@ -39,4 +39,18 @@
     "security.workspace.trust.untrustedFiles": "newWindow",
     "git.autofetch": false,
     "git.openRepositoryInParentFolders": "always",
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.views.repositories.autoRefresh": false,
+    "codeium.enableCodeLens": false,
+    "go.editorContextMenuCommands": {
+        "playground": false,
+        "debugTestAtCursor": false,
+        "testCoverage": false,
+        "addImport": false,
+        "generateTestForFunction": false,
+        "testAtCursor": false,
+        "addTags": false,
+        "toggleTestFile": false
+    },
 }

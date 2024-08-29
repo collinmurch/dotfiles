@@ -1,11 +1,7 @@
-\.git
-\.gitignore
-
 ^/.DS_Store
 
-^/README.*
-^/LICENSE.*
-^/COPYING.*
-
-config_macos.sh
-install_macos.sh
+.*\.sh
+.*\.md
+.*\.txt
+\.gitignore
+\.git

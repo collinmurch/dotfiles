@@ -1,97 +1,7 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 local config = wezterm.config_builder()
-
-config = {
-	color_scheme = 'Catppuccin Mocha',
-	
-	font = wezterm.font(
-		'JetBrains Mono',
-		{weight = 'Medium'}
-	),
-	font_size = 15.0,
-	window_background_opacity = 0.97,
-	macos_window_background_blur = 5,
-	
-	window_padding = {
-		left = 30,
-		right = 30,
-		top = 10,
-		bottom = 10,
-	},
-
-	-- https://github.com/catppuccin/zed/blob/main/themes/catppuccin-mauve.json
-	window_frame = {
-		font = wezterm.font { family = 'JetBrains Mono', weight = 'Bold'},
-		font_size = 13.0,
-		active_titlebar_bg = '#1E1E2E',
-		inactive_titlebar_bg = '#1E1E2E',
-	},
-
-	colors = {
-		tab_bar = {
-			active_tab = {
-				bg_color = '#1E1E2E',
-				fg_color = '#CDD6F4',
-			},
-			inactive_tab = {
-				bg_color = '313244',
-				fg_color = '#BAC2DE',
-			},
-			new_tab = {
-				bg_color = '313244',
-				fg_color = '#BAC2DE',
-			},
-			new_tab_hover = {
-				bg_color = '#1E1E2E',
-				fg_color = '#CDD6F4',
-			},
-		},
-	},
-
-	keys = {
-		-- Close the current pane instead of window if a pane is open
-		{ key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = false }},
-
-		-- Remove the shift select printing random characters
-		{ key = 'LeftArrow', mods = 'SHIFT', action = act.Nop },
-		{ key = 'RightArrow', mods = 'SHIFT', action = act.Nop },
-		{ key = 'UpArrow', mods = 'SHIFT', action = act.Nop },
-		{ key = 'DownArrow', mods = 'SHIFT', action = act.Nop },
-	},
-
-	hyperlink_rules = {
-    -- URL with a protocol
-    {
-      regex = "\\b\\w+://(?:[\\w.-]+)\\.[a-z]{2,15}\\S*\\b",
-      format = "$0",
-    },
-
-    -- implicit mailto link
-    {
-        regex = "\\b\\w+@[\\w-]+(\\.[\\w-]+)+\\b",
-        format = "mailto:$0",
-    },
-
-    -- new in nightly builds; automatically highly file:// URIs.
-    {
-        regex = "\\bfile://\\S*\\b",
-        format = "$0"
-    },
-
-    -- [likely] filename regex
-    {
-      regex = "/\\b\\S*\\b",
-      format = "$EDITOR:$0"
-    }
-  },
-
-	window_decorations = 'INTEGRATED_BUTTONS | RESIZE',
-	window_close_confirmation = 'NeverPrompt',
-	audible_bell = 'Disabled',
-	adjust_window_size_when_changing_font_size = false,
-	automatically_reload_config = true,
-}
+local hyperlink_rules = wezterm.default_hyperlink_rules()
 
 function editable(filename)
   -- "foo.bar" -> ".bar"
@@ -151,5 +61,75 @@ wezterm.on("open-uri", function(window, pane, uri)
     return false
   end
 end)
+
+table.insert(hyperlink_rules, {
+  regex = "/\\b\\S*\\b",
+  format = "$EDITOR:$0"
+})
+
+config = {
+	color_scheme = 'Catppuccin Mocha',
+	
+	font = wezterm.font(
+		'JetBrains Mono',
+		{weight = 'Medium'}
+	),
+	font_size = 15.0,
+	window_background_opacity = 0.97,
+	macos_window_background_blur = 5,
+	
+	window_padding = {
+		left = 30,
+		right = 30,
+		top = 10,
+		bottom = 10,
+	},
+
+  -- Catppuccin Colors
+	window_frame = {
+		font = wezterm.font { family = 'JetBrains Mono', weight = 'Bold'},
+		font_size = 13.0,
+		active_titlebar_bg = '#1E1E2E',
+		inactive_titlebar_bg = '#1E1E2E',
+	},
+	colors = {
+		tab_bar = {
+			active_tab = {
+				bg_color = '#1E1E2E',
+				fg_color = '#CDD6F4',
+			},
+			inactive_tab = {
+				bg_color = '313244',
+				fg_color = '#BAC2DE',
+			},
+			new_tab = {
+				bg_color = '313244',
+				fg_color = '#BAC2DE',
+			},
+			new_tab_hover = {
+				bg_color = '#1E1E2E',
+				fg_color = '#CDD6F4',
+			},
+		},
+	},
+
+	keys = {
+		-- Close the current pane instead of window if a pane is open
+		{ key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = false }},
+
+		-- Remove the shift select printing random characters
+		{ key = 'LeftArrow', mods = 'SHIFT', action = act.Nop },
+		{ key = 'RightArrow', mods = 'SHIFT', action = act.Nop },
+		{ key = 'UpArrow', mods = 'SHIFT', action = act.Nop },
+		{ key = 'DownArrow', mods = 'SHIFT', action = act.Nop },
+	},
+
+	window_decorations = 'INTEGRATED_BUTTONS | RESIZE',
+	window_close_confirmation = 'NeverPrompt',
+	audible_bell = 'Disabled',
+	adjust_window_size_when_changing_font_size = false,
+	automatically_reload_config = true,
+  hyperlink_rules = hyperlink_rules,
+}
 
 return config
