@@ -24,8 +24,7 @@ stow .
 ### Vim
 
 - I use [neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-- After, you should re-run `stow .` -- you'll have to fix the conflicts as well like in [Instructions](#instructions)
-- **Note:** the symlink isn't actually working. I'll fix this later by adding a script that just patches `chadrc.lua` to read from a symlinked file
+- After, you must patch the `chadrc.lua` file because Nvchad does not like a symlinked file to be the entrypoint for whatever reason: `/bin/zsh ./patch_nvchad.sh`
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`

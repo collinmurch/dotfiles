@@ -64,11 +64,17 @@ config = {
 		-- Close the current pane instead of window if a pane is open
 		{ key = 'w', mods = 'CMD', action = act.CloseCurrentPane { confirm = false }},
 
-		-- Remove the shift select printing random characters
+		-- Remove the shift & ctrlselect printing random characters
 		{ key = 'LeftArrow', mods = 'SHIFT', action = act.Nop },
 		{ key = 'RightArrow', mods = 'SHIFT', action = act.Nop },
 		{ key = 'UpArrow', mods = 'SHIFT', action = act.Nop },
 		{ key = 'DownArrow', mods = 'SHIFT', action = act.Nop },
+    { key = 'UpArrow', mods = 'ALT', action = act.Nop },
+		{ key = 'DownArrow', mods = 'ALT', action = act.Nop },
+    
+    -- Word traversal
+    { key = 'LeftArrow', mods = 'ALT', action = wezterm.action.SendKey{ key = 'b', mods = 'ALT' } },
+    { key = 'RightArrow', mods = 'ALT', action = wezterm.action.SendKey{ key = 'f', mods = 'ALT' } },
 	},
 
 	window_decorations = 'INTEGRATED_BUTTONS | RESIZE',
