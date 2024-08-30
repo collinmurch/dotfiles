@@ -15,7 +15,7 @@ stow .
 
 **Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
-## Additional Needed Config
+## Additional Optional Config
 
 ### Zsh
 
@@ -23,8 +23,8 @@ stow .
 
 ### Vim
 
-- I use [neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-- After, you must patch the `chadrc.lua` file because Nvchad does not like a symlinked file to be the entrypoint for whatever reason: `/bin/zsh ./patch_nvchad.sh`
+- I like to use [Neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
+  - After, you must patch the `chadrc.lua` file because Nvchad does not like a symlinked file to be the entrypoint for whatever reason: `/bin/zsh ./patch_nvchad.sh`
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
