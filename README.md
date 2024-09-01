@@ -10,7 +10,7 @@
 ```bash
 git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
 ```
-*Or run `stow .` from the dotfiles directory*
+*Or run `stow .` from `~/dotfiles`*
 
 **Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
