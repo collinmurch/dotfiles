@@ -8,10 +8,9 @@
 ## Instructions
 
 ```bash
-cd ~
-git clone https://github.com/collinmurch/dotfiles && cd dotfiles
-stow .
+git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
 ```
+*Or run `stow .` from the dotfiles directory*
 
 **Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
@@ -23,8 +22,8 @@ stow .
 
 ### Vim
 
-- I like to use [Neovim](https://neovim.io) with [Nvchad](https://nvchad.com), you can install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-  - After, you must patch the `chadrc.lua` file because Nvchad does not like a symlinked file to be the entrypoint for whatever reason: `/bin/zsh ./patch_nvchad.sh`
+- I use [LazyVim](https://www.lazyvim.org) with pretty light customization
+- Install with `git clone https://github.com/LazyVim/starter ~/.config/nvim && stow -d ~/dotfiles -t ~ . && nvim`
 
 ### VS Code
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`

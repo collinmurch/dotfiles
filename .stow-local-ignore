@@ -3,6 +3,6 @@
 .*\.sh
 .*\.md
 .*\.txt
+
 \.gitignore
 \.git
-chadrc\.lua
