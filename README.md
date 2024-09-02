@@ -26,10 +26,12 @@ git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
 - Install with `git clone https://github.com/LazyVim/starter ~/.config/nvim && stow -d ~/dotfiles -t ~ . && nvim`
 
 ### VS Code
+
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
 - Install my extensions with `/bin/zsh install_vscode.sh`
 
 ### Raycast
+
 - Export settings under `Advanced` from previous machine and then import them under the same tab
 
 ## MacOS Applications
