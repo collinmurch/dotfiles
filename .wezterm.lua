@@ -82,7 +82,7 @@ config = {
 	hyperlink_rules = hyperlink_rules,
 }
 
-function get_if_valid_file(name, input_uri)
+function get_if_valid_file(input_uri)
 	local function strip_colon(filename)
 		local colon_pos = filename:find(":")
 		if colon_pos then
@@ -103,13 +103,13 @@ function get_if_valid_file(name, input_uri)
 	end
 
 	-- check for the matched absolute file path
-	if file_exists(name) then
-		return name
+	if file_exists(input_uri) then
+		return input_uri
 	end
 end
 
 wezterm.on("open-uri", function(window, pane, uri)
-	local filename = get_if_valid_file(pane, uri)
+	local filename = get_if_valid_file(uri)
 
 	if filename then
 		os.execute("code --goto " .. filename)

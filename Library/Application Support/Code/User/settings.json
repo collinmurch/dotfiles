@@ -53,4 +53,5 @@
         "addTags": false,
         "toggleTestFile": false
     },
+    "javascript.updateImportsOnFileMove.enabled": "always",
 }
