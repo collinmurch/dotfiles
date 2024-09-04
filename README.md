@@ -8,9 +8,9 @@
 ## Instructions
 
 ```bash
-git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
+git clone https://github.com/collinmurch/dotfiles ~ 
+stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 ```
-*Or run `stow .` from `~/dotfiles`*
 
 **Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
@@ -18,12 +18,19 @@ git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
 
 ### Zsh
 
-- Any additional config you need for work or whatever (for my job I need to specify `AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
+- Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zshenv` or `~/.zprofile`
 
 ### Vim
 
-- I use [LazyVim](https://www.lazyvim.org) with pretty light customization
-- Install with `git clone https://github.com/LazyVim/starter ~/.config/nvim && stow -d ~/dotfiles -t ~ . && nvim`
+- I use [NvChad](https://nvchad.com) with pretty light customization
+- Install and get my settings with:
+
+```bash
+git clone https://github.com/NvChad/starter ~/.config/nvim 
+echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua # Point chadrc.lua to our symlink
+stow -d ~/dotfiles -t ~ .
+nvim
+```
 
 ### VS Code
 
