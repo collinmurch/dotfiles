@@ -23,14 +23,8 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 ### Vim
 
 - I use [NvChad](https://nvchad.com) with pretty light customization
-- Install and get my settings with:
-
-```bash
-git clone https://github.com/NvChad/starter ~/.config/nvim 
-echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua # Point chadrc.lua to our symlink
-stow -d ~/dotfiles -t ~ .
-nvim
-```
+- Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
+- Get my settings with `echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua && stow -d ~/dotfiles -t ~ . && nvim ~/.config/nvim/lua/chadrc.lua -c "sleep 1" -c "wq"`
 
 ### VS Code
 
