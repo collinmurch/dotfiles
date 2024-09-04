@@ -18,7 +18,7 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 
 ### Zsh
 
-- Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zshenv` or `~/.zprofile`
+- Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
 ### Vim
 
