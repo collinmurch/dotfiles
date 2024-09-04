@@ -39,9 +39,10 @@
     "security.workspace.trust.untrustedFiles": "newWindow",
     "git.autofetch": false,
     "git.openRepositoryInParentFolders": "always",
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.currentLine.enabled": false,
     "gitlens.views.repositories.autoRefresh": false,
+    "gitlens.currentLine.enabled": false, // in modern version
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
     "codeium.enableCodeLens": false,
     "go.editorContextMenuCommands": {
         "playground": false,
