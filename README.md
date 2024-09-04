@@ -18,7 +18,7 @@ git clone https://github.com/collinmurch/dotfiles ~ && stow -d ~/dotfiles -t ~ .
 
 ### Zsh
 
-- Any additional config you need for work or whatever (for my job I need to specify `GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
+- Any additional config you need for work or whatever (for my job I need to specify `AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
 ### Vim
 

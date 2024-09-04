@@ -1,5 +1,5 @@
 format = "$directory$character"
-right_format = "$git_branch"
+right_format = "$git_branch$aws"
 add_newline = false
 
 [line_break]
