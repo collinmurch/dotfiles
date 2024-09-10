@@ -8,11 +8,16 @@
 ## Instructions
 
 ```bash
-git clone https://github.com/collinmurch/dotfiles ~ 
+git clone https://github.com/collinmurch/dotfiles ~
 stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
+/bin/zsh ~/dotfiles/install_macos.sh # Optional, but recommended
 ```
 
-**Note:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
+Then open a new terminal session
+
+**Note 1:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
+
+**Note 2:** `install_macos.sh` specifies the expected zsh plugins that should be installed; you'll get errors from sourcing `~/.zshrc` if you don't run that script
 
 ## Additional Optional Config
 
