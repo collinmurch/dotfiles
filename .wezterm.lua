@@ -62,6 +62,8 @@ config = {
 		{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
 
 		-- Remove the shift & ctrlselect printing random characters
+		{ key = "LeftArrow", mods = "CTRL", action = act.Nop },
+		{ key = "RightArrow", mods = "CTRL", action = act.Nop },
 		{ key = "LeftArrow", mods = "SHIFT", action = act.Nop },
 		{ key = "RightArrow", mods = "SHIFT", action = act.Nop },
 		{ key = "UpArrow", mods = "SHIFT", action = act.Nop },
