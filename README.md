@@ -1,4 +1,4 @@
-# dotfiles
+# macOS dotfiles
 
 ## Requirements
 
@@ -7,13 +7,13 @@
 
 ## Instructions
 
+Run the below script then open a new terminal session
+
 ```bash
 git clone https://github.com/collinmurch/dotfiles ~
+/bin/zsh ~/dotfiles/install_macos.sh # Optional, but highly recommended
 stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
-/bin/zsh ~/dotfiles/install_macos.sh # Optional, but recommended
 ```
-
-Then open a new terminal session
 
 **Note 1:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
 
