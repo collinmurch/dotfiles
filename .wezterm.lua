@@ -56,18 +56,18 @@ config = {
     },
 
     keys = {
-        -- Close the current pane instead of window if a pane is open
-        { key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
-        
-		-- Remove the alt / ctrl+shift select printing random characters
+      -- Close the current pane instead of window if a pane is open
+      { key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
+		  
+      -- Remove the alt / ctrl+shift select printing random characters
     	{ key = "UpArrow", mods = "ALT", action = act.Nop },
-        { key = "DownArrow", mods = "ALT", action = act.Nop },
+      { key = "DownArrow", mods = "ALT", action = act.Nop },
     	{ key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.Nop },
     	{ key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.Nop },
         
-		-- Word traversal with alt arrows
-        { key = "LeftArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
-        { key = "RightArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
+		  -- Word traversal with alt arrows
+      { key = "LeftArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
+      { key = "RightArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
     },
 
     window_decorations = "INTEGRATED_BUTTONS | RESIZE",
