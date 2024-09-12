@@ -5,7 +5,7 @@
 1. `git`
 2. `stow`
 
-## Instructions
+## Installation Instructions
 
 Run the below script then open a new terminal session
 
@@ -30,6 +30,7 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 - I use [NvChad](https://nvchad.com) with pretty light customization
 - Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
 - Get my settings with `echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua && stow -d ~/dotfiles -t ~ . && nvim ~/.config/nvim/lua/chadrc.lua -c "sleep 1" -c "wq"`
+  - You may need to fix any file conflicts similar to in [Installation Instructions](#installation-instructions)
 
 ### VS Code
 

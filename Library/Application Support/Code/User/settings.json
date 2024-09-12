@@ -40,7 +40,7 @@
     "git.autofetch": false,
     "git.openRepositoryInParentFolders": "always",
     "gitlens.views.repositories.autoRefresh": false,
-    "gitlens.currentLine.enabled": false, // in modern version
+    "gitlens.currentLine.enabled": false,
     "gitlens.codeLens.authors.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "codeium.enableCodeLens": false,
