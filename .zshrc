@@ -22,7 +22,7 @@ compinit
 zstyle ':completion:*' menu select
 
 # Case insensitivity for zsh autocomplete
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 setopt no_list_ambiguous
 
 # Plugins
