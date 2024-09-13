@@ -7,7 +7,6 @@ brew install lua-language-server    # for nvchadrc.lua
 brew install starship
 brew install bat
 brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
 
 brew install --cask font-jetbrains-mono
 

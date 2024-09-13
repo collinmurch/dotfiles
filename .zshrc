@@ -21,12 +21,11 @@ autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
 
-# Case insensitivity for zsh autocomplete
+# Zsh autocomplete with tab
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 setopt no_list_ambiguous
 
 # Plugins
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-shift-select.zsh
