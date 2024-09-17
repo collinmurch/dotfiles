@@ -54,5 +54,10 @@
         "addTags": false,
         "toggleTestFile": false
     },
+    "gopls": {
+        "build.buildFlags": [
+            "-tags=integration",
+        ]
+    },
     "javascript.updateImportsOnFileMove.enabled": "always",
 }
