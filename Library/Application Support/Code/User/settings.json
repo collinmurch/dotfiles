@@ -58,6 +58,7 @@
         "build.buildFlags": [
             "-tags=integration",
             "-tags=wireinject",
+            "-tags=!wireinject",
         ]
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
