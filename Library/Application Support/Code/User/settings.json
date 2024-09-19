@@ -65,10 +65,10 @@
             "vendor": false,
             "test": true
         },
-        "build.buildFlags": [
-            "-tags=integration",
-            "-tags=wireinject",
-            "-tags=!wireinject",
+        "build.standaloneTags": [
+            "integration",
+            "wireinject",
+            "!wireinject"
         ]
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
