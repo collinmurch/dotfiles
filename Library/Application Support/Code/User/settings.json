@@ -68,7 +68,8 @@
         "build.standaloneTags": [
             "integration",
             "wireinject",
-            "!wireinject"
+            "!wireinject",
+            "tools"
         ]
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
