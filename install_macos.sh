@@ -2,6 +2,8 @@
 
 brew install stow
 brew install neovim
+brew install helix
+brew install zellij
 brew install ripgrep                # for vim-telescope
 brew install lua-language-server    # for nvchadrc.lua
 brew install starship
