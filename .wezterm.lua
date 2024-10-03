@@ -77,6 +77,8 @@ config = {
     automatically_reload_config = true,
     hyperlink_rules = hyperlink_rules,
     hide_tab_bar_if_only_one_tab = true,
+    tab_bar_at_bottom = true,
+    use_fancy_tab_bar = false,
 }
 
 function get_if_valid_file(input_uri)

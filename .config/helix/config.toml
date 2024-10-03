@@ -2,3 +2,6 @@ theme = "collin"
 
 [editor.cursor-shape]
 insert = "bar"
+
+[editor.file-picker]
+hidden = false
