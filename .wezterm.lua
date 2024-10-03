@@ -23,7 +23,7 @@ config = {
     window_padding = {
         left = 20,
         right = 20,
-        top = 10,
+        top = 55,
         bottom = 10,
     },
 
@@ -58,14 +58,14 @@ config = {
     keys = {
         -- Close the current pane instead of window if a pane is open
         { key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = false }) },
-		  
+
         -- Remove the alt / ctrl+shift select printing random characters
         { key = "UpArrow", mods = "ALT", action = act.Nop },
         { key = "DownArrow", mods = "ALT", action = act.Nop },
-    	{ key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.Nop },
-    	{ key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.Nop },
-        
-		-- Word traversal with alt arrows
+        { key = 'LeftArrow', mods = 'CTRL|SHIFT', action = act.Nop },
+    	  { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.Nop },
+
+		    -- Word traversal with alt arrows
         { key = "LeftArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
         { key = "RightArrow", mods = "ALT", action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
     },
@@ -76,6 +76,7 @@ config = {
     adjust_window_size_when_changing_font_size = false,
     automatically_reload_config = true,
     hyperlink_rules = hyperlink_rules,
+    hide_tab_bar_if_only_one_tab = true,
 }
 
 function get_if_valid_file(input_uri)
