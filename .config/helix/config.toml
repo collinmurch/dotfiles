@@ -1,0 +1,4 @@
+theme = "collin"
+
+[editor.cursor-shape]
+insert = "bar"
