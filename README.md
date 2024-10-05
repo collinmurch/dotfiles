@@ -25,12 +25,8 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
-### Vim
-
-- I use [NvChad](https://nvchad.com) with pretty light customization
-- Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-- Get my settings with `echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua && stow -d ~/dotfiles -t ~ . && nvim ~/.config/nvim/lua/chadrc.lua -c "sleep 1" -c "wq"`
-  - You may need to fix any file conflicts similar to in [Installation Instructions](#installation-instructions)
+### Git
+- I use [Helix](https://helix-editor.com) for editing, set as the global editor with `git config --global core.editor hx`
 
 ### VS Code
 
