@@ -7,8 +7,6 @@ local hyperlink_rules = wezterm.default_hyperlink_rules()
 --    Does not match binaries (/Users/foo/test:123)
 --    To expand this to fit relative paths, use: \\/?\\b([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b
 --    Note: absolute paths were chosen for speed (forcing a prepended '/' requires few regex steps)
--- You could also re-write this to match optimistically, then limit with lua, but the
---    downside of that approach is a lot gets underlined but isn't clickable
 table.insert(hyperlink_rules, {
   regex = "\\/([\\w.\\/\\-]*\\w+\\.\\w+)(:\\d+)?\\b",
   format = "$0",
@@ -27,7 +25,7 @@ config = {
     bottom = 10,
   },
 
-  -- Catppuccin Colors
+  -- Catppuccin colors
   colors = {
     tab_bar = {
       active_tab = {
@@ -69,8 +67,6 @@ config = {
     -- Close the current pane instead of window if a pane is open
     { key = "w",          mods = "CMD",            action = act.CloseCurrentPane({ confirm = false }) },
 
-    -- Debug overlay
-    { key = 'd',          mods = 'SHIFT|ALT',      action = act.ShowDebugOverlay },
 
     -- Remove the alt / ctrl+shift select printing unix keycodes
     { key = "UpArrow",    mods = "ALT",            action = act.Nop },
@@ -81,6 +77,22 @@ config = {
     -- Word traversal with alt arrows
     { key = "LeftArrow",  mods = "ALT",            action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
     { key = "RightArrow", mods = "ALT",            action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
+
+    -- Rename current tab
+    {
+      key = 'E',
+      mods = 'SHIFT|ALT',
+      action = act.PromptInputLine {
+        description = 'Enter new name for tab',
+        action = wezterm.action_callback(function(window, pane, line)
+          if line then
+            window:active_tab():set_title(line)
+          end
+        end),
+      },
+    },
+
+    { key = 'D',          mods = 'SHIFT|ALT',      action = act.ShowDebugOverlay },
   },
 
   window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW | INTEGRATED_BUTTONS",
