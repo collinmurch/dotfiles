@@ -63,11 +63,14 @@ config = {
     { key = "l",          mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize { "Right", 1 } },
 
     -- New Panes
-    { key = "\"",          mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = "\"",         mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
     { key = ":",          mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
 
     -- Close the current pane instead of window if a pane is open
     { key = "w",          mods = "CMD",            action = act.CloseCurrentPane({ confirm = false }) },
+
+    -- Debug overlay
+    { key = 'd',          mods = 'SHIFT|ALT',      action = act.ShowDebugOverlay },
 
     -- Remove the alt / ctrl+shift select printing unix keycodes
     { key = "UpArrow",    mods = "ALT",            action = act.Nop },
