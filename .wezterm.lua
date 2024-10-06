@@ -28,10 +28,6 @@ config = {
   },
 
   -- Catppuccin Colors
-  window_frame = {
-    font = wezterm.font({ family = "JetBrains Mono", weight = "Bold" }),
-    font_size = 13.0,
-  },
   colors = {
     tab_bar = {
       active_tab = {
@@ -54,18 +50,34 @@ config = {
   },
 
   keys = {
-    -- Close the current pane instead of window if a pane is open
-    { key = "w",          mods = "CMD",        action = act.CloseCurrentPane({ confirm = false }) },
+    -- Moving around panes
+    { key = "h",          mods = "SHIFT|ALT",      action = act.ActivatePaneDirection "Left" },
+    { key = "j",          mods = "SHIFT|ALT",      action = act.ActivatePaneDirection "Down" },
+    { key = "k",          mods = "SHIFT|ALT",      action = act.ActivatePaneDirection "Up" },
+    { key = "l",          mods = "SHIFT|ALT",      action = act.ActivatePaneDirection "Right" },
 
-    -- Remove the alt / ctrl+shift select printing random characters
-    { key = "UpArrow",    mods = "ALT",        action = act.Nop },
-    { key = "DownArrow",  mods = "ALT",        action = act.Nop },
-    { key = 'LeftArrow',  mods = 'CTRL|SHIFT', action = act.Nop },
-    { key = 'RightArrow', mods = 'CTRL|SHIFT', action = act.Nop },
+    -- Adjusting pane sizes
+    { key = "h",          mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize { "Left", 1 } },
+    { key = "j",          mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize { "Down", 1 } },
+    { key = "k",          mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize { "Up", 1 } },
+    { key = "l",          mods = "CTRL|SHIFT|ALT", action = act.AdjustPaneSize { "Right", 1 } },
+
+    -- New Panes
+    { key = "\"",          mods = 'SHIFT|ALT|CTRL', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+    { key = ":",          mods = 'SHIFT|ALT|CTRL', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+
+    -- Close the current pane instead of window if a pane is open
+    { key = "w",          mods = "CMD",            action = act.CloseCurrentPane({ confirm = false }) },
+
+    -- Remove the alt / ctrl+shift select printing unix keycodes
+    { key = "UpArrow",    mods = "ALT",            action = act.Nop },
+    { key = "DownArrow",  mods = "ALT",            action = act.Nop },
+    { key = 'LeftArrow',  mods = 'CTRL|SHIFT',     action = act.Nop },
+    { key = 'RightArrow', mods = 'CTRL|SHIFT',     action = act.Nop },
 
     -- Word traversal with alt arrows
-    { key = "LeftArrow",  mods = "ALT",        action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
-    { key = "RightArrow", mods = "ALT",        action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
+    { key = "LeftArrow",  mods = "ALT",            action = wezterm.action.SendKey({ key = "b", mods = "ALT" }) },
+    { key = "RightArrow", mods = "ALT",            action = wezterm.action.SendKey({ key = "f", mods = "ALT" }) },
   },
 
   window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW | INTEGRATED_BUTTONS",
