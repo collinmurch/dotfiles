@@ -81,7 +81,7 @@ config = {
     -- Rename current tab
     {
       key = 'E',
-      mods = 'SHIFT|ALT',
+      mods = 'CTRL|SHIFT|ALT',
       action = act.PromptInputLine {
         description = 'Enter new name for tab',
         action = wezterm.action_callback(function(window, pane, line)

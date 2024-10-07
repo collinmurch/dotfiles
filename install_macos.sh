@@ -1,7 +1,9 @@
 #!/bin/zsh
 
 brew install stow
-brew install helix
+brew install neovim
+brew install ripgrep                # for vim-telescope
+brew install lua-language-server    # for nvchadrc.lua
 brew install starship
 brew install bat
 brew install zsh-syntax-highlighting
