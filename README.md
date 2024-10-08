@@ -25,7 +25,8 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
-### Vim
+### NeoVim
+*Note: I mostly use helix*
 
 - I use [NvChad](https://nvchad.com) with pretty light customization
 - Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
