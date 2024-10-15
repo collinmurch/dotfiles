@@ -65,12 +65,14 @@
             "vendor": false,
             "test": true
         },
+        "build.buildFlags": [
+            "-tags=integration"
+        ],
         "build.standaloneTags": [
-            "integration",
             "wireinject",
             "!wireinject",
             "tools"
-        ]
+        ],
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "codeium.enableCommandSideHintEducation": false,
