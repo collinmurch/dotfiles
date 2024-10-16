@@ -80,8 +80,8 @@ config = {
 
     -- Rename current tab
     {
-      key = 'E',
-      mods = 'CTRL|SHIFT|ALT',
+      key = 'e',
+      mods = 'CMD',
       action = act.PromptInputLine {
         description = 'Enter new name for tab',
         action = wezterm.action_callback(function(window, pane, line)
@@ -96,6 +96,7 @@ config = {
   },
 
   window_decorations = "RESIZE | MACOS_FORCE_ENABLE_SHADOW | INTEGRATED_BUTTONS",
+  tab_max_width = 24,
   window_close_confirmation = "NeverPrompt",
   audible_bell = "Disabled",
   adjust_window_size_when_changing_font_size = false,
