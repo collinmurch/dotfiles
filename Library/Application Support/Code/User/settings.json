@@ -65,8 +65,10 @@
             "vendor": false,
             "test": true
         },
+        "build.buildFlags": [
+            "-tags=integration"
+        ],
         "build.standaloneTags": [
-            "integration",
             "wireinject",
             "!wireinject",
             "tools"
