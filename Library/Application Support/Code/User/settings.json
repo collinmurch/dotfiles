@@ -76,5 +76,7 @@
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "codeium.enableCommandSideHintEducation": false,
-    "codeium.disableSupercomplete": true
+    "codeium.disableSupercomplete": true,
+    "go.survey.prompt": false,
+    "go.showWelcome": false
 }
