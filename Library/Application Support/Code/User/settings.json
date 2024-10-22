@@ -77,5 +77,6 @@
     "codeium.enableCommandSideHintEducation": false,
     "codeium.disableSupercomplete": true,
     "go.survey.prompt": false,
-    "go.showWelcome": false
+    "go.showWelcome": false,
+    "yaml.format.singleQuote": true
 }
