@@ -16,6 +16,7 @@ config = {
   color_scheme = "Catppuccin Mocha",
   font = wezterm.font("JetBrains Mono", { weight = "Medium" }),
   font_size = 15.0,
+  default_cursor_style = 'BlinkingBar',
   window_background_opacity = 0.97,
   macos_window_background_blur = 5,
   window_padding = {
