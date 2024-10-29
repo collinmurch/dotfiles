@@ -10,7 +10,7 @@
   "ui_font_size": 15,
   "buffer_font_size": 15,
   "buffer_font_family": "JetBrains Mono",
-  "theme": "Catppuccin Mocha (Blur)",
+  "theme": "Catppuccin Mocha",
   "terminal": {
     "font_size": 15
   },
@@ -24,8 +24,8 @@
   },
   "assistant": {
     "default_model": {
-      "provider": "ollama",
-      "model": "llama3.1:latest"
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
     "version": "2"
   },
