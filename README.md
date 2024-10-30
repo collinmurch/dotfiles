@@ -11,13 +11,13 @@ Run the below script then open a new terminal session
 
 ```bash
 git clone https://github.com/collinmurch/dotfiles ~
-/bin/zsh ~/dotfiles/install_macos.sh # Optional, but highly recommended
-stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
+/bin/zsh ~/dotfiles/install_macos.sh                     # Optional, but highly recommended
+mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .   # Can also run `stow .` from ~/dotfiles
 ```
 
-**Note 1:** You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
-
-**Note 2:** `install_macos.sh` specifies the expected zsh plugins that should be installed; you'll get errors from sourcing `~/.zshrc` if you don't run that script
+**Notes**
+- You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
+- `install_macos.sh` specifies the expected zsh plugins that should be installed; you'll get errors from sourcing `~/.zshrc` if you don't run that script
 
 ## Additional Optional Config
 
@@ -26,15 +26,11 @@ stow -d ~/dotfiles -t ~ . # Can also run `stow .` from ~/dotfiles
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
 ### NeoVim
-*Note: I mostly use [Helix](https://helix-editor.com)*
 
 - For NeoVim use [NvChad](https://nvchad.com) with pretty light customization
 - Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
 - Get my settings with `echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua && stow -d ~/dotfiles -t ~ . && nvim ~/.config/nvim/lua/chadrc.lua -c "sleep 1" -c "wq"`
   - You may need to fix any file conflicts similar to in [Installation Instructions](#installation-instructions)
-
-### Git
-- I use [Helix](https://helix-editor.com) for editing, set as the global editor with `git config --global core.editor hx`
 
 ### VS Code
 
