@@ -11,6 +11,21 @@
   "buffer_font_size": 15,
   "buffer_font_family": "JetBrains Mono",
   "theme": "Catppuccin Mocha",
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "html": true,
+    "git-firefly": true,
+    "make": true,
+    "lua": true,
+    "terraform": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "sql": true,
+    "toml": true,
+    "graphql": true,
+    "zig": true,
+    "swift": true
+  },
   "terminal": {
     "font_size": 15
   },
@@ -49,9 +64,32 @@
     "dock": "left"
   },
   "project_panel": {
-    "dock": "right"
+    "dock": "right",
+    "scrollbar": {
+      "show": "system"
+    }
   },
   "tabs": {
+    "file_icons": true,
     "git_status": true
+  },
+
+  // The below may not be implemented in Zed yet
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": ["!reference sequence"]
+        }
+      }
+    },
+    "gopls": {
+      "initializaiton_options": {
+        "build": {
+          "buildFlags": ["-tags=integration"],
+          "standaloneTags": ["wireinject", "!wireinject", "tools"]
+        }
+      }
+    }
   }
 }
