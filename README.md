@@ -17,6 +17,7 @@ mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .
 
 **Notes**
 - You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
+  - Then re-run `stow -d ~/dotfiles -t ~ .`
 
 ## Additional Optional Config
 
