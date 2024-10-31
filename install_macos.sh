@@ -1,20 +1,15 @@
 #!/bin/zsh
 
-brew install stow
-brew install neovim
-brew install ripgrep                    # For vim-telescope
-brew install lua-language-server gopls  # For nvim config editing
-brew install starship
-brew install bat
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
+brew install stow neovim bat starship                       # cli
+brew install ripgrep lua-language-server                    # neovim
+brew install zsh-syntax-highlighting zsh-autosuggestions    # zsh
 
 brew install --cask font-jetbrains-mono
 
-brew install raycast --cask
-brew install wezterm --cask
-brew install visual-studio-code --cask
-brew install zed --cask
+brew install --cask raycast
+brew install --cask wezterm
+brew install --cask visual-studio-code
+brew install --cask zed
 
 git config --global core.editor "nvim"
 git config --global merge.tool "nvimdiff3"
