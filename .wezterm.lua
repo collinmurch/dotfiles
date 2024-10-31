@@ -4,7 +4,7 @@ local config = wezterm.config_builder()
 local hyperlink_rules = wezterm.default_hyperlink_rules()
 
 config = {
-    color_scheme = "Catppuccin Mocha",
+    color_scheme = "Poimandres",
     font = wezterm.font("JetBrains Mono", { weight = "Medium" }),
     font_size = 15.0,
     default_cursor_style = 'BlinkingBar',
