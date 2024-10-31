@@ -37,4 +37,3 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab
-  - Sadly there's no way to do this programatically

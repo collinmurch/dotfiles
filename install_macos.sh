@@ -15,3 +15,6 @@ brew install raycast --cask
 brew install wezterm --cask
 brew install visual-studio-code --cask
 brew install zed --cask
+
+git config --global core.editor "nvim"
+git config --global merge.tool "nvimdiff3"
