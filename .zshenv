@@ -7,4 +7,4 @@ export PATH=$PATH:$DEV/go/bin
 export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"
 
-export BAT_THEME="Nord"
+export BAT_THEME="Poimandres"

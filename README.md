@@ -30,6 +30,10 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
+### Bat
+
+- After stowing the dotfiles, run `bat cache --build`
+
 ### VS Code
 
 - Remove previous extensions with `rm -rf ~/.vscode/extensions`
