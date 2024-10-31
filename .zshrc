@@ -1,6 +1,7 @@
 #
 # Aliases
 #
+
 alias vim="nvim"
 alias cat="bat -p"
 alias ls="ls --color"

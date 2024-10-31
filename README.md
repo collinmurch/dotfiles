@@ -10,27 +10,24 @@
 Run the below script then open a new terminal session
 
 ```bash
-git clone https://github.com/collinmurch/dotfiles ~
-/bin/zsh ~/dotfiles/install_macos.sh                     # Optional, but highly recommended
-mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .   # Can also run `stow .` from ~/dotfiles
+git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
+/bin/zsh install_macos.sh # Dependency installation, highly recommended
+mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .
 ```
 
 **Notes**
 - You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
-- `install_macos.sh` specifies the expected zsh plugins that should be installed; you'll get errors from sourcing `~/.zshrc` if you don't run that script
 
 ## Additional Optional Config
+
+## MacOS System Settings
+
+A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running but you do you
+- *This is a subset of [Murderlon](https://github.com/murderlon)'s list*
 
 ### Zsh
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
-
-### NeoVim
-
-- For NeoVim use [NvChad](https://nvchad.com) with pretty light customization
-- Install with `git clone https://github.com/NvChad/starter ~/.config/nvim && nvim`
-- Get my settings with `echo "return require('custom.chadrc')" > ~/.config/nvim/lua/chadrc.lua && stow -d ~/dotfiles -t ~ . && nvim ~/.config/nvim/lua/chadrc.lua -c "sleep 1" -c "wq"`
-  - You may need to fix any file conflicts similar to in [Installation Instructions](#installation-instructions)
 
 ### VS Code
 
@@ -40,15 +37,4 @@ mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .   # Can also run `stow .`
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab
-
-## MacOS Applications
-
-The development apps configured by this repository can be installed with `/bin/zsh install_macos.sh`
-
-In general I try to keep it limited to just tools *that I actively use*
-
-## MacOS Config
-
-A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running but you do you
-
-Compiled from [Murderlon](https://github.com/murderlon)'s list I think
+  - Sadly there's no way to do this programatically

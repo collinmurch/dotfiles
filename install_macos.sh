@@ -1,10 +1,9 @@
 #!/bin/zsh
 
 brew install stow
-brew install helix
 brew install neovim
-brew install ripgrep                    # For vim-telescope (NvChad)
-brew install lua-language-server gopls  # LSPs enabled in NvChad config
+brew install ripgrep                    # For vim-telescope
+brew install lua-language-server gopls  # For nvim config editing
 brew install starship
 brew install bat
 brew install zsh-syntax-highlighting

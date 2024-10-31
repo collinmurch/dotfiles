@@ -17,28 +17,6 @@ config = {
         bottom = 10,
     },
 
-    -- Catppuccin colors
-    colors = {
-        tab_bar = {
-            active_tab = {
-                bg_color = "#1E1E2E",
-                fg_color = "#CDD6F4",
-            },
-            inactive_tab = {
-                bg_color = "313244",
-                fg_color = "#BAC2DE",
-            },
-            new_tab = {
-                bg_color = "313244",
-                fg_color = "#BAC2DE",
-            },
-            new_tab_hover = {
-                bg_color = "#1E1E2E",
-                fg_color = "#CDD6F4",
-            },
-        },
-    },
-
     keys = {
         -- Moving around panes
         { key = "h",          mods = "SHIFT|ALT",      action = act.ActivatePaneDirection "Left" },
