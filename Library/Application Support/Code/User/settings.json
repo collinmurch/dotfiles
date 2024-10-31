@@ -23,7 +23,6 @@
     "git.confirmSync": false,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
-    "workbench.colorTheme": "poimandres",
     "editor.fontFamily": "JetBrains Mono",
     "go.toolsManagement.autoUpdate": true,
     "redhat.telemetry.enabled": false,
@@ -78,5 +77,6 @@
     "codeium.disableSupercomplete": true,
     "go.survey.prompt": false,
     "go.showWelcome": false,
-    "yaml.format.singleQuote": true
+    "yaml.format.singleQuote": true,
+    "workbench.colorTheme": "poimandres"
 }

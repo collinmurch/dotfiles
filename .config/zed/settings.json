@@ -24,7 +24,8 @@
     "toml": true,
     "graphql": true,
     "zig": true,
-    "swift": true
+    "swift": true,
+    "proto": true
   },
   "terminal": {
     "font_size": 15
