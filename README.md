@@ -11,7 +11,7 @@ Run the below script then open a new terminal session
 
 ```bash
 git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
-/bin/zsh install_macos.sh # Dependency installation, highly recommended
+/bin/zsh install_macos.sh # Dependency installation -- highly recommended
 mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .
 ```
 
