@@ -11,8 +11,9 @@ Run the below script then open a new terminal session
 
 ```bash
 git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
-/bin/zsh install_macos.sh # Dependency installation -- highly recommended
+/bin/zsh install_macos.sh # dependency installation -- highly recommended
 mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .
+bat cache --build # force bat to load the custom theme
 ```
 
 **Notes**
@@ -29,10 +30,6 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 ### Zsh
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
-
-### Bat
-
-- After stowing the dotfiles, run `bat cache --build`
 
 ### VS Code
 
