@@ -20,7 +20,7 @@ mkdir ~/.config &>/dev/null; stow -d ~/dotfiles -t ~ .
 
 ## Additional Optional Config
 
-## MacOS System Settings
+### MacOS System Settings
 
 A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running but you do you
 - *This is a subset of [Murderlon](https://github.com/murderlon)'s list*
