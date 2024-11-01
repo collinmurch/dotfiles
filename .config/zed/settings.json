@@ -16,16 +16,7 @@
     "html": true,
     "git-firefly": true,
     "make": true,
-    "lua": true,
-    "terraform": true,
-    "dockerfile": true,
-    "docker-compose": true,
-    "sql": true,
-    "toml": true,
-    "graphql": true,
-    "zig": true,
-    "swift": true,
-    "proto": true
+    "dockerfile": true
   },
   "terminal": {
     "font_size": 15
