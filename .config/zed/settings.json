@@ -71,6 +71,9 @@
     "yaml-language-server": {
       "settings": {
         "yaml": {
+          "format": {
+            "singleQuote": true
+          },
           "customTags": ["!reference sequence"]
         }
       }
