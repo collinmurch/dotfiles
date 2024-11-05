@@ -66,31 +66,30 @@
     "git_status": true
   },
   "languages": {
-      "YAML": {
-        "formatter": "language_server"
-      }
-    },
-    "lsp": {
-      "yaml-language-server": {
-        "settings": {
-          "yaml": {
-            "customTags": ["!reference sequence"],
-            "format": {
-              "enable": true,
-              "singleQuote": true
-            }
+    "YAML": {
+      "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": ["!reference sequence"],
+          "format": {
+            "enable": true,
+            "singleQuote": true
           }
         }
       }
-    },
+    }
+  },
 
-    // The below may not be implemented in Zed yet
-    "gopls": {
-      "initializaiton_options": {
-        "build": {
-          "buildFlags": ["-tags=integration"],
-          "standaloneTags": ["wireinject", "!wireinject", "tools"]
-        }
+  // The below may not be implemented in Zed yet
+  "gopls": {
+    "initializaiton_options": {
+      "build": {
+        "buildFlags": ["-tags=integration"],
+        "standaloneTags": ["wireinject", "!wireinject", "tools"]
       }
     }
   }
