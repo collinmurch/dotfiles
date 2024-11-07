@@ -12,7 +12,7 @@ Open a new terminal session after running:
 ```bash
 git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
 /bin/zsh install_macos.sh               # dependency installation
-stow --no-folding -d ~/dotfiles -t ~ .  # prevent directories from being symlinked
+stow --no-folding -d ~/dotfiles -t ~ .  # prevent directories from being symlinked (--no-folding)
 bat cache --build                       # build bat cache with custom theme
 ```
 
