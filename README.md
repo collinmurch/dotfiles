@@ -7,14 +7,13 @@
 
 ## Installation Instructions
 
-Run the below script then open a new terminal session
+Open a new terminal session after running:
 
 ```bash
 git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
-/bin/zsh install_macos.sh # dependency installation -- highly recommended
-mkdir ~/.config &>/dev/null # create .config manually to prevent it from being a symlink
-stow -d ~/dotfiles -t ~ .
-bat cache --build # force bat to load the custom theme
+/bin/zsh install_macos.sh               # dependency installation
+stow --no-folding -d ~/dotfiles -t ~ .  # prevent directories from being symlinked
+bat cache --build                       # build bat cache with custom theme
 ```
 
 **Notes**
