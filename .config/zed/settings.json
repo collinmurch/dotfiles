@@ -71,6 +71,11 @@
     }
   },
   "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "buildFlags": ["-tags=integrationtest,integration,manual"]
+      }
+    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
@@ -80,16 +85,6 @@
             "singleQuote": true
           }
         }
-      }
-    }
-  },
-
-  // The below may not be implemented in Zed yet
-  "gopls": {
-    "initializaiton_options": {
-      "build": {
-        "buildFlags": ["-tags=integration"],
-        "standaloneTags": ["wireinject", "!wireinject", "tools"]
       }
     }
   }
