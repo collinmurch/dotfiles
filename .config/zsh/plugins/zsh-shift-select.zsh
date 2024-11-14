@@ -1,6 +1,6 @@
-# From https://github.com/jirutka/zsh-shift-select/blob/master/zsh-shift-select.plugin.zsh
+# This file was modified to support:
+# - Immediately delete  selected buffer and replace it with the input character(s)
 
-# vim: set ts=4:
 # Copyright 2022-present Jakub Jirutka <jakub@jirutka.cz>.
 # SPDX-License-Identifier: MIT
 #
@@ -36,12 +36,13 @@ zle -N shift-select::kill-region
 # Deactivate the selection region, switch back to the main keymap and process
 # the typed keys again.
 function shift-select::deselect-and-input() {
-	zle deactivate-region -w
-	# Switch back to the main keymap (emacs).
-	zle -K main
-	# Push the typed keys back to the input stack, i.e. process them again,
-	# but now with the main keymap.
-	zle -U "$KEYS"
+  # Check if KEYS is a printable character
+  if [[ "$KEYS" =~ [[:print:]] ]]; then
+    zle kill-region -w  # Delete the selected region
+  fi
+  zle deactivate-region -w
+  zle -K main           # Switch back to the main keymap (emacs)
+  zle -U "$KEYS"        # Push the typed keys back to the input stack
 }
 zle -N shift-select::deselect-and-input
 
