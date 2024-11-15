@@ -9,6 +9,7 @@
 {
   "ui_font_size": 15,
   "buffer_font_size": 15,
+  "tab_size": 4,
   "buffer_font_family": "JetBrains Mono",
   "theme": "Catppuccin Mocha",
   "auto_install_extensions": {
