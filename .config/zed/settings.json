@@ -11,9 +11,8 @@
   "buffer_font_size": 15,
   "tab_size": 4,
   "buffer_font_family": "JetBrains Mono",
-  "theme": "Catppuccin Mocha",
+  "theme": "One Dark",
   "auto_install_extensions": {
-    "catppuccin": true,
     "html": true,
     "git-firefly": true,
     "make": true,
