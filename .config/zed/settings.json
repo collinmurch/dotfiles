@@ -7,84 +7,93 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-    "ui_font_size": 14,
-    "buffer_font_size": 14,
-    "buffer_font_family": "JetBrains Mono",
-    "theme": "One Dark",
-    "auto_install_extensions": {
-        "html": true,
-        "git-firefly": true,
-        "make": true,
-        "dockerfile": true
+  "ui_font_size": 14,
+  "buffer_font_size": 14,
+  "buffer_font_family": "JetBrains Mono",
+  "theme": "One Dark",
+  "auto_install_extensions": {
+    "html": true,
+    "git-firefly": true,
+    "make": true,
+    "dockerfile": true
+  },
+  "terminal": {
+    "font_size": 14
+  },
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "supermaven"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
     },
-    "terminal": {
-        "font_size": 14
-    },
-    "features": {
-        "copilot": false,
-        "inline_completion_provider": "supermaven"
-    },
-    "telemetry": {
-        "diagnostics": false,
-        "metrics": false
-    },
-    "assistant": {
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-3-5-sonnet-latest"
-        },
-        "version": "2"
-    },
-    "inlay_hints": {
-        "enabled": false
-    },
-    "toolbar": {
-        "quick_actions": false,
-        "breadcrumbs": false
-    },
-    "collaboration_panel": {
-        "button": false
-    },
-    "notification_panel": {
-        "button": false
-    },
-    "chat_panel": {
-        "button": false
-    },
-    "outline_panel": {
-        "dock": "left"
-    },
-    "project_panel": {
-        "dock": "right",
-        "scrollbar": {
-            "show": "system"
-        }
-    },
-    "tabs": {
-        "file_icons": true,
-        "git_status": true
-    },
-    "languages": {
-        "YAML": {
-            "formatter": "language_server"
-        }
-    },
-    "lsp": {
-        "gopls": {
-            "initialization_options": {
-                "buildFlags": ["-tags=integrationtest,integration,manual"]
-            }
-        },
-        "yaml-language-server": {
-            "settings": {
-                "yaml": {
-                    "customTags": ["!reference sequence"],
-                    "format": {
-                        "enable": true,
-                        "singleQuote": true
-                    }
-                }
-            }
-        }
+    "version": "2"
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "dock": "right",
+    "scrollbar": {
+      "show": "system"
     }
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "languages": {
+    "YAML": {
+      "formatter": "language_server"
+    }
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "buildFlags": ["-tags=integrationtest,integration,manual"]
+      }
+    },
+    "pyright": {
+      "settings": {
+        "python.analysis": {
+          "diagnosticSeverityOverrides": {
+            "reportPrivateImportUsage": "none"
+          }
+        }
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": ["!reference sequence"],
+          "format": {
+            "enable": true,
+            "singleQuote": true
+          }
+        }
+      }
+    }
+  }
 }
