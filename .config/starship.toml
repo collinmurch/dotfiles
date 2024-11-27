@@ -6,7 +6,7 @@ add_newline = false
 disabled = true
 
 [aws]
-format = "on [$symbol($profile)]($style)"
+format = "on [$symbol($profile) ]($style)"
 
 [python]
-format = "on [$symbol($virtualenv)]($style)"
+format = "on [$symbol($virtualenv) ]($style)"
