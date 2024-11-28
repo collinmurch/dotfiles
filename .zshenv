@@ -1,6 +1,7 @@
+export HOMEBREW_PREFIX="/opt/homebrew"
 export DEV=$HOME/Developer
 
-export PATH=$PATH:/opt/homebrew/bin
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=$PATH:$DEV/scripts
 export PATH=$PATH:$DEV/go/bin
 

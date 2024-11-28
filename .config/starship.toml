@@ -1,12 +1,7 @@
 format = "$directory$character"
-right_format = "$git_branch$python$aws"
+right_format = "$git_branch"
+
 add_newline = false
 
 [line_break]
 disabled = true
-
-[aws]
-format = "on [$symbol($profile) ]($style)"
-
-[python]
-format = "on [$symbol($virtualenv) ]($style)"
