@@ -77,10 +77,6 @@
   "languages": {
     "Python": {
       "language_servers": ["ruff"]
-    },
-    "YAML": {
-      // yaml-language-server does not say it has format capabilities so we have to tell Zed it does
-      "formatter": "language_server"
     }
   },
   "lsp": {
@@ -92,11 +88,7 @@
     "yaml-language-server": {
       "settings": {
         "yaml": {
-          "customTags": ["!reference sequence"],
-          "format": {
-            "enable": true,
-            "singleQuote": true
-          }
+          "customTags": ["!reference sequence"]
         }
       }
     }
