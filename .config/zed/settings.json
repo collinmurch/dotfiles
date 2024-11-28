@@ -118,7 +118,11 @@
         "yaml": {
           "customTags": [
             "!reference sequence"
-          ]
+          ],
+          "format": {
+            "enable": true,
+            "singleQuote": true
+          }
         }
       }
     }
