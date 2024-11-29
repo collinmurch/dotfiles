@@ -1,14 +1,32 @@
+# Theming
 theme = TokyoNight
 font-family = JetBrains Mono
 font-size = 14
+font-thicken = true
 cursor-style = bar
+window-padding-y = 0
+window-padding-x = 15
 background-opacity = 0.95
 background-blur-radius = 20
 
-window-padding-x = 10
+# Config
+quit-after-last-window-closed = true
+macos-titlebar-style = tabs
 
+
+# Keybinds -- word traversal
 keybind = option+right=esc:f
 keybind = option+left=esc:b
+
+# Keybinds -- line traversal
+keybind = cmd+right=text:\x05
+keybind = cmd+left=text:\x01
+
+# Keybinds -- line & word deletion
+keybind = cmd+backspace=text:\x15
+keybind = opt+delete=esc:d
+
+# Keybinds -- ignore sequences
 keybind = option+up=ignore
 keybind = option+down=ignore
 keybind = ctrl+shift+right=ignore
