@@ -1,0 +1,15 @@
+theme = TokyoNight
+font-family = JetBrains Mono
+font-size = 14
+cursor-style = bar
+background-opacity = 0.95
+background-blur-radius = 20
+
+window-padding-x = 10
+
+keybind = option+right=esc:f
+keybind = option+left=esc:b
+keybind = option+up=ignore
+keybind = option+down=ignore
+keybind = ctrl+shift+right=ignore
+keybind = ctrl+shift+left=ignore
