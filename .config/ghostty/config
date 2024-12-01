@@ -4,7 +4,7 @@ font-family = JetBrains Mono
 font-size = 14
 font-thicken = true
 cursor-style = bar
-window-padding-y = 0
+window-padding-y = 5
 window-padding-x = 15
 background-opacity = 0.95
 background-blur-radius = 20
@@ -16,7 +16,7 @@ macos-titlebar-style = tabs
 
 
 # Keybinds -- tabs, panes, etc.
-keybind = global:cmd+/=toggle_quick_terminal
+keybind = global:ctrl+shift+/=toggle_quick_terminal
 keybind = ctrl+enter=new_split:auto
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
