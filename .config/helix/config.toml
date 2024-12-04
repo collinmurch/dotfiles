@@ -1,0 +1,10 @@
+theme = "poimandres-transparent"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor]
+completion-timeout = 5
+
+[editor.file-picker]
+hidden = false
