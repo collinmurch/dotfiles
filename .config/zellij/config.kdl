@@ -1,4 +1,0 @@
-theme "catppuccin-mocha"
-default_layout "default"
-copy_on_select true
-pane_frames false
