@@ -1,0 +1,5 @@
+[language-server.gopls]
+config = { "buildFlags" = ["-tags=integrationtest,integration,manual"]}
+
+[language-server.yaml-language-server]
+config = { "yaml" = { "customTags" = [ "!reference sequence" ]}}
