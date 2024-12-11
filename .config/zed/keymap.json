@@ -1,0 +1,7 @@
+[
+  {
+    "bindings": {
+      "cmd-shift-c": "project_panel::ToggleFocus" // Overwrite the chat panel
+    }
+  }
+]
