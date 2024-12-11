@@ -22,9 +22,10 @@
     "dockerfile": true,
     "ruff": true
   },
+  "show_completions_on_input": false,
   "features": {
-    "copilot": false,
-    "inline_completion_provider": "supermaven"
+    "inline_completion_provider": "none",
+    "copilot": false
   },
   "telemetry": {
     "diagnostics": false,
