@@ -2,7 +2,7 @@
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "buffer_font_family": "JetBrains Mono",
-  "theme": "Catppuccin Mocha",
+  "theme": "One Dark",
   "terminal": {
     "font_size": 14
   },
@@ -14,7 +14,6 @@
     "dockerfile": true,
     "ruff": true
   },
-  "show_completions_on_input": false,
   "features": {
     "inline_completion_provider": "none",
     "copilot": false
@@ -102,7 +101,7 @@
     "gopls": {
       "initialization_options": {
         "buildFlags": [
-          "-tags=integrationtest,integration,manual"
+          "-tags=integrationtest,integration,manual,wireinject"
         ]
       }
     },
