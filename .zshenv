@@ -1,7 +1,7 @@
 export HOMEBREW_PREFIX="/opt/homebrew"
 export DEV=$HOME/Developer
 
-export PATH=/opt/homebrew/bin:$PATH
+export PATH=$HOMEBREW_PREFIX:$PATH
 
 export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"
