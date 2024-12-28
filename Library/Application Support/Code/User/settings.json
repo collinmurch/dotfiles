@@ -23,7 +23,7 @@
     "git.confirmSync": false,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
-    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontFamily": "TX-02",
     "go.toolsManagement.autoUpdate": true,
     "redhat.telemetry.enabled": false,
     "window.commandCenter": false,

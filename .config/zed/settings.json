@@ -1,8 +1,8 @@
 {
   "ui_font_size": 14,
   "buffer_font_size": 14,
-  "buffer_font_family": "JetBrains Mono",
-  "theme": "One Dark",
+  "buffer_font_family": "TX-02",
+  "theme": "Gruvbox Dark",
   "terminal": {
     "font_size": 14
   },
