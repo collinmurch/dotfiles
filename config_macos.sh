@@ -72,3 +72,9 @@ defaults write com.apple.dock autohide -bool true
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+# NeoVim as the default Git editor
+git config --global core.editor "nvim"
+
+# Quiet ZSH down
+touch .hushlogin
