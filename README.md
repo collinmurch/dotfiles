@@ -31,11 +31,6 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
-### VS Code
-
-- Remove previous extensions with `rm -rf ~/.vscode/extensions`
-- Install my extensions with `/bin/zsh install_vscode.sh`
-
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab
