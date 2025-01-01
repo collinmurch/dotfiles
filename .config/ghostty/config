@@ -9,6 +9,10 @@ window-padding-x = 15
 background-opacity = 0.95
 background-blur-radius = 20
 
+macos-icon = custom-style
+macos-icon-frame = aluminum
+macos-icon-ghost-color = #5DE4C7
+macos-icon-screen-color = #1B1E28
 
 # Config
 quit-after-last-window-closed = true
