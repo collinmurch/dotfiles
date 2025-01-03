@@ -2,7 +2,7 @@
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "buffer_font_family": "TX-02",
-  "theme": "Gruvbox Dark",
+  "theme": "Everforest Dark",
   "terminal": {
     "font_size": 14
   },
@@ -11,6 +11,7 @@
     "use_system_clipboard": "never"
   },
   "auto_install_extensions": {
+    "everforest": true,
     "html": true,
     "git-firefly": true,
     "make": true,
@@ -103,9 +104,17 @@
   "lsp": {
     "gopls": {
       "initialization_options": {
+        "gofumpt": true,
         "buildFlags": [
           "-tags=integrationtest,integration,manual,wireinject"
-        ]
+        ],
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true
+        }
       }
     },
     "yaml-language-server": {
