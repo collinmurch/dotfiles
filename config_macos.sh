@@ -76,5 +76,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # NeoVim as the default Git editor
 git config --global core.editor "nvim"
 
+# Git global ignore
+git config --global core.excludesfile ~/.gitignore
+
 # Quiet ZSH down
 touch .hushlogin
