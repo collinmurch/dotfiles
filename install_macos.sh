@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-brew install stow neovim bat starship jq                    # cli
+brew install stow neovim bat starship                    	# cli
 brew install ripgrep lua-language-server                    # neovim
 brew install zsh-syntax-highlighting zsh-autosuggestions    # zsh
 
