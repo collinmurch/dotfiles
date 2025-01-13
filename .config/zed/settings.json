@@ -47,7 +47,7 @@
     "button": false
   },
   "chat_panel": {
-    "button": false
+    "button": "never"
   },
   "outline_panel": {
     "dock": "left"
