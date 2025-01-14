@@ -331,7 +331,7 @@
           "type.class.definition": {
             "color": "#91B4D5",
             "font_style": null,
-            "font_weight": "bold"
+            "font_weight": null
           },
           "constructor": {
             "color": "#ADD7FF",
