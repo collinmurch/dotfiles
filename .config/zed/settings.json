@@ -2,7 +2,7 @@
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "buffer_font_family": "TX-02",
-  "theme": "Everforest Dark",
+  "theme": "Nord",
   "terminal": {
     "font_size": 14
   },
@@ -11,7 +11,7 @@
     "use_system_clipboard": "never"
   },
   "auto_install_extensions": {
-    "everforest": true,
+    "nord": true,
     "html": true,
     "git-firefly": true,
     "make": true,
@@ -27,11 +27,11 @@
     "metrics": false
   },
   "assistant": {
+    "version": "2",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
+    }
   },
   "inlay_hints": {
     "enabled": false
