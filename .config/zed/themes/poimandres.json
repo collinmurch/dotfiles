@@ -1,10 +1,10 @@
 {
   "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
   "author": "collinmurch",
-  "name": "Poimandres (collinmurch)",
+  "name": "Poimandres (custom)",
   "themes": [
     {
-      "name": "Poimandres (collinmurch)",
+      "name": "Poimandres (custom)",
       "appearance": "dark",
       "style": {
         "accents": [
