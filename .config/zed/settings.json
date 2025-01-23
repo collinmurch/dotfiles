@@ -123,7 +123,7 @@
             "!reference sequence"
           ],
           "format": {
-            "enable": true,
+            "enable": false,
             "singleQuote": true
           }
         }
