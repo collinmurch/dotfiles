@@ -28,8 +28,8 @@
   "assistant": {
     "version": "2",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "provider": "ollama",
+      "model": "deepseek-r1:7b"
     }
   },
   "inlay_hints": {
@@ -102,6 +102,7 @@
   },
   "lsp": {
     "gopls": {
+      "gofumpt": true,
       "initialization_options": {
         "gofumpt": true,
         "buildFlags": [
