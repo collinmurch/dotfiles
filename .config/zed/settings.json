@@ -102,8 +102,8 @@
   },
   "lsp": {
     "gopls": {
-      "gofumpt": true,
       "initialization_options": {
+        "staticcheck": true,
         "gofumpt": true,
         "buildFlags": [
           "-tags=integrationtest,integration,manual,wireinject"
