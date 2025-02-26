@@ -71,6 +71,9 @@
         "source.organizeImports.ruff": true
       }
     },
+    "YAML": {
+      "format_on_save": "off"
+    }
     "JavaScript": {
       "code_actions_on_format": {
         "source.fixAll": true,
