@@ -1,4 +1,5 @@
 {
+  "icon_theme": "Material Icon Theme",
   "ui_font_size": 14,
   "buffer_font_size": 14,
   "buffer_font_family": "TX-02",
@@ -11,11 +12,13 @@
     "use_system_clipboard": "never"
   },
   "auto_install_extensions": {
+    "material-icon-theme": true,
     "html": true,
     "git-firefly": true,
     "make": true,
     "dockerfile": true,
     "ruff": true
+    
   },
   "features": {
     "inline_completion_provider": "none",
