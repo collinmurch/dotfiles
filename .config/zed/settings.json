@@ -50,7 +50,7 @@
     "button": "never"
   },
   "outline_panel": {
-    "dock": "right"
+    "button": false
   },
   "project_panel": {
     "dock": "right",
