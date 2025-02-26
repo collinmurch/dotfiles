@@ -16,7 +16,6 @@
     "make": true,
     "dockerfile": true,
     "ruff": true
-    
   },
   "features": {
     "inline_completion_provider": "none",
@@ -73,7 +72,7 @@
     },
     "YAML": {
       "format_on_save": "off"
-    }
+    },
     "JavaScript": {
       "code_actions_on_format": {
         "source.fixAll": true,
