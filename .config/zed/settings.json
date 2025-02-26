@@ -63,12 +63,9 @@
     "file_icons": true,
     "git_status": true
   },
-  "formatter": "language_server",
   "languages": {
     "Python": {
-      "language_servers": [
-        "ruff"
-      ],
+      "language_servers": ["ruff"],
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
         "source.organizeImports.ruff": true
@@ -107,9 +104,7 @@
       "initialization_options": {
         "staticcheck": true,
         "gofumpt": true,
-        "buildFlags": [
-          "-tags=integrationtest,integration,manual,wireinject"
-        ],
+        "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
         "hints": {
           "assignVariableTypes": true,
           "compositeLiteralFields": true,
@@ -125,11 +120,7 @@
         "yaml": {
           "customTags": [
             "!reference sequence"
-          ],
-          "format": {
-            "enable": false,
-            "singleQuote": true
-          }
+          ]
         }
       }
     }
