@@ -105,6 +105,9 @@
     "gopls": {
       "initialization_options": {
         "staticcheck": true,
+        "analyses": {
+          "SA4006": false
+        },
         "gofumpt": true,
         "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
         "hints": {
