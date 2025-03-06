@@ -40,6 +40,9 @@
     "quick_actions": false,
     "breadcrumbs": false
   },
+  "git_panel": {
+    "dock": "right"
+  },
   "collaboration_panel": {
     "button": false
   },
