@@ -17,6 +17,7 @@ bat cache --build                       # build bat cache with custom theme
 ```
 
 **Notes**
+
 - You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
   - Then re-run `stow -d ~/dotfiles -t ~ .`
 
@@ -25,7 +26,8 @@ bat cache --build                       # build bat cache with custom theme
 ### MacOS System Settings
 
 A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running but you do you
-- *This is a subset of [Murderlon](https://github.com/murderlon)'s list*
+
+- _This is a subset of [Murderlon](https://github.com/murderlon)'s list_
 
 ### Zsh
 
@@ -34,3 +36,7 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab
+
+### Scripts
+
+- All the scripts I use with Raycast and as CLI utilities can be found at [scripts](https://github.com/collinmurch/scripts)
