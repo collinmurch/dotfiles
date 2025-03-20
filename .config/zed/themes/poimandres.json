@@ -127,6 +127,12 @@
         "deleted": "#d0679d",
         "deleted.border": "#d0679d",
         "deleted.background": "#d0679d1f",
+        "modified": "#fffac2",
+        "modified.background": "#fffac21f",
+        "modified.border": "#fffac2",
+        "version_control.added": "#5DE4c7",
+        "version_control.modified": "#fffac2",
+        "version_control.deleted": "#d0679d",
         "hidden": "#767c9d",
         "hidden.border": "#767c9d",
         "hidden.background": "#252b37",
@@ -136,9 +142,7 @@
         "ignored": "#767c9d",
         "ignored.border": "#767c9d",
         "ignored.background": "#252b37",
-        "modified": "#fffac2",
-        "modified.border": "#fffac2",
-        "modified.background": "#fffac21f",
+
         "predictive": "#767c9d",
         "predictive.border": "#a6accd",
         "predictive.background": "#252b37",
@@ -637,7 +641,7 @@
           },
           "namespace": {
             "color": "#91B4D5",
-            "font_style": "italic",
+            "font_style": null,
             "font_weight": null
           },
           "field": {
