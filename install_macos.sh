@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-brew install stow neovim bat starship
+brew install stow neovim bat starship jq
 brew install ripgrep
 brew install zsh-syntax-highlighting zsh-autosuggestions
 
