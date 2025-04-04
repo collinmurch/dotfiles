@@ -7,9 +7,6 @@
     "font_size": 14
   },
   "vim_mode": true,
-  "vim": {
-    "use_system_clipboard": "never"
-  },
   "auto_install_extensions": {
     "html": true,
     "git-firefly": true,
@@ -30,7 +27,7 @@
     "version": "2",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-3-7-sonnet-thinking-latest"
     }
   },
   "inlay_hints": {
@@ -126,9 +123,7 @@
     "yaml-language-server": {
       "settings": {
         "yaml": {
-          "customTags": [
-            "!reference sequence"
-          ]
+          "customTags": ["!reference sequence"]
         }
       }
     }
