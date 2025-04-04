@@ -8,6 +8,7 @@ window-padding-y = 5
 window-padding-x = 15
 background-opacity = 0.95
 background-blur-radius = 20
+adjust-cursor-thickness = 200%
 
 macos-icon = custom-style
 macos-icon-frame = plastic
