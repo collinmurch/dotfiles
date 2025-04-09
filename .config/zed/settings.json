@@ -62,43 +62,19 @@
     "file_icons": true,
     "git_status": true
   },
+  "formatter": {
+    "code_actions": {
+      "source.fixAll": true,
+      "source.fixAll.eslint": true,
+      "source.organizeImports": true
+    }
+  },
   "languages": {
     "Python": {
-      "language_servers": ["ruff"],
-      "code_actions_on_format": {
-        "source.fixAll.ruff": true,
-        "source.organizeImports.ruff": true
-      }
+      "language_servers": ["ruff"]
     },
     "YAML": {
       "format_on_save": "off"
-    },
-    "JavaScript": {
-      "code_actions_on_format": {
-        "source.fixAll": true,
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
-      }
-    },
-    "TypeScript": {
-      "code_actions_on_format": {
-        "source.fixAll": true,
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
-      }
-    },
-    "Svelte": {
-      "code_actions_on_format": {
-        "source.fixAll": true,
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
-      }
-    },
-    "Go": {
-      "code_actions_on_format": {
-        "source.fixAll": true,
-        "source.organizeImports": true
-      }
     }
   },
   "lsp": {
