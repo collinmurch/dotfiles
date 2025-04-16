@@ -62,13 +62,6 @@
     "file_icons": true,
     "git_status": true
   },
-  "formatter": {
-    "code_actions": {
-      "source.fixAll": true,
-      "source.fixAll.eslint": true,
-      "source.organizeImports": true
-    }
-  },
   "languages": {
     "Python": {
       "language_servers": ["ruff"]
