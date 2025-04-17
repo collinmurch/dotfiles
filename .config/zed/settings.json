@@ -9,6 +9,7 @@
 	"vim_mode": true,
 	"auto_install_extensions": {
 		"html": true,
+		"graphql": true,
 		"git-firefly": true,
 		"make": true,
 		"dockerfile": true,
