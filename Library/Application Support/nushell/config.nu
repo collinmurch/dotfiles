@@ -5,7 +5,7 @@ alias godev = cd $"($env.DEV)/go/src"
 
 $env.config = {
     show_banner: false
-    buffer_editor: 'vim'
+    buffer_editor: 'nvim'
     highlight_resolved_externals: true
 }
 
