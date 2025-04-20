@@ -30,6 +30,12 @@ $env.config = {
         separator: $poimandres.border
         row_index: $poimandres.hint
     }
+    cursor_shape: {
+        default: {
+            shape: line
+            blinking: true
+        }
+    }
     history: {
         max_size: 10000
     }

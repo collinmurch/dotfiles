@@ -4,6 +4,11 @@
   "buffer_font_family": "TX-02",
   "theme": "Poimandres (custom)",
   "terminal": {
+    "shell": {
+      "program": "/opt/homebrew/bin/nu"
+    },
+    "cursor_shape": "bar",
+    "blinking": "on",
     "font_size": 14
   },
   "vim_mode": true,
