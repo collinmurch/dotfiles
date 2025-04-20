@@ -1,3 +1,8 @@
+alias vim = nvim
+alias cat = bat -p
+alias dev = cd $env.DEV
+alias godev = cd $"($env.DEV)/go/src"
+
 let poimandres = {
     background: "#1b1e28"
     foreground: "#e4f0fb"
@@ -15,11 +20,6 @@ let poimandres = {
     comment: "#a6accd"
     surface: "#252b37"
 }
-
-alias vim = nvim
-alias cat = bat -p
-alias dev = cd $env.DEV
-alias godev = cd $"($env.DEV)/go/src"
 
 $env.config = {
     show_banner: false
