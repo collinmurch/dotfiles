@@ -11,4 +11,4 @@ brew install --cask ghostty
 brew install --cask visual-studio-code
 brew install --cask zed
 
-sudo chsh -s $(which nu)
+chsh -s $(which nu)
