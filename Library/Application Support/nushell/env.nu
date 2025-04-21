@@ -30,3 +30,5 @@ $env.LS_COLORS = [
     "st=38;2;255;250;194",    # sticky directory
     "ca=38;2;255;250;194"     # file with capability
 ] | str join ":"
+
+source $"($nu.default-config-dir)/local.nu"

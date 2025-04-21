@@ -1,8 +1,8 @@
 alias vim = nvim
 alias cat = bat -p
+
 alias dev = cd $env.DEV
 alias godev = cd $"($env.DEV)/go/src"
-alias docs = cd "~/Documents/iCloud Drive/Documents"
 
 let poimandres = {
     background: "#1b1e28"
