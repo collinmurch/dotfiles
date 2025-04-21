@@ -39,3 +39,6 @@ $env.config = {
         max_size: 10000
     }
 }
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
