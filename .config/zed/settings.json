@@ -93,21 +93,21 @@
       }
     },
     "JavaScript": {
+      "language_servers": [
+        "eslint"
+      ],
       "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
       }
     },
     "TypeScript": {
+      "language_servers": [
+        "eslint"
+      ],
       "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
-      }
-    },
-    "TSX": {
-      "code_actions_on_format": {
-        "source.fixAll.biome": true,
-        "source.organizeImports.biome": true
+        "source.fixAll.eslint": true,
+        "source.organizeImports": true
       }
     },
     "Go": {

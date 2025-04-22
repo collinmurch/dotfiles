@@ -1,8 +1,8 @@
 alias vim = nvim
 alias cat = bat -p
 
-alias dev = cd $env.DEV
-alias godev = cd $"($env.DEV)/go/src"
+alias dev = cd $"($env.HOME)/Developer"
+alias godev = cd $"($env.HOME)/Developer/go/src"
 
 let poimandres = {
     background: "#1b1e28"
