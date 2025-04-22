@@ -15,5 +15,8 @@ brew install --cask visual-studio-code
 # nushell config.nu depends on local.nu existing
 cp ~/dotfiles/Library/Application\ Support/nushell/local.template.nu ~/dotfiles/Library/Application\ Support/nushell/local.nu
 
+# stow ~/dotfiles to ~
+stow --no-folding -d ~/dotfiles -t ~ .
+
 # rebuild bat cache with our custom theme
 bat cache --build
