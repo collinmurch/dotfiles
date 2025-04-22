@@ -1,6 +1,1 @@
-$env.ICLOUD = $"($env.HOME)/Documents/iCloud Drive"
-
-alias icloud = cd $"($env.ICLOUD)"
-alias docs = cd  $"($env.ICLOUD)/Documents"
-
-# Test
+# This file is used for machine-specific config; not tracked by Git
