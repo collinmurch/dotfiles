@@ -8,5 +8,12 @@ brew install ripgrep jq
 
 brew install --cask raycast
 brew install --cask ghostty
-brew install --cask visual-studio-code
 brew install --cask zed
+brew install --cask visual-studio-code
+
+
+# nushell config.nu depends on local.nu existing
+cp ~/dotfiles/Library/Application\ Support/nushell/local.template.nu ~/dotfiles/Library/Application\ Support/nushell/local.nu
+
+# rebuild bat cache with our custom theme
+bat cache --build
