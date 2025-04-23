@@ -1,10 +1,9 @@
 alias vim = nvim
 alias cat = bat -p
 
-alias nuconfig = cd $"($nu.default-config-dir)"
-
 alias dev = cd $"($env.HOME)/Developer"
 alias godev = cd $"($env.HOME)/Developer/go/src"
+alias nuconfig = cd $"($nu.default-config-dir)"
 
 let poimandres = {
     background: "#1b1e28"
