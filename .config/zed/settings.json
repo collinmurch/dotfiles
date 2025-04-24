@@ -16,8 +16,7 @@
     }
   },
   "auto_install_extensions": {
-    "ruff": true,
-    "biome": true
+    "ruff": true
   },
   "features": {
     "edit_prediction_provider": "none",
@@ -69,42 +68,10 @@
     "file_icons": true,
     "git_status": true
   },
-  "formatter": "language_server",
   "languages": {
     "YAML": {
-      "format_on_save": "off"
-    },
-    "JSON": {
-      "language_servers": [
-        "biome"
-      ],
-      "code_actions_on_format": {
-        "source.fixAll.biome": true
-      }
-    },
-    "HTML": {
-      "language_servers": [
-        "biome"
-      ],
-      "code_actions_on_format": {
-        "source.fixAll.biome": true
-      }
-    },
-    "CSS": {
-      "language_servers": [
-        "biome"
-      ],
-      "code_actions_on_format": {
-        "source.fixAll.biome": true
-      }
-    },
-    "GraphQL": {
-      "language_servers": [
-        "biome"
-      ],
-      "code_actions_on_format": {
-        "source.fixAll.biome": true
-      }
+      "format_on_save": "off",
+      "language_servers": [] // yaml-language-server is a pain
     },
     "Python": {
       "language_servers": [
@@ -122,21 +89,15 @@
       }
     },
     "JavaScript": {
-      "language_servers": [
-        "biome"
-      ],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true,
-        "source.fixAll.biome": true
+        "source.organizeImports": true,
+        "source.fixAll": true
       }
     },
     "TypeScript": {
-      "language_servers": [
-        "biome"
-      ],
       "code_actions_on_format": {
-        "source.organizeImports.biome": true,
-        "source.fixAll.biome": true
+        "source.organizeImports": true,
+        "source.fixAll": true
       }
     },
     "Go": {
@@ -158,19 +119,6 @@
         "hints": {
           "constantValues": true,
           "parameterNames": true
-        }
-      }
-    },
-    "yaml-language-server": {
-      "settings": {
-        "yaml": {
-          "schemaStore": {
-            "enable": true,
-            "url": "https://www.schemastore.org/api/json/catalog.json"
-          },
-          "customTags": [
-            "!reference sequence"
-          ]
         }
       }
     }
