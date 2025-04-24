@@ -70,13 +70,10 @@
   },
   "languages": {
     "YAML": {
-      "format_on_save": "off",
       "language_servers": [] // yaml-language-server is a pain
     },
     "Python": {
-      "language_servers": [
-        "ruff"
-      ],
+      "language_servers": ["ruff"],
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
         "source.organizeImports.ruff": true
@@ -113,9 +110,7 @@
         "gofumpt": true,
         // Generally we want to include all the files we're going to edit so the LSP
         // doesn't complain about missing imports or other problems
-        "buildFlags": [
-          "-tags=integrationtest,integration,manual,wireinject"
-        ],
+        "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
         "hints": {
           "constantValues": true,
           "parameterNames": true
