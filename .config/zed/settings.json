@@ -70,7 +70,7 @@
   },
   "languages": {
     "YAML": {
-      "language_servers": [] // yaml-language-server is a pain
+      "language_servers": []
     },
     "Python": {
       "language_servers": ["ruff"],
