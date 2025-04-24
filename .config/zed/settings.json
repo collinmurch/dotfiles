@@ -3,25 +3,26 @@
   "buffer_font_size": 14,
   "buffer_font_family": "TX-02",
   "theme": "Poimandres (custom)",
+  "vim_mode": true,
   "terminal": {
+    "font_size": 14,
+    "cursor_shape": "bar",
+    "blinking": "on",
     "toolbar": {
       "breadcrumbs": false
     },
     "shell": {
       "program": "/opt/homebrew/bin/nu"
-    },
-    "cursor_shape": "bar",
-    "blinking": "on",
-    "font_size": 14
+    }
   },
-  "vim_mode": true,
   "auto_install_extensions": {
     "html": true,
     "graphql": true,
     "git-firefly": true,
     "make": true,
     "dockerfile": true,
-    "ruff": true
+    "ruff": true,
+    "biome": true
   },
   "features": {
     "edit_prediction_provider": "none",
@@ -78,6 +79,38 @@
     "YAML": {
       "format_on_save": "off"
     },
+    "JSON": {
+      "language_servers": [
+        "biome"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true
+      }
+    },
+    "HTML": {
+      "language_servers": [
+        "biome"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true
+      }
+    },
+    "CSS": {
+      "language_servers": [
+        "biome"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true
+      }
+    },
+    "GraphQL": {
+      "language_servers": [
+        "biome"
+      ],
+      "code_actions_on_format": {
+        "source.fixAll.biome": true
+      }
+    },
     "Python": {
       "language_servers": [
         "ruff"
@@ -88,42 +121,42 @@
       }
     },
     "Svelte": {
+      "language_servers": [
+        "svelte-language-server"
+      ],
       "code_actions_on_format": {
-        "source.organizeImports": true
+        "source.organizeImports": true,
+        "source.fixAll": true
       }
     },
     "JavaScript": {
       "language_servers": [
-        "eslint"
+        "biome"
       ],
       "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
       }
     },
     "TypeScript": {
       "language_servers": [
-        "eslint"
+        "biome"
       ],
       "code_actions_on_format": {
-        "source.fixAll.eslint": true,
-        "source.organizeImports": true
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
       }
     },
     "Go": {
       "code_actions_on_format": {
-        "source.fixAll": true,
-        "source.organizeImports": true
+        "source.organizeImports": true,
+        "source.fixAll": true
       }
     }
   },
   "lsp": {
     "gopls": {
       "initialization_options": {
-        "staticcheck": true,
-        "analyses": {
-          "SA4006": false
-        },
         "gofumpt": true,
         // Generally we want to include all the files we're going to edit so the LSP
         // doesn't complain about missing imports or other problems
@@ -131,12 +164,8 @@
           "-tags=integrationtest,integration,manual,wireinject"
         ],
         "hints": {
-          "assignVariableTypes": true,
-          "compositeLiteralFields": true,
-          "compositeLiteralTypes": true,
           "constantValues": true,
-          "parameterNames": true,
-          "rangeVariableTypes": true
+          "parameterNames": true
         }
       }
     },
