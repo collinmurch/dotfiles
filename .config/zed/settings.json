@@ -16,6 +16,7 @@
     }
   },
   "auto_install_extensions": {
+    "biome": true,
     "ruff": true
   },
   "features": {
@@ -68,33 +69,75 @@
     "file_icons": true,
     "git_status": true
   },
+  "formatter": "language_server",
   "languages": {
     "YAML": {
       "language_servers": []
     },
+    "JSON": {
+      "language_servers": [
+        "biome"
+      ]
+    },
+    "JSONC": {
+      "language_servers": [
+        "biome"
+      ]
+    },
+    "GraphQL": {
+      "language_servers": [
+        "biome"
+      ]
+    },
+    "CSS": {
+      "language_servers": [
+        "biome"
+      ]
+    },
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": [
+        "ruff"
+      ],
       "code_actions_on_format": {
         "source.fixAll.ruff": true,
         "source.organizeImports.ruff": true
       }
     },
     "Svelte": {
+      "language_servers": ["svelte-language-server"],
       "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
+        "source.fixAll": true,
+        "source.organizeImports": true
       }
     },
     "JavaScript": {
+      "language_servers": [
+        "biome",
+        "eslint"
+      ],
       "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
       }
     },
     "TypeScript": {
+      "language_servers": [
+        "biome",
+        "eslint"
+      ],
       "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
+      }
+    },
+    "TSX": {
+      "language_servers": [
+        "biome",
+        "eslint"
+      ],
+      "code_actions_on_format": {
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
       }
     },
     "Go": {
@@ -110,7 +153,9 @@
         "gofumpt": true,
         // Generally we want to include all the files we're going to edit so the LSP
         // doesn't complain about missing imports or other problems
-        "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
+        "buildFlags": [
+          "-tags=integrationtest,integration,manual,wireinject"
+        ],
         "hints": {
           "constantValues": true,
           "parameterNames": true
