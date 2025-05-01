@@ -1,133 +1,134 @@
 {
-    "ui_font_size": 16,
-    "buffer_font_size": 14,
-    "buffer_font_family": "TX-02",
-    "theme": "Poimandres (custom)",
-    "vim_mode": true,
-    "terminal": {
-        "font_size": 14,
-        "cursor_shape": "bar",
-        "blinking": "on",
-        "toolbar": {
-            "breadcrumbs": false
-        },
-        "shell": {
-            "program": "/opt/homebrew/bin/nu"
-        }
-    },
-    "auto_install_extensions": {
-        "ruff": true
-    },
-    "features": {
-        "edit_prediction_provider": "none",
-        "copilot": false
-    },
-    "telemetry": {
-        "diagnostics": false,
-        "metrics": false
-    },
-    "assistant": {
-        "default_profile": "ask",
-        "always_allow_tool_actions": true,
-        "dock": "left",
-        "version": "2",
-        "default_model": {
-            "provider": "zed.dev",
-            "model": "claude-3-7-sonnet-thinking-latest"
-        }
-    },
-    "inlay_hints": {
-        "enabled": false
-    },
+  "ui_font_size": 16,
+  "buffer_font_size": 14,
+  "buffer_font_family": "TX-02",
+  "theme": "Poimandres (custom)",
+  "vim_mode": true,
+  "terminal": {
+    "font_size": 14,
+    "cursor_shape": "bar",
+    "blinking": "on",
     "toolbar": {
-        "quick_actions": false,
-        "breadcrumbs": false
+      "breadcrumbs": false
     },
-    "git_panel": {
-        "dock": "right"
-    },
-    "collaboration_panel": {
-        "button": false
-    },
-    "notification_panel": {
-        "button": false
-    },
-    "chat_panel": {
-        "button": "never"
-    },
-    "outline_panel": {
-        "button": false
-    },
-    "project_panel": {
-        "dock": "right",
-        "scrollbar": {
-            "show": "system"
-        }
-    },
-    "tabs": {
-        "file_icons": true,
-        "git_status": true
-    },
-    "languages": {
-        "YAML": {
-            "language_servers": []
-        },
-        "Python": {
-            "language_servers": ["ruff"],
-            "code_actions_on_format": {
-                "source.organizeImports.ruff": true,
-                "source.fixAll.ruff": true
-            }
-        },
-        "Svelte": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll": true
-            }
-        },
-        // If you don't turn off prettier formatting you will forever be at war with eslint
-        "JavaScript": {
-            "formatter": null,
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true
-            }
-        },
-        "TypeScript": {
-            "formatter": null,
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true
-            }
-        },
-        "TSX": {
-            "formatter": null,
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll.eslint": true
-            }
-        },
-        "Go": {
-            "code_actions_on_format": {
-                "source.organizeImports": true,
-                "source.fixAll": true
-            }
-        }
-    },
-    "lsp": {
-        "gopls": {
-            "initialization_options": {
-                "gofumpt": true,
-                // Generally we want to include all the files we're going to edit so the LSP
-                // doesn't complain about missing imports or other problems
-                "buildFlags": [
-                    "-tags=integrationtest,integration,manual,wireinject"
-                ],
-                "hints": {
-                    "constantValues": true,
-                    "parameterNames": true
-                }
-            }
-        }
+    "shell": {
+      "program": "/opt/homebrew/bin/nu"
     }
+  },
+  "auto_install_extensions": {
+    "ruff": true
+  },
+  "features": {
+    "edit_prediction_provider": "none",
+    "copilot": false
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "assistant": {
+    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "dock": "left",
+    "version": "2",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-thinking-latest"
+    }
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "toolbar": {
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": "never"
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "project_panel": {
+    "dock": "right",
+    "scrollbar": {
+      "show": "system"
+    }
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "languages": {
+    "YAML": {
+      "language_servers": []
+    },
+    "Python": {
+      "language_servers": ["ruff"],
+      "code_actions_on_format": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": true
+      }
+    },
+    "Svelte": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+      }
+    },
+    // If you don't turn off prettier formatting you will forever be at war with eslint
+    "JavaScript": {
+      "formatter": {
+        "code_actions": {
+          "source.organizeImports": true,
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.organizeImports": true,
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "code_actions": {
+          "source.organizeImports": true,
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll": true
+      }
+    }
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true,
+        // Generally we want to include all the files we're going to edit so the LSP
+        // doesn't complain about missing imports or other problems
+        "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
+        "hints": {
+          "constantValues": true,
+          "parameterNames": true
+        }
+      }
+    }
+  }
 }
