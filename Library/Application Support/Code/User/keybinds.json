@@ -1,5 +1,10 @@
 [
   {
+    "key": "g shift+a",
+    "command": "editor.action.goToReferences",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
     "key": "cmd+i",
     "command": "composerMode.agent"
   },
