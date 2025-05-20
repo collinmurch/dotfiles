@@ -1,4 +1,5 @@
 {
+  "workbench.colorTheme": "poimandres",
   "editor.fontSize": 14,
   "terminal.integrated.fontSize": 15,
   "editor.tabSize": 4,
@@ -68,6 +69,6 @@
   "go.survey.prompt": false,
   "go.showWelcome": false,
   "yaml.format.singleQuote": true,
-  "workbench.colorTheme": "poimandres",
+  "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
   "gitweblinks.defaultBranch": "main"
 }
