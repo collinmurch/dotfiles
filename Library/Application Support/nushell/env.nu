@@ -23,10 +23,11 @@ load-env {
 }
 
 $env.PATH = ($env.PATH | append [
-    "/usr/local/bin",
-     $"($env.HOMEBREW_PREFIX)/bin",
-    $"($env.HOME)/Developer/scripts",
-    $"($env.GOPATH)/bin"
+  "/usr/local/bin",
+  $"($env.HOMEBREW_PREFIX)/bin",
+  $"($env.HOME)/.local/bin",
+  $"($env.HOME)/Developer/scripts",
+  $"($env.GOPATH)/bin"
 ])
 
 $env.GOROOT = $"(do { ^brew --prefix go } | str trim)/libexec"

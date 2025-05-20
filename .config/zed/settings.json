@@ -16,7 +16,8 @@
     }
   },
   "auto_install_extensions": {
-    "ruff": true
+    "ruff": true,
+    "pyrefly": true
   },
   "features": {
     "edit_prediction_provider": "none",
@@ -73,7 +74,8 @@
       "language_servers": []
     },
     "Python": {
-      "language_servers": ["ruff"],
+      "language_servers": ["ruff", "pyrefly"],
+      "formatter": "language_server",
       "code_actions_on_format": {
         "source.organizeImports.ruff": true,
         "source.fixAll.ruff": true
