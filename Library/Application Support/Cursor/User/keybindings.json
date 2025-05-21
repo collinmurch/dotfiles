@@ -10,6 +10,26 @@
     "when": "editorTextFocus && vim.mode == 'Normal'"
   },
   {
+    "key": "] d",
+    "command": "editor.action.marker.next",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "[ d",
+    "command": "editor.action.marker.prev",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "] c",
+    "command": "workbench.action.editor.nextChange",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "[ c",
+    "command": "workbench.action.editor.previousChange",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
     "key": "cmd+i",
     "command": "composerMode.agent"
   },
