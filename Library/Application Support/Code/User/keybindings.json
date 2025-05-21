@@ -5,6 +5,11 @@
     "when": "editorTextFocus && vim.mode == 'Normal'"
   },
   {
+    "key": "g d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
     "key": "cmd+i",
     "command": "composerMode.agent"
   },

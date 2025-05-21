@@ -1,0 +1,31 @@
+[
+  {
+    "key": "g shift+a",
+    "command": "editor.action.goToReferences",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "g d",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "cmd+i",
+    "command": "composerMode.agent"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "!editorTextFocus || editorTextFocus"
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    "when": "!editorTextFocus || editorTextFocus"
+  },
+  {
+    "key": "cmd+c",
+    "command": "editor.action.clipboardCopyAction",
+    "when": "textInputFocus && editorTextFocus && !editorHasSelection && (vim.mode == 'Normal' || vim.mode == 'Insert')"
+  }
+]
