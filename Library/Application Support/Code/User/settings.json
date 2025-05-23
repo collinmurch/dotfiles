@@ -9,11 +9,7 @@
   "yaml.customTags": ["!reference sequence"],
   "explorer.confirmDragAndDrop": false,
   "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
   "editor.scrollbar.vertical": "auto",
-  "eslint.validate": ["javascript"],
   "editor.suggestSelection": "first",
   "terminal.integrated.cursorStyle": "underline",
   "git.confirmSync": false,
@@ -64,5 +60,33 @@
   "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
   "gitweblinks.defaultBranch": "main",
   "vim.enableNeovim": true,
-  "vim.useSystemClipboard": true
+  "vim.useSystemClipboard": true,
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "always"
+    }
+  },
+  "[javascriptreact]": { // JSX / .jsx
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "always"
+    }
+  },
+  "[typescript]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "always"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always",
+      "source.fixAll.eslint": "always"
+    }
+  }
 }
