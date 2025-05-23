@@ -68,7 +68,7 @@
       "source.fixAll.eslint": "always"
     }
   },
-  "[javascriptreact]": { // JSX / .jsx
+  "[javascriptreact]": {
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "always",
