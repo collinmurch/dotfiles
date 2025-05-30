@@ -28,14 +28,14 @@
     "metrics": false
   },
   "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-thinking-latest"
+    },
     "default_profile": "ask",
     "always_allow_tool_actions": true,
     "dock": "left",
-    "version": "2",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-thinking-latest"
-    }
+    "version": "2"
   },
   "inlay_hints": {
     "enabled": false
