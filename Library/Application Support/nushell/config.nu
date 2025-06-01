@@ -38,6 +38,9 @@ $env.config = {
     }
     history: {
         max_size: 10000
+    },
+    completions: {
+        algorithm: "fuzzy"
     }
 }
 
