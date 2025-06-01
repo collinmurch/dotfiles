@@ -10,7 +10,8 @@
 Open a new terminal session after running:
 
 ```bash
-git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~ && cd ~/dotfiles
+git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
+cd ~/dotfiles
 /bin/zsh install_macos.sh               # dependency installation & setup
 ```
 
