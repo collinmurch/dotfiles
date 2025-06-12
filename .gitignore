@@ -1,4 +1,5 @@
 .zed/
+.claude/
 
 **/.DS_Store
 **/local.nu
