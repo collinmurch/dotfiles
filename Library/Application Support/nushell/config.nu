@@ -1,6 +1,5 @@
 alias vim = nvim
 alias cat = bat -p
-
 alias finder = ^open .
 
 alias dev = cd $"($env.HOME)/Developer"
