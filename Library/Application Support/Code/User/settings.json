@@ -6,7 +6,9 @@
   "editor.fontLigatures": true,
   "explorer.confirmDelete": false,
   "editor.minimap.enabled": false,
-  "yaml.customTags": ["!reference sequence"],
+  "yaml.customTags": [
+    "!reference sequence"
+  ],
   "explorer.confirmDragAndDrop": false,
   "editor.formatOnSave": true,
   "editor.scrollbar.vertical": "auto",
@@ -50,8 +52,14 @@
       "vendor": false,
       "test": true
     },
-    "build.buildFlags": ["-tags=integration"],
-    "build.standaloneTags": ["wireinject", "!wireinject", "tools"]
+    "build.buildFlags": [
+      "-tags=integration"
+    ],
+    "build.standaloneTags": [
+      "wireinject",
+      "!wireinject",
+      "tools"
+    ]
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "go.survey.prompt": false,
@@ -60,7 +68,41 @@
   "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
   "gitweblinks.defaultBranch": "main",
   "vim.enableNeovim": true,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "y",
+        "y"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
+    },
+    {
+      "before": [
+        "y",
+        "w"
+      ],
+      "after": [
+        "y",
+        "w"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "y"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
+    }
+  ],
   "[javascript]": {
     "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
