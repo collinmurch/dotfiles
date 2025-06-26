@@ -1,0 +1,32 @@
+[delta "poimandres"]
+    # author: https://github.com/collinmurch (custom theme)
+    # Based on Poimandres color scheme
+    dark = true
+    syntax-theme = Poimandres
+    file-added-label = [+]
+    file-copied-label = [==]
+    file-modified-label = [*]
+    file-removed-label = [-]
+    file-renamed-label = [->]
+    file-style = "#e4f0fb" bold
+    hunk-header-decoration-style = "#5DE4c7" ul
+    hunk-header-file-style = "#5DE4c7" ul bold
+    hunk-header-line-number-style = "#ADD7FF" box bold
+    hunk-header-style = file line-number syntax bold italic
+    plus-style = "#5DE4c7"
+    plus-emph-style = "#1b1e28" "#5DE4c7"
+    minus-style = "#d0679d"
+    minus-emph-style = "#1b1e28" "#d0679d"
+    line-numbers = true
+    line-numbers-minus-style = "#d0679d"
+    line-numbers-plus-style = "#5DE4c7"
+    line-numbers-left-style = "#767c9d"
+    line-numbers-right-style = "#767c9d"
+    line-numbers-zero-style = "#a6accd"
+    zero-style = syntax
+    whitespace-error-style = "#d0679d" reverse
+    blame-code-style = syntax
+    blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+    blame-palette = "#1b1e28" "#303340" "#506477"
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
