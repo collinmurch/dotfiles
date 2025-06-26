@@ -53,7 +53,6 @@ git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.features poimandres
 git config --global delta.navigate true
-git config --global diff.context 7
 git config --global merge.conflictStyle zdiff3
 git config --global delta.hyperlinks true
 git config --global delta.hyperlinks-file-link-format "zed://file/{path}:{line}"

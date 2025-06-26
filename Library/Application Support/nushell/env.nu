@@ -2,6 +2,7 @@ load-env {
     "HOMEBREW_PREFIX": "/opt/homebrew"
     "BAT_THEME": "Poimandres"
     "GOPATH": $"($env.HOME)/Developer/go"
+    "ENABLE_BACKGROUND_TASKS": true,
     "LS_COLORS": $'$([
         "di=38;2;141;221;255",    # directory
         "ln=38;2;145;180;213",    # symbolic link
