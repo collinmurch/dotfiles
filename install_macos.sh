@@ -47,7 +47,7 @@ git config --global pull.rebase true
 # Set push to create upstream branch automatically
 git config --global push.autoSetupRemote true
 
-# Configure delta as pager (themes file will be symlinked by stow)
+# Configure delta as pager
 git config --global include.path ~/.config/delta-themes.gitconfig
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
@@ -57,4 +57,5 @@ git config --global diff.context 7
 git config --global merge.conflictStyle zdiff3
 git config --global delta.side-by-side true
 git config --global delta.hyperlinks true
+git config --global delta.hyperlinks-file-link-format "zed://file/{path}:{line}"
 git config --global delta.colorMoved default
