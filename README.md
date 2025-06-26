@@ -32,6 +32,10 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 
 - Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
 
+### Nushell
+
+- Machine-specific config can be added to `$nu.default-config-dir/local.nu` - it will be sourced if it exists
+
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab

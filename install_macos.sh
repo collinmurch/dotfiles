@@ -27,8 +27,6 @@ uv tool install pyrefly
 # Below must be run from dotfiles directory
 #
 
-# nushell config.nu depends on local.nu existing
-cp ./Library/Application\ Support/nushell/local.template.nu ./Library/Application\ Support/nushell/local.nu
 
 # stow ~/dotfiles to ~
 stow --no-folding -d ~/dotfiles -t ~ .

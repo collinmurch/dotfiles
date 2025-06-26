@@ -32,4 +32,7 @@ $env.PATH = ($env.PATH | append [
 
 $env.GOROOT = $"(do { ^brew --prefix go } | str trim)/libexec"
 
-source $"($nu.default-config-dir)/local.nu"
+const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) { 
+  $"($nu.default-config-dir)/local.nu"
+} else { null }
+source $local_config
