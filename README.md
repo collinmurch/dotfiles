@@ -30,7 +30,7 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 
 ### Zsh
 
-- Any additional config you need for work or whatever (`AWS_REGION, AWS_PROFILE, GOPROXY, GOSUMDB`, etc.) can be set in `~/.zprofile`
+- Machine-specific config can be set in `~/.zprofile`
 
 ### Nushell
 
