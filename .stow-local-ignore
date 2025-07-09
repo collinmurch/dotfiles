@@ -3,6 +3,8 @@
 .*\.md
 .*\.txt
 \.git
+(^|/)\.claude(/|$)
+(^|/)\.zed(/|$)
 
 # Nix build inputs
 (^|/)flake\.nix$
