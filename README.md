@@ -24,24 +24,30 @@ Then open a new terminal session
 
 ## Additional Optional Config
 
+### Machine-Specific Config/Environment
+
+For each respective shell, these files aren't comitted in the repository and will be sourced if they exist:
+
+- Zsh: `~/.zprofile`
+- Nushell: `$nu.default-config-dir/local.nu`
+
 ### MacOS System Settings
 
 A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running but you do you
 
-- _This is a subset of [Murderlon](https://github.com/murderlon)'s list_
+- This is a subset of [Murderlon](https://github.com/murderlon)'s list
+- Will probably migrate this to [nix-darwin](https://github.com/nix-darwin/nix-darwin) at some point
 
-### Zsh
+### Scripts
 
-- Machine-specific config can be set in `~/.zprofile`
-
-### Nushell
-
-- Machine-specific config can be added to `$nu.default-config-dir/local.nu` - it will be sourced if it exists
+- All the scripts I use with Raycast and as CLI utilities can be found at: [scripts](https://github.com/collinmurch/scripts)
 
 ### Raycast
 
 - Export settings under `Advanced` from previous machine and then import them under the same tab
 
-### Scripts
+### Orion
 
-- All the scripts I use with Raycast and as CLI utilities can be found at [scripts](https://github.com/collinmurch/scripts)
+- Sometimes keybindings conflict with extensions, for example Bitwarden conflicting with "Search With DuckDuckGo"
+  - System Preferences: Keyboards --> Keyboard Shortcuts --> App Shortcuts
+  - Override “Search With DuckDuckGo" to a new keybinding for Orion
