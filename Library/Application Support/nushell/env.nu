@@ -25,7 +25,9 @@ load-env {
 
 $env.PATH = ($env.PATH | append [
   "/usr/local/bin",
-  $"($env.HOMEBREW_PREFIX)/bin",
+  "/nix/var/nix/profiles/default/bin",
+  $"($env.HOME)/.nix-profile/bin",
+  $"($env.HOMEBREW_PREFIX)/bin", # Eventually we'll get rid of this in favor of pure nix
   $"($env.HOME)/.local/bin",
   $"($env.HOME)/Developer/scripts",
   $"($env.GOPATH)/bin"
@@ -33,7 +35,7 @@ $env.PATH = ($env.PATH | append [
 
 $env.GOROOT = $"(do { ^brew --prefix go } | str trim)/libexec"
 
-const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) { 
+const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
 } else { null }
 source $local_config

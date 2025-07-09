@@ -8,3 +8,7 @@ completion-timeout = 5
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+# Assumes git-link.py from collinmurch/scripts is available in $env.PATH
+"space" = { "g" = { "l" = ":pipe-to git-link.py %{buffer_name} %{cursor_line}" } }

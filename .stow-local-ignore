@@ -1,8 +1,11 @@
 ^/.DS_Store
-local\.template\.nu$
-
 .*\.sh
 .*\.md
 .*\.txt
-
 \.git
+
+# Nix build inputs
+(^|/)flake\.nix$
+(^|/)flake\.lock$
+(^|/)overlays(/|$)
+(^|/)pkg-list\.nix$

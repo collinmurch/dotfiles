@@ -15,7 +15,7 @@
       "breadcrumbs": false
     },
     "shell": {
-      "program": "/opt/homebrew/bin/nu"
+      "program": "/.nix-profile/bin/nu"
     }
   },
   "auto_install_extensions": {
@@ -77,7 +77,7 @@
       "language_servers": []
     },
     "Python": {
-      "language_servers": ["ruff", "pyrefly"],
+      "language_servers": ["ruff", "ty"],
       "formatter": "language_server",
       "code_actions_on_format": {
         "source.organizeImports.ruff": true,
@@ -123,6 +123,12 @@
     }
   },
   "lsp": {
+    "ty": {
+      "binary": {
+        "path": "/Users/yourname/.local/bin/ty",
+        "arguments": ["server"]
+      }
+    },
     "gopls": {
       "initialization_options": {
         "gofumpt": true,

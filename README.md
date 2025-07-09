@@ -1,24 +1,26 @@
 # macOS dotfiles
 
-## Requirements
+This repo is a little quirky at the moment; I'm half way between a Nix-style setup and a stow one.
+Eventually this will be fully Nix-based but for now we do some non-reproducible stuff with bootstrap.
+
+## Prerequisites
 
 1. `git`
-2. `stow`
+2. `nix`
+3. Experimental features enabled:
+
+```bash
+echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
+```
 
 ## Installation Instructions
 
-Open a new terminal session after running:
-
 ```bash
-git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
-cd ~/dotfiles
-/bin/zsh install_macos.sh               # dependency installation & setup
+nix profile add github:collinmurch/dotfiles#pkg-set
+nix run github:collinmurch/dotfiles#bootstrap   # expect stow conflicts the first time you run this
 ```
 
-**Notes**
-
-- You may need to fix any conflicts from the above by doing `mv [CONFLICT FILE] [CONFLICT FILE].bak`
-  - Then re-run `stow -d ~/dotfiles -t ~ .`
+Then open a new terminal session
 
 ## Additional Optional Config
 

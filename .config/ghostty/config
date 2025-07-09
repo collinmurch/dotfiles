@@ -17,7 +17,7 @@ macos-icon-screen-color = #1B1E28
 
 
 # Config
-command = /opt/homebrew/bin/nu
+command = ~/.nix-profile/bin/nu
 quit-after-last-window-closed = true
 macos-titlebar-style = tabs
 
@@ -47,3 +47,4 @@ keybind = option+up=ignore
 keybind = option+down=ignore
 keybind = ctrl+shift+right=ignore
 keybind = ctrl+shift+left=ignore
+keybind = shift+enter=text:\n

@@ -30,3 +30,11 @@ eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/zsh-shift-select.zsh
+
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+fi
+
+if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+fi
