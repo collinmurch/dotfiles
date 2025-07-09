@@ -20,7 +20,7 @@
             allowBroken  = true;
           };
         };
-        wanted  = import ./pkg-list.nix { inherit pkgs system; };
+        wanted  = import ./pkg-list.nix { inherit pkgs; };
 
         pkg-set = pkgs.buildEnv {
           name  = "collin-packages";
@@ -37,8 +37,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo " Cloning git repository..."
-git clone --recurse-submodules https://github.com/collinmurch/dotfiles ~
+if [ ! -d "$HOME/dotfiles/.git" ]; then
+  echo "→ Cloning git repository..."
+  git clone --recurse-submodules https://github.com/collinmurch/dotfiles "$HOME/dotfiles"
+else
+  echo "✓ Dotfiles repo already exists – skipping clone."
+fi
 
 echo "→ Linking dot-files with stow…"
 stow --no-folding -d ~/dotfiles -t ~ .
@@ -60,7 +64,7 @@ git config --global delta.hyperlinks true
 git config --global delta.hyperlinks-file-link-format 'zed://file/{path}:{line}'
 git config --global delta.colorMoved default
 
-echo "✓ All done – open a new shell!"
+echo "✓ All done – opening a new (nu) shell..." && exec ~/.nix-profile/bin/nu -l
           '';
         };
       in {

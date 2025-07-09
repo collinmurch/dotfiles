@@ -1,4 +1,4 @@
-{ pkgs, system }:
+{ pkgs }:
 with pkgs; [
   # core shells/tools
   nushell  stow  neovim  helix  bat  starship

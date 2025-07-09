@@ -3,6 +3,8 @@
 .*\.md
 .*\.txt
 \.git
+\.gitignore
+\.gitmodules
 (^|/)\.claude(/|$)
 (^|/)\.zed(/|$)
 
