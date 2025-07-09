@@ -24,9 +24,9 @@ Then open a new terminal session to get the changes.
 
 ## Additional Optional Config
 
-### Machine-Specific Config/Environment
+### Custom Environments
 
-For each respective shell, these files aren't comitted in the repository and will be sourced if they exist:
+If either of these files are present, they will be sourced for the respective shell (not comitted):
 
 - **Zsh:** `~/.zprofile`
 - **Nushell:** `$nu.default-config-dir/local.nu`

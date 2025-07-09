@@ -1,8 +1,6 @@
 load-env {
-    "HOMEBREW_PREFIX": "/opt/homebrew"
     "BAT_THEME": "Poimandres"
     "GOPATH": $"($env.HOME)/Developer/go"
-    "ENABLE_BACKGROUND_TASKS": true,
     "LS_COLORS": $'$([
         "di=38;2;141;221;255",    # directory
         "ln=38;2;145;180;213",    # symbolic link
@@ -21,14 +19,15 @@ load-env {
         "st=38;2;255;250;194",    # sticky directory
         "ca=38;2;255;250;194"     # file with capability
     ] | str join ":")'
+
+    "ENABLE_BACKGROUND_TASKS": true
 }
 
 $env.PATH = ($env.PATH | append [
   "/usr/local/bin",
   "/nix/var/nix/profiles/default/bin",
   $"($env.HOME)/.nix-profile/bin",
-  $"($env.HOMEBREW_PREFIX)/bin", # Eventually we'll get rid of this in favor of pure nix
-  $"($env.HOME)/.local/bin",
+  "/opt/homebrew/bin", # Eventually we'll get rid of this in favor of pure nix
   $"($env.HOME)/Developer/scripts",
   $"($env.GOPATH)/bin"
 ])

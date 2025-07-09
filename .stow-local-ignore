@@ -1,15 +1,22 @@
-^/.DS_Store
+# general
+(^|/)\.DS_Store$
 .*\.sh
 .*\.md
 .*\.txt
 \.git
 \.gitignore
 \.gitmodules
+
+# custom environments
+^Library/Application Support/nushell/local\.nu$
+^\.zprofile$
+
+# editor
 (^|/)\.claude(/|$)
 (^|/)\.zed(/|$)
 
-# Nix build inputs
-(^|/)flake\.nix$
-(^|/)flake\.lock$
-(^|/)overlays(/|$)
-(^|/)pkg-list\.nix$
+# nix
+^flake\.nix$
+^flake\.lock$
+^overlays$
+^pkg-list\.nix$

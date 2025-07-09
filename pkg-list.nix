@@ -1,12 +1,15 @@
 { pkgs }:
 with pkgs; [
   # core shells/tools
-  nushell  stow  neovim  helix  bat  starship
-  ripgrep  jq  delta  nil  nixd  uv  ty
+  nushell  stow  neovim  helix  bat
+  ripgrep  starship  jq  delta
+
+  # languages
+  nil  nixd  uv
 
   # zsh plugins
   zsh-syntax-highlighting    zsh-autosuggestions
 
-  # GUI applications (require allowUnfree = true)
+  # gui applications (require allowUnfree = true)
   # raycast  zed-editor  vscode
 ]

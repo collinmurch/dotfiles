@@ -1,4 +1,10 @@
+# general
+.DS_Store
+
+# editor
 .zed/
 .claude/
 
-**/.DS_Store
+# custom environments
+/Library/Application Support/nushell/local.nu
+/.zprofile
