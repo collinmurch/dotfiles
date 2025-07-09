@@ -20,8 +20,6 @@ nix profile add github:collinmurch/dotfiles#pkg-set
 nix run github:collinmurch/dotfiles#bootstrap       # expect stow conflicts on first run
 ```
 
-Then open a new terminal session to get the changes.
-
 ## Additional Optional Config
 
 ### Custom Environments
