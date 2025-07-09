@@ -64,7 +64,8 @@ git config --global delta.hyperlinks true
 git config --global delta.hyperlinks-file-link-format 'zed://file/{path}:{line}'
 git config --global delta.colorMoved default
 
-echo "✓ All done – opening a new (nu) shell..." && exec ~/.nix-profile/bin/nu -l
+echo "✓ All done – opening a new (nu) shell..."
+exec ~/.nix-profile/bin/nu -l
           '';
         };
       in {
