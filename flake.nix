@@ -33,40 +33,7 @@
             description = "Bootstrap dotfiles and configure system";
             mainProgram = "collin-bootstrap";
           };
-          text = ''
-#!/usr/bin/env bash
-set -euo pipefail
-
-if [ ! -d "$HOME/dotfiles/.git" ]; then
-  echo "→ Cloning git repository..."
-  git clone --recurse-submodules https://github.com/collinmurch/dotfiles "$HOME/dotfiles"
-else
-  echo "✓ Dotfiles repo already exists – skipping clone."
-fi
-
-echo "→ Linking dot-files with stow…"
-stow --no-folding -d ~/dotfiles -t ~ .
-
-echo "→ Rebuilding bat cache…"
-bat cache --build
-
-echo "→ Setting Git defaults…"
-git config --global core.editor nvim                         2>/dev/null || true
-git config --global pull.rebase true                         2>/dev/null || true
-git config --global push.autoSetupRemote true
-git config --global include.path ~/.config/delta-themes.gitconfig
-git config --global core.pager delta
-git config --global interactive.diffFilter 'delta --color-only'
-git config --global delta.features poimandres
-git config --global delta.navigate true
-git config --global merge.conflictStyle zdiff3
-git config --global delta.hyperlinks true
-git config --global delta.hyperlinks-file-link-format 'zed://file/{path}:{line}'
-git config --global delta.colorMoved default
-
-echo "✓ All done – opening a new (nu) shell..."
-exec ~/.nix-profile/bin/nu -l
-          '';
+          text = builtins.readFile ./bootstrap.sh;
         };
       in {
         packages.pkg-set = pkg-set;                                     # nix profile install .#pkg-set
