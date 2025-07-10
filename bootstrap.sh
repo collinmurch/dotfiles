@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-read -p "Clone dotfiles repository? (y/N): " -n 1 -r
-echo
+# Check if we're in an interactive terminal
+if [[ -t 0 ]]; then
+  read -p "Clone dotfiles repository? (y/N): " -n 1 -r
+  echo
+else
+  REPLY="y"
+  echo "Clone dotfiles repository? (y/N): y (non-interactive mode)"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   if [ ! -d "$HOME/dotfiles/.git" ]; then
     echo "→ Cloning git repository..."
@@ -14,8 +21,14 @@ else
   echo "✓ Skipping repository clone."
 fi
 
-read -p "Link dot-files with stow? (y/N): " -n 1 -r
-echo
+if [[ -t 0 ]]; then
+  read -p "Link dot-files with stow? (y/N): " -n 1 -r
+  echo
+else
+  REPLY="y"
+  echo "Link dot-files with stow? (y/N): y (non-interactive mode)"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "→ Linking dot-files with stow…"
   stow --no-folding -d ~/dotfiles -t ~ .
@@ -23,8 +36,14 @@ else
   echo "✓ Skipping stow linking."
 fi
 
-read -p "Rebuild bat cache? (y/N): " -n 1 -r
-echo
+if [[ -t 0 ]]; then
+  read -p "Rebuild bat cache? (y/N): " -n 1 -r
+  echo
+else
+  REPLY="y"
+  echo "Rebuild bat cache? (y/N): y (non-interactive mode)"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "→ Rebuilding bat cache…"
   bat cache --build
@@ -32,8 +51,14 @@ else
   echo "✓ Skipping bat cache rebuild."
 fi
 
-read -p "Set Git global defaults? (y/N): " -n 1 -r
-echo
+if [[ -t 0 ]]; then
+  read -p "Set Git global defaults? (y/N): " -n 1 -r
+  echo
+else
+  REPLY="y"
+  echo "Set Git global defaults? (y/N): y (non-interactive mode)"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "→ Setting Git defaults…"
   git config --global core.editor nvim                         2>/dev/null || true
@@ -52,8 +77,14 @@ else
   echo "✓ Skipping Git configuration."
 fi
 
-read -p "Open a new (nu) shell? (y/N): " -n 1 -r
-echo
+if [[ -t 0 ]]; then
+  read -p "Open a new (nu) shell? (y/N): " -n 1 -r
+  echo
+else
+  REPLY="y"
+  echo "Open a new (nu) shell? (y/N): y (non-interactive mode)"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "✓ All done – opening a new (nu) shell..."
   exec ~/.nix-profile/bin/nu -l
