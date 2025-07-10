@@ -22,22 +22,18 @@
     "ruff": true
   },
   "features": {
-    "edit_prediction_provider": "none",
-    "copilot": false
+    "edit_prediction_provider": "none"
   },
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "assistant": {
+  "agent": {
+    "dock": "left",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-thinking-latest"
-    },
-    "default_profile": "ask",
-    "always_allow_tool_actions": true,
-    "dock": "left",
-    "version": "2"
+    }
   },
   "inlay_hints": {
     "enabled": false
