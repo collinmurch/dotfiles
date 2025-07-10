@@ -36,7 +36,7 @@
           text = builtins.readFile ./bootstrap.sh;
         };
       in {
-        packages.pkg-set = pkg-set;                                     # nix profile install .#pkg-set
+        packages.pkg-set = pkg-set; # nix profile install .#pkg-set
         apps.bootstrap   = {
           type = "app";
           program = "${bootstrap}/bin/collin-bootstrap";

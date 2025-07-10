@@ -11,7 +11,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "✓ Dotfiles repo already exists – skipping clone."
   fi
 else
-  echo "✓ Skipping repository clone, exiting..."
+  echo "✓ Nothing to do."
   exit 0
 fi
 
@@ -51,7 +51,18 @@ read -p "Open a new (nu) shell? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "✓ All done – opening a new (nu) shell..."
-  exec ~/.nix-profile/bin/nu -l
+
+  # Check if nu is available in PATH first
+  if command -v nu >/dev/null 2>&1; then
+    exec nu -l
+  # Fallback to nix profile location
+  elif [ -x "$HOME/.nix-profile/bin/nu" ]; then
+    exec "$HOME/.nix-profile/bin/nu" -l
+  else
+    echo "Error: nushell (nu) not found in PATH or at ~/.nix-profile/bin/nu"
+    echo "Please ensure nushell is installed and available."
+    exit 1
+  fi
 else
   echo "✓ All done!"
 fi
