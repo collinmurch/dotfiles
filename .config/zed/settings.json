@@ -1,6 +1,7 @@
 {
     "ui_font_size": 16,
     "buffer_font_size": 14,
+    "tab_size": 4,
     "buffer_font_family": "TX-02",
     "theme": "Poimandres (custom)",
     "vim_mode": true,
