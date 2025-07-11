@@ -19,7 +19,8 @@
     }
   },
   "auto_install_extensions": {
-    "ruff": true
+    "ruff": true,
+    "biome": true
   },
   "features": {
     "edit_prediction_provider": "none"
@@ -79,14 +80,8 @@
         "source.fixAll.ruff": true
       }
     },
-    "Svelte": {
-      "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
-      }
-    },
-    // If you don't turn off prettier formatting you will forever be at war with eslint
     "JavaScript": {
+      "language_servers": ["biome", "eslint_d"],
       "formatter": {
         "code_actions": {
           "source.organizeImports": true,
@@ -95,6 +90,7 @@
       }
     },
     "TypeScript": {
+      "language_servers": ["biome", "eslint_d"],
       "formatter": {
         "code_actions": {
           "source.organizeImports": true,
@@ -103,6 +99,7 @@
       }
     },
     "TSX": {
+      "language_servers": ["biome", "eslint_d"],
       "formatter": {
         "code_actions": {
           "source.organizeImports": true,
