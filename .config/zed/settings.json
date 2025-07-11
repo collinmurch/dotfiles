@@ -4,7 +4,6 @@
     "buffer_font_family": "TX-02",
     "theme": "Poimandres (custom)",
     "vim_mode": true,
-    "tab_size": 4,
     "vim": {
         "use_system_clipboard": "on_yank"
     },
