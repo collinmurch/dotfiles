@@ -1,131 +1,117 @@
 {
-  "ui_font_size": 16,
-  "buffer_font_size": 14,
-  "buffer_font_family": "TX-02",
-  "theme": "Poimandres (custom)",
-  "vim_mode": true,
-  "vim": {
-    "use_system_clipboard": "on_yank"
-  },
-  "terminal": {
-    "font_size": 14,
-    "cursor_shape": "bar",
-    "blinking": "on",
+    "ui_font_size": 16,
+    "buffer_font_size": 14,
+    "buffer_font_family": "TX-02",
+    "theme": "Poimandres (custom)",
+    "vim_mode": true,
+    "tab_size": 4,
+    "vim": {
+        "use_system_clipboard": "on_yank"
+    },
+    "terminal": {
+        "font_size": 14,
+        "cursor_shape": "bar",
+        "blinking": "on",
+        "toolbar": {
+            "breadcrumbs": false
+        },
+        "shell": {
+            "program": "nu"
+        }
+    },
+    "auto_install_extensions": {
+        "ruff": true,
+        "biome": true
+    },
+    "features": {
+        "edit_prediction_provider": "none"
+    },
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    },
+    "agent": {
+        "dock": "left",
+        "default_model": {
+            "provider": "zed.dev",
+            "model": "claude-sonnet-4-thinking-latest"
+        }
+    },
+    "inlay_hints": {
+        "enabled": false
+    },
     "toolbar": {
-      "breadcrumbs": false
+        "quick_actions": false,
+        "breadcrumbs": false
     },
-    "shell": {
-      "program": "nu"
-    }
-  },
-  "auto_install_extensions": {
-    "ruff": true,
-    "biome": true
-  },
-  "features": {
-    "edit_prediction_provider": "none"
-  },
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-  "agent": {
-    "dock": "left",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking-latest"
-    }
-  },
-  "inlay_hints": {
-    "enabled": false
-  },
-  "toolbar": {
-    "quick_actions": false,
-    "breadcrumbs": false
-  },
-  "git_panel": {
-    "dock": "right"
-  },
-  "collaboration_panel": {
-    "button": false
-  },
-  "notification_panel": {
-    "button": false
-  },
-  "chat_panel": {
-    "button": "never"
-  },
-  "outline_panel": {
-    "button": false
-  },
-  "project_panel": {
-    "dock": "right",
-    "scrollbar": {
-      "show": "system"
-    }
-  },
-  "tabs": {
-    "file_icons": true,
-    "git_status": true
-  },
-  "languages": {
-    "YAML": {
-      "language_servers": []
+    "git_panel": {
+        "dock": "right"
     },
-    "Python": {
-      "language_servers": ["ruff"],
-      "formatter": "language_server",
-      "code_actions_on_format": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": true
-      }
+    "collaboration_panel": {
+        "button": false
     },
-    "JavaScript": {
-      "language_servers": ["biome", "eslint_d"],
-      "formatter": {
-        "code_actions": {
-          "source.organizeImports": true,
-          "source.fixAll.eslint": true
+    "notification_panel": {
+        "button": false
+    },
+    "chat_panel": {
+        "button": "never"
+    },
+    "outline_panel": {
+        "button": false
+    },
+    "project_panel": {
+        "dock": "right",
+        "scrollbar": {
+            "show": "system"
         }
-      }
     },
-    "TypeScript": {
-      "language_servers": ["biome", "eslint_d"],
-      "formatter": {
-        "code_actions": {
-          "source.organizeImports": true,
-          "source.fixAll.eslint": true
+    "tabs": {
+        "file_icons": true,
+        "git_status": true
+    },
+    "languages": {
+        "YAML": {
+            "language_servers": []
+        },
+        "Python": {
+            "language_servers": ["ruff"],
+            "formatter": "language_server",
+            "code_actions_on_format": {
+                "source.organizeImports.ruff": true,
+                "source.fixAll.ruff": true
+            }
+        },
+        "JavaScript": {
+            "language_servers": ["biome"],
+            "formatter": "language_server"
+        },
+        "TypeScript": {
+            "language_servers": ["biome"],
+            "formatter": "language_server"
+        },
+        "TSX": {
+            "language_servers": ["biome"],
+            "formatter": "language_server"
+        },
+        "Go": {
+            "code_actions_on_format": {
+                "source.organizeImports": true,
+                "source.fixAll": true
+            }
         }
-      }
     },
-    "TSX": {
-      "language_servers": ["biome", "eslint_d"],
-      "formatter": {
-        "code_actions": {
-          "source.organizeImports": true,
-          "source.fixAll.eslint": true
+    "lsp": {
+        "gopls": {
+            "initialization_options": {
+                "gofumpt": true,
+                "buildFlags": [
+                    "-tags=integrationtest,integration,manual,wireinject"
+                ],
+                "hints": {
+                    "constantValues": true,
+                    "parameterNames": true
+                }
+            }
         }
-      }
-    },
-    "Go": {
-      "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
-      }
     }
-  },
-  "lsp": {
-    "gopls": {
-      "initialization_options": {
-        "gofumpt": true,
-        // Generally we want to include all the files we're going to edit so the LSP
-        // doesn't complain about missing imports or other problems
-        "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
-        "hints": {
-          "constantValues": true,
-          "parameterNames": true
-        }
-      }
-    }
-  }
 }
