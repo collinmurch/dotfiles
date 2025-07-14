@@ -25,8 +25,8 @@ load-env {
 
 $env.PATH = ($env.PATH | append [
   "/usr/local/bin",
+ $"($env.HOME)/.nix-profile/bin",
   "/nix/var/nix/profiles/default/bin",
-  $"($env.HOME)/.nix-profile/bin",
   "/opt/homebrew/bin", # Eventually we'll get rid of this in favor of pure nix
   $"($env.HOME)/Developer/scripts",
   $"($env.GOPATH)/bin"
