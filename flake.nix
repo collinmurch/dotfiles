@@ -20,7 +20,7 @@
             allowBroken  = true;
           };
         };
-        wanted  = import ./pkg-list.nix { inherit pkgs; };
+        wanted  = import ./pkg-set.nix { inherit pkgs; };
 
         pkg-set = pkgs.buildEnv {
           name  = "collin-packages";

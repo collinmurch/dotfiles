@@ -3,7 +3,7 @@ let
   # Package groups
   coreTools = with pkgs; [
     nushell stow neovim helix bat
-    ripgrep starship jq delta
+    ripgrep starship jq delta fzf
   ];
   
   devTools = with pkgs; [
