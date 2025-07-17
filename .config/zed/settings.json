@@ -83,15 +83,24 @@
         },
         "JavaScript": {
             "language_servers": ["biome", "vtsls"],
-            "formatter": "language_server"
+            "formatter": "language_server",
+            "code_actions_on_format": {
+                "source.organizeImports.biome": true
+            }
         },
         "TypeScript": {
             "language_servers": ["biome", "vtsls"],
-            "formatter": "language_server"
+            "formatter": "language_server",
+            "code_actions_on_format": {
+                "source.organizeImports.biome": true
+            }
         },
         "TSX": {
             "language_servers": ["biome", "vtsls"],
-            "formatter": "language_server"
+            "formatter": "language_server",
+            "code_actions_on_format": {
+                "source.organizeImports.biome": true
+            }
         },
         "Go": {
             "code_actions_on_format": {
