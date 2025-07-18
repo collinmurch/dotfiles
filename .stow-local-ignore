@@ -19,4 +19,4 @@
 ^flake\.nix$
 ^flake\.lock$
 ^overlays$
-^pkg-list\.nix$
+^pkg-set\.nix$
