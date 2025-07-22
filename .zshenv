@@ -8,4 +8,5 @@ export BAT_THEME="Poimandres"
 
 export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"
+
 export PATH=$PATH:$GOROOT/bin
