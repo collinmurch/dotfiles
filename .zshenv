@@ -10,3 +10,4 @@ export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"
 
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
