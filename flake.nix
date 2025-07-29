@@ -6,12 +6,14 @@
     flake-utils.url = "github:numtide/flake-utils";
     helix.url       = "github:helix-editor/helix/master";
     helix.inputs.nixpkgs.follows = "nixpkgs";
+    agenix.url      = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, flake-utils, helix }:
+  outputs = {self, nixpkgs, flake-utils, helix, agenix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        externalFlakes = { inherit helix; };
+        externalFlakes = { inherit helix agenix; };
         pkgs = import nixpkgs {
           inherit system;
           overlays = import ./overlays externalFlakes;
@@ -20,7 +22,7 @@
             allowBroken  = true;
           };
         };
-        wanted  = import ./pkg-set.nix { inherit pkgs; };
+        wanted  = import ./pkg-set.nix { inherit pkgs; } ++ [ agenix.packages.${system}.default ];
 
         pkg-set = pkgs.buildEnv {
           name  = "collin-packages";

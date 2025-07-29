@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-read -p "Clone dotfiles repository? (y/N): " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  if [ ! -d "$HOME/dotfiles/.git" ]; then
+if [ ! -d "$HOME/dotfiles/.git" ]; then
+  read -p "Clone dotfiles repository? (y/N): " -n 1 -r
+  echo
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "→ Cloning git repository..."
     git clone --recurse-submodules https://github.com/collinmurch/dotfiles "$HOME/dotfiles"
   else
-    echo "✓ Dotfiles repo already exists – skipping clone."
+    echo "✓ Nothing to do."
+    exit 0
   fi
 else
-  echo "✓ Nothing to do."
-  exit 0
+  echo "✓ Dotfiles repo already exists – skipping clone."
 fi
 
 read -p "Link dot-files with stow? (y/N): " -n 1 -r
@@ -26,6 +26,67 @@ fi
 
 echo "→ Rebuilding bat cache…"
 bat cache --build
+
+echo "→ Installing TX-02 fonts…"
+
+# Create fonts directory
+FONT_DIR="$HOME/.local/share/fonts/tx02"
+mkdir -p "$FONT_DIR"
+
+# Check if fonts already installed
+if [ -f "$FONT_DIR/TX-02-Regular.otf" ]; then
+  echo "✓ TX-02 fonts already installed"
+else
+  # Check if Bitwarden is unlocked
+  if command -v bw >/dev/null 2>&1; then
+    if ! bw status | nu -c 'from json | get status' | grep -q "unlocked" 2>/dev/null; then
+      echo "  Bitwarden vault is not unlocked. Attempting to unlock bw..."
+      if SESSION_KEY=$(bw unlock --raw); then
+        export BW_SESSION="$SESSION_KEY"
+        BW_CMD="bw"
+      else
+        echo "✗ Failed to unlock bw vault"
+        exit 1
+      fi
+    else
+      BW_CMD="bw"
+    fi
+  else
+    echo "✗ bw command not found"
+    echo "  Please install Bitwarden CLI (e.g., brew install bitwarden-cli)"
+    exit 1
+  fi
+  
+  # Decrypt and install fonts if Bitwarden is available and unlocked
+  if [ -n "${BW_CMD:-}" ]; then
+    echo "  Decrypting TX-02 fonts using Bitwarden SSH key..."
+    
+    # Create temporary key file from Bitwarden
+    TEMP_KEY=$(mktemp)
+    trap 'rm -f "$TEMP_KEY"' EXIT
+    
+    # Get SSH key from Bitwarden
+    bw get item "GitHub Encryption Secret" | nu -c 'from json | get sshKey.privateKey' > "$TEMP_KEY"
+    
+    # Convert SSH private key to age format
+    AGE_KEY_FILE=$(mktemp)
+    trap 'rm -f "$AGE_KEY_FILE"' EXIT
+    ssh-to-age -private-key -i "$TEMP_KEY" > "$AGE_KEY_FILE"
+    
+    # Decrypt fonts using age with converted key
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Regular.otf.age > "$FONT_DIR/TX-02-Regular.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold.otf.age > "$FONT_DIR/TX-02-Bold.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Oblique.otf.age > "$FONT_DIR/TX-02-Oblique.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold-Oblique.otf.age > "$FONT_DIR/TX-02-Bold-Oblique.otf"
+    
+    echo "✓ TX-02 fonts installed to $FONT_DIR"
+    
+    # Refresh font cache on Linux
+    if [[ "$OSTYPE" == "linux-gnu"* ]] && command -v fc-cache >/dev/null 2>&1; then
+      fc-cache -f "$FONT_DIR"
+    fi
+  fi
+fi
 
 read -p "Set Git global defaults? (y/N): " -n 1 -r
 echo

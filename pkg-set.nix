@@ -5,15 +5,15 @@ let
     nushell stow neovim helix bat
     ripgrep starship jq delta fzf
   ];
-  
+
   devTools = with pkgs; [
-    nil nixd uv
+    nil nixd uv age ssh-to-age
   ];
-  
+
   zshPlugins = with pkgs; [
     zsh-syntax-highlighting zsh-autosuggestions
   ];
-  
+
   basePackages = coreTools ++ devTools ++ zshPlugins;
 in
 basePackages ++ [

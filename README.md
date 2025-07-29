@@ -20,6 +20,14 @@ nix profile add github:collinmurch/dotfiles#pkg-set
 nix run github:collinmurch/dotfiles#bootstrap       # expect stow conflicts on first run
 ```
 
+### Encrypted Fonts
+
+This setup includes encrypted TX-02 fonts that are decrypted during bootstrap using your Bitwarden SSH key:
+
+- Fonts are stored encrypted in `fonts/*.age` to avoid licensing issues
+- Requires Bitwarden CLI to be unlocked: `bw unlock`
+- Fonts auto-decrypt to `~/.local/share/fonts/tx02/` during installation
+
 ## Additional Optional Config
 
 ### Custom Environments
