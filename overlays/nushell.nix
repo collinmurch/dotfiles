@@ -3,8 +3,8 @@ let
   src = super.fetchFromGitHub {
     owner = "collinmurch";
     repo  = "nushell";
-    rev   = "de49eb16f0fcf8370d8ee4aa240580121bbe9e4d";
-    hash  = "sha256-r9Pfow10HW6HsADirIJTXOPZPNOFMM43dh4YlXhzBq0=";
+    rev   = "853ee847a82e3c1ea975486fe923beb48a2d4887";
+    hash  = "sha256-MTBOPCxn0GWwixMNhb9MvfJrBSkEMGXPVMcFbGb6AM8=";
   };
 in
 {
