@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url     = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     helix.url       = "github:helix-editor/helix/master";
     helix.inputs.nixpkgs.follows = "nixpkgs";
@@ -10,7 +11,7 @@
     agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, flake-utils, helix, agenix }:
+  outputs = {self, nixpkgs, nixpkgs-unstable, flake-utils, helix, agenix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         externalFlakes = { inherit helix agenix; };
@@ -22,7 +23,14 @@
             allowBroken  = true;
           };
         };
-        wanted  = import ./pkg-set.nix { inherit pkgs; } ++ [ agenix.packages.${system}.default ];
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config = {
+            allowUnfree  = true;
+            allowBroken  = true;
+          };
+        };
+        wanted  = import ./pkg-set.nix { inherit pkgs pkgs-unstable; } ++ [ agenix.packages.${system}.default ];
 
         pkg-set = pkgs.buildEnv {
           name  = "collin-packages";
