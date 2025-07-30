@@ -12,7 +12,7 @@ in
     pname   = "nushell";
     version = "0.0.1";
     inherit src;
-    cargoHash = "sha256-8W9wO3VQlLJD1G64kH5kO0HIEIt7JjSpNr3ksJq9eWA=";
+    cargoHash = "sha256-firVJQA9jDgve9BMSN7VEovvhrrUNPUuVlte3Xdh3JQ=";
     cargoBuildFlags = [
       "--no-default-features"
       "--features=rustls-tls"
