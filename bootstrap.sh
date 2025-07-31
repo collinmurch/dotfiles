@@ -27,16 +27,19 @@ fi
 echo "→ Rebuilding bat cache…"
 bat cache --build
 
-echo "→ Installing TX-02 fonts…"
+read -p "Install TX-02 fonts? (y/N): " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo "→ Installing TX-02 fonts…"
 
-# Create fonts directory
-FONT_DIR="$HOME/.local/share/fonts/tx02"
-mkdir -p "$FONT_DIR"
+  # Create fonts directory
+  FONT_DIR="$HOME/.local/share/fonts/tx02"
+  mkdir -p "$FONT_DIR"
 
-# Check if fonts already installed
-if [ -f "$FONT_DIR/TX-02-Regular.otf" ]; then
-  echo "✓ TX-02 fonts already installed"
-else
+  # Check if fonts already installed
+  if [ -f "$FONT_DIR/TX-02-Regular.otf" ]; then
+    echo "✓ TX-02 fonts already installed"
+  else
   # Check if Bitwarden is available and handle authentication
   if command -v bw >/dev/null 2>&1; then
     BW_STATUS=$(bw status | nu -c 'from json | get status' 2>/dev/null || echo "unknown")
@@ -112,6 +115,9 @@ else
       fc-cache -f "$FONT_DIR"
     fi
   fi
+  fi
+else
+  echo "✓ Skipping TX-02 font installation."
 fi
 
 read -p "Set Git global defaults? (y/N): " -n 1 -r

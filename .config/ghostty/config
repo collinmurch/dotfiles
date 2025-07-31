@@ -1,6 +1,7 @@
 # Theming
 theme = Poimandres
 font-family = TX-02
+font-family = JetBrains Mono
 font-size = 14
 font-thicken = true
 cursor-style = bar

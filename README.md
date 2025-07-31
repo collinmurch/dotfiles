@@ -20,13 +20,11 @@ nix profile add github:collinmurch/dotfiles#pkg-set
 nix run github:collinmurch/dotfiles#bootstrap       # expect stow conflicts on first run
 ```
 
-### Encrypted Fonts
+### Fonts
 
-This setup includes encrypted TX-02 fonts that are decrypted during bootstrap using your Bitwarden SSH key:
+This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally decrypted during `bootstrap.sh` using my Bitwarden SSH key:
 
-- Fonts are stored encrypted in `fonts/*.age` to avoid licensing issues
-- Requires Bitwarden CLI to be unlocked: `bw unlock`
-- Fonts auto-decrypt to `~/.local/share/fonts/tx02/` during installation
+**JetBrains Mono** is installed and is a fallback font for all configs if **TX-02** isn't found.
 
 ## Additional Optional Config
 
