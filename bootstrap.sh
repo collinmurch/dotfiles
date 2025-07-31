@@ -37,10 +37,31 @@ mkdir -p "$FONT_DIR"
 if [ -f "$FONT_DIR/TX-02-Regular.otf" ]; then
   echo "✓ TX-02 fonts already installed"
 else
-  # Check if Bitwarden is unlocked
+  # Check if Bitwarden is available and handle authentication
   if command -v bw >/dev/null 2>&1; then
-    if ! bw status | nu -c 'from json | get status' | grep -q "unlocked" 2>/dev/null; then
-      echo "  Bitwarden vault is not unlocked. Attempting to unlock bw..."
+    BW_STATUS=$(bw status | nu -c 'from json | get status' 2>/dev/null || echo "unknown")
+
+    case "$BW_STATUS" in
+    "unauthenticated")
+      echo "  Bitwarden CLI is not logged in."
+      read -p "  Enter your Bitwarden email: " BW_EMAIL
+      echo "  Logging in to Bitwarden..."
+      if bw login "$BW_EMAIL"; then
+        echo "  Login successful. Now unlocking vault..."
+        if SESSION_KEY=$(bw unlock --raw); then
+          export BW_SESSION="$SESSION_KEY"
+          BW_CMD="bw"
+        else
+          echo "✗ Failed to unlock bw vault after login"
+          exit 1
+        fi
+      else
+        echo "✗ Failed to login to Bitwarden"
+        exit 1
+      fi
+      ;;
+    "locked")
+      echo "  Bitwarden vault is locked. Attempting to unlock..."
       if SESSION_KEY=$(bw unlock --raw); then
         export BW_SESSION="$SESSION_KEY"
         BW_CMD="bw"
@@ -48,39 +69,44 @@ else
         echo "✗ Failed to unlock bw vault"
         exit 1
       fi
-    else
+      ;;
+    "unlocked")
       BW_CMD="bw"
-    fi
+      ;;
+    *)
+      echo "✗ Unknown Bitwarden status: $BW_STATUS"
+      exit 1
+      ;;
+    esac
   else
     echo "✗ bw command not found"
-    echo "  Please install Bitwarden CLI (e.g., brew install bitwarden-cli)"
     exit 1
   fi
-  
+
   # Decrypt and install fonts if Bitwarden is available and unlocked
   if [ -n "${BW_CMD:-}" ]; then
     echo "  Decrypting TX-02 fonts using Bitwarden SSH key..."
-    
+
     # Create temporary key file from Bitwarden
     TEMP_KEY=$(mktemp)
     trap 'rm -f "$TEMP_KEY"' EXIT
-    
+
     # Get SSH key from Bitwarden
-    bw get item "GitHub Encryption Secret" | nu -c 'from json | get sshKey.privateKey' > "$TEMP_KEY"
-    
+    bw get item "GitHub Encryption Secret" | nu -c 'from json | get sshKey.privateKey' >"$TEMP_KEY"
+
     # Convert SSH private key to age format
     AGE_KEY_FILE=$(mktemp)
     trap 'rm -f "$AGE_KEY_FILE"' EXIT
-    ssh-to-age -private-key -i "$TEMP_KEY" > "$AGE_KEY_FILE"
-    
+    ssh-to-age -private-key -i "$TEMP_KEY" >"$AGE_KEY_FILE"
+
     # Decrypt fonts using age with converted key
-    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Regular.otf.age > "$FONT_DIR/TX-02-Regular.otf"
-    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold.otf.age > "$FONT_DIR/TX-02-Bold.otf"
-    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Oblique.otf.age > "$FONT_DIR/TX-02-Oblique.otf"
-    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold-Oblique.otf.age > "$FONT_DIR/TX-02-Bold-Oblique.otf"
-    
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Regular.otf.age >"$FONT_DIR/TX-02-Regular.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold.otf.age >"$FONT_DIR/TX-02-Bold.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Oblique.otf.age >"$FONT_DIR/TX-02-Oblique.otf"
+    age -d -i "$AGE_KEY_FILE" ~/dotfiles/fonts/TX-02-Bold-Oblique.otf.age >"$FONT_DIR/TX-02-Bold-Oblique.otf"
+
     echo "✓ TX-02 fonts installed to $FONT_DIR"
-    
+
     # Refresh font cache on Linux
     if [[ "$OSTYPE" == "linux-gnu"* ]] && command -v fc-cache >/dev/null 2>&1; then
       fc-cache -f "$FONT_DIR"
