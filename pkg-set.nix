@@ -1,13 +1,23 @@
 { pkgs, pkgs-unstable }:
 let
-  # Package groups
-  coreTools = with pkgs; [
-    nushell stow neovim helix bat
-    ripgrep starship jq delta fzf
-  ];
-
-  devTools = with pkgs; [
-    nil nixd uv age ssh-to-age bitwarden-cli
+  # 
+  # required for dotfiles
+  tools = with pkgs; [
+    nushell 
+    stow 
+    neovim 
+    helix 
+    bat
+    ripgrep 
+    starship 
+    delta 
+    fzf
+    bitwarden-cli 
+    age 
+    ssh-to-age
+    nil 
+    nixd 
+    uv
   ];
 
   fonts = with pkgs; [
@@ -18,9 +28,11 @@ let
     zsh-syntax-highlighting zsh-autosuggestions
   ];
 
-  basePackages = coreTools ++ devTools ++ fonts ++ zshPlugins;
+  guiApplications = with pkgs; [
+    ### gui applications (require allowUnfree = true)
+    # raycast  zed-editor  vscode
+  ];
+
+  basePackages = tools ++ fonts ++ zshPlugins ++ guiApplications;
 in
-basePackages ++ [
-  # gui applications (require allowUnfree = true)
-  # raycast  zed-editor  vscode
-]
+basePackages
