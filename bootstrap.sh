@@ -15,6 +15,7 @@ else
   echo "✓ Dotfiles repo already exists – skipping clone."
 fi
 
+echo
 read -p "Link dot-files with stow? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -24,9 +25,11 @@ else
   echo "✓ Skipping stow linking."
 fi
 
+echo
 echo "→ Rebuilding bat cache…"
 bat cache --build
 
+echo
 read -p "Install TX-02 fonts? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -47,7 +50,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     case "$BW_STATUS" in
     "unauthenticated")
       echo "  Bitwarden CLI is not logged in."
-      read -p "  Enter your Bitwarden email: " BW_EMAIL
+      read -r -p "  Enter your Bitwarden email: " BW_EMAIL
       echo "  Logging in to Bitwarden..."
       if bw login "$BW_EMAIL"; then
         echo "  Login successful. Now unlocking vault..."
@@ -120,6 +123,7 @@ else
   echo "✓ Skipping TX-02 font installation."
 fi
 
+echo
 read -p "Set Git global defaults? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -140,6 +144,7 @@ else
   echo "✓ Skipping Git configuration."
 fi
 
+echo
 read -p "Open a new (nu) shell? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
