@@ -15,7 +15,7 @@ final: prev: {
       rm -r bitwarden_license
     '';
 
-    nodejs = prev.nodejs_20;
+    nodejs = prev.nodejs_22;
 
     npmDepsHash = "sha256-NnkT+NO3zUI71w9dSinnPeJbOlWBA4IHAxnMlYUmOT4=";
 
