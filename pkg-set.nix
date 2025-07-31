@@ -7,7 +7,7 @@ let
   ];
 
   devTools = with pkgs; [
-    nil nixd uv age ssh-to-age
+    nil nixd uv age ssh-to-age bitwarden-cli
   ];
 
   zshPlugins = with pkgs; [
