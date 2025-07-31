@@ -25,12 +25,15 @@ let
   ];
 
   zshPlugins = with pkgs; [
-    zsh-syntax-highlighting zsh-autosuggestions
+    zsh-syntax-highlighting 
+    zsh-autosuggestions
   ];
 
   guiApplications = with pkgs; [
     ### gui applications (require allowUnfree = true)
-    # raycast  zed-editor  vscode
+    # raycast  
+    # zed-editor  
+    # vscode
   ];
 
   basePackages = tools ++ fonts ++ zshPlugins ++ guiApplications;
