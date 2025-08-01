@@ -1,5 +1,6 @@
 self: super:
 {
+  # Temporary use my fork until nushell merges the reedline fix
   nushell = super.rustPlatform.buildRustPackage rec {
     pname = "nushell";
     version = "0.106.1";

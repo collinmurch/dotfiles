@@ -12,7 +12,7 @@ let
     starship 
     delta 
     fzf
-    bitwarden-cli 
+    # bitwarden-cli 
     age 
     ssh-to-age
     nil 
