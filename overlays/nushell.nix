@@ -1,18 +1,21 @@
 self: super:
 {
-  nushell = super.nushell.overrideAttrs (oldAttrs: {
-    cargoPatches = (oldAttrs.cargoPatches or []) ++ [
-      (super.writeText "reedline-fork.patch" ''
-        --- a/Cargo.toml
-        +++ b/Cargo.toml
-        @@ -280,0 +280,3 @@ nu-ansi-term = {git = "https://github.com/nushell/nu-ansi-term.git", branch = "
-         # Run all benchmarks with `cargo bench`
-         # Run individual benchmarks like `cargo bench -- <regex>` e.g. `cargo bench -- parse`
-         [[bench]]
-        +
-        +[patch."https://github.com/nushell/reedline"]
-        +reedline = { git = "https://github.com/collinmurch/reedline", branch = "main" }
-      '')
-    ];
-  });
+  nushell = super.rustPlatform.buildRustPackage rec {
+    pname = "nushell";
+    version = "0.106.1";
+
+    src = super.fetchFromGitHub {
+      owner = "collinmurch";
+      repo = "nushell";
+      rev = "main";
+      hash = "sha256-Myj5sAPQJk7HvmtDx52G9iz354IXA95YqfJ/ccaFvSk=";
+    };
+
+    cargoHash = "sha256-id3Y463zOzKLmmV6Ww4YVA2LIz2hJ7JzHGkAm98HyAE=";
+
+    nativeBuildInputs = with super; [ pkg-config ];
+
+    cargoBuildFlags = [ "--features=default" ];
+    doCheck = false;
+  };
 }
