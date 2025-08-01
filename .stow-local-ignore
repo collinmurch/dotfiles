@@ -6,6 +6,7 @@
 \.git
 \.gitignore
 \.gitmodules
+^fonts$
 
 # custom environments
 ^Library/Application Support/nushell/local\.nu$
@@ -16,7 +17,6 @@
 (^|/)\.zed(/|$)
 
 # nix
-^flake\.nix$
+.*\.nix
 ^flake\.lock$
 ^overlays$
-^pkg-set\.nix$
