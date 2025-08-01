@@ -32,11 +32,7 @@
     "metrics": false
   },
   "agent": {
-    "dock": "left",
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4-thinking-latest"
-    }
+    "enabled": false
   },
   "inlay_hints": {
     "enabled": false
