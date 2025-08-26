@@ -18,6 +18,7 @@ let
     nil 
     nixd 
     uv
+    imagemagick
   ];
 
   fonts = with pkgs; [
