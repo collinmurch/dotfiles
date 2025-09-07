@@ -32,7 +32,9 @@
     "metrics": false
   },
   "agent": {
-    "enabled": false
+    "always_allow_tool_actions": true,
+    "enabled": true,
+    "dock": "left"
   },
   "inlay_hints": {
     "enabled": false
@@ -66,7 +68,6 @@
     "file_icons": true,
     "git_status": true
   },
-
   "languages": {
     "YAML": {
       "language_servers": []
