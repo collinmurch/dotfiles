@@ -29,7 +29,8 @@ $env.PATH = ($env.PATH | append [
   "/nix/var/nix/profiles/default/bin",
   "/opt/homebrew/bin", # Eventually we'll get rid of this in favor of pure nix
   $"($env.HOME)/Developer/scripts",
-  $"($env.GOPATH)/bin"
+  $"($env.GOPATH)/bin",
+  $"($env.HOME)/.cache/lm-studio/bin",
 ])
 
 $env.GOROOT = $"(do { ^brew --prefix go } | str trim)/libexec"
