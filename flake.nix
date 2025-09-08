@@ -5,16 +5,14 @@
     nixpkgs.url     = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
-    helix.url       = "github:helix-editor/helix/master";
-    helix.inputs.nixpkgs.follows = "nixpkgs";
     agenix.url      = "github:ryantm/agenix";
     agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {self, nixpkgs, nixpkgs-unstable, flake-utils, helix, agenix }:
+  outputs = {self, nixpkgs, nixpkgs-unstable, flake-utils, agenix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        externalFlakes = { inherit helix agenix; };
+        externalFlakes = { inherit agenix; };
         pkgs = import nixpkgs {
           inherit system;
           overlays = import ./overlays externalFlakes;
