@@ -1,23 +1,24 @@
 { pkgs, pkgs-unstable }:
 let
-  # 
+  #
   # required for dotfiles
   tools = with pkgs; [
-    nushell 
-    stow 
-    neovim 
-    helix 
+    nushell
+    stow
+    neovim
+    helix
     bat
-    ripgrep 
-    starship 
-    delta 
+    ripgrep
+    starship
+    delta
     fzf
-    # bitwarden-cli 
-    age 
+    # bitwarden-cli
+    age
     ssh-to-age
-    nil 
-    nixd 
+    nil
+    nixd
     uv
+    bun
     imagemagick
   ];
 
@@ -26,14 +27,14 @@ let
   ];
 
   zshPlugins = with pkgs; [
-    zsh-syntax-highlighting 
+    zsh-syntax-highlighting
     zsh-autosuggestions
   ];
 
   guiApplications = with pkgs; [
     ### gui applications (require allowUnfree = true)
-    # raycast  
-    # zed-editor  
+    # raycast
+    # zed-editor
     # vscode
   ];
 
