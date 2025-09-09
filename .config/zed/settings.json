@@ -6,6 +6,7 @@
   "buffer_font_fallbacks": ["JetBrains Mono"],
   "theme": "Poimandres (custom)",
   "vim_mode": true,
+  "use_system_window_tabs": true,
   "vim": {
     "use_system_clipboard": "on_yank"
   },
