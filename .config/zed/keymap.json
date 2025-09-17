@@ -1,8 +1,9 @@
 [
   {
     "bindings": {
-      "cmd-shift-c": "project_panel::ToggleFocus",
-      "alt-cmd-b": "workspace::ToggleLeftDock"
+      "cmd-shift-e": "project_panel::ToggleFocus",
+      "alt-cmd-b": "workspace::ToggleLeftDock",
+      "cmd-shift-c": null
     }
   }
 ]
