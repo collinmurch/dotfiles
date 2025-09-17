@@ -26,7 +26,7 @@ let poimandres = {
 
 $env.config = {
     show_banner: false
-    buffer_editor: "nvim"
+    buffer_editor: "hx"
     highlight_resolved_externals: true
     color_config: {
         separator: $poimandres.border

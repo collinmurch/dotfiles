@@ -128,7 +128,7 @@ read -p "Set Git global defaults? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "→ Setting Git defaults…"
-  git config --global core.editor nvim 2>/dev/null || true
+  git config --global core.editor hx 2>/dev/null || true
   git config --global pull.rebase true 2>/dev/null || true
   git config --global push.autoSetupRemote true 2>/dev/null || true
   git config --global include.path ~/.config/delta-themes.gitconfig 2>/dev/null || true
