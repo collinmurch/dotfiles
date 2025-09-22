@@ -33,8 +33,7 @@ let
 
   guiApplications = with pkgs; [
     ### gui applications (require allowUnfree = true)
-    # raycast
-    # zed-editor
+   # zed-editor
     # vscode
   ];
 
