@@ -40,11 +40,7 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 
 ### Scripts
 
-All the scripts I use with Raycast and as CLI utilities can be found at: [scripts](https://github.com/collinmurch/scripts).
-
-### Raycast
-
-Export settings under **Advanced** from previous machine and then import them under the same tab.
+All the scripts I use with spotlight and as CLI utilities can be found at: [scripts](https://github.com/collinmurch/scripts).
 
 ### Orion
 
