@@ -76,8 +76,8 @@ defaults write com.apple.dock autohide -bool true
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-# Helix as the default Git editor
-git config --global core.editor "hx"
+# NeoVim as the default Git editor
+git config --global core.editor "nvim"
 
 # Git global ignore
 git config --global core.excludesfile ~/.gitignore
