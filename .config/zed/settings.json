@@ -22,7 +22,6 @@
     }
   },
   "auto_install_extensions": {
-    "ruff": true,
     "oxlint": true
   },
   "features": {
@@ -52,9 +51,6 @@
   },
   "notification_panel": {
     "button": false
-  },
-  "chat_panel": {
-    "button": "never"
   },
   "outline_panel": {
     "button": false
