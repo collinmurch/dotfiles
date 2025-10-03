@@ -20,6 +20,7 @@ let
     uv
     bun
     imagemagick
+    emacsPackages.pbcopy
   ];
 
   fonts = with pkgs; [
