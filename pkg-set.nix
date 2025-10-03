@@ -34,8 +34,8 @@ let
 
   guiApplications = with pkgs; [
     ### gui applications (require allowUnfree = true)
-   # zed-editor
-    # vscode
+    # zed-editor
+    # raycast
   ];
 
   basePackages = tools ++ fonts ++ zshPlugins ++ guiApplications;
