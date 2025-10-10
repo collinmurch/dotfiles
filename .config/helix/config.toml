@@ -7,7 +7,7 @@ insert = "bar"
 completion-timeout = 5
 
 [editor.file-picker]
-hidden = false
+hidden = true
 
 [keys.normal]
 # Assumes git-link.py from collinmurch/scripts is available in $env.PATH
