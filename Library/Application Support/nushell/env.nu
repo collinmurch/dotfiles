@@ -25,20 +25,29 @@ load-env {
 
 $env.PATH = ($env.PATH | append [
   "/usr/local/bin",
- $"($env.HOME)/.nix-profile/bin",
   "/nix/var/nix/profiles/default/bin",
   "/opt/homebrew/bin", # Eventually we'll get rid of this in favor of pure nix
+
+  $"($env.HOME)/.nix-profile/bin",
   $"($env.HOME)/Developer/scripts",
-  $"($env.GOPATH)/bin",
   $"($env.HOME)/.cache/lm-studio/bin",
+
+  $"($env.GOPATH)/bin",
 ])
 
-$env.GOROOT = $"(do { ^brew --prefix go } | str trim)/libexec"
+# explicitely set go dirs so we can control sandbox access w/ agents
+load-env {
+    "GOCACHE": $"($env.HOME)/Library/Caches/go-build"
+    "GOTMPDIR": $"($env.HOME)/Library/Caches/go-tmp"
+    "GOMODCACHE": $"($env.GOPATH)/pkg/mod"
+    "GOROOT": $"(do { ^brew --prefix go } | str trim)/libexec"
+}
 
 const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
 } else { null }
 source $local_config
+
 
 # run codex with access to web search, gloabl caches, etc.
 export def codex [...args] {
