@@ -11,10 +11,10 @@ in {
       owner = "collinmurch";
       repo = "nushell";
       rev = "main";
-      hash = "sha256-mWpy2mb8CEFySzSiiWFIRSw2zSaLPpIswj3zlJ0Q+bA=";
+      hash = "sha256-4N0PrMmlbQxFUlpOpTjmI/28bNAy8Y/OewOEf5IIcZc=";
     };
 
-    cargoHash = "sha256-Y02KmdZk6u/UVA+/SwcYr56ugU5liqnVdQk6mLB/lck=";
+    cargoHash = "sha256-yFWUcuaz+kY+kaOy3xub1riQjDiSPykgmjlTdBJGGD4=";
 
     nativeBuildInputs = with prev; [ pkg-config ];
 
