@@ -26,7 +26,7 @@ load-env {
 $env.PATH = ($env.PATH | append [
   "/usr/local/bin",
   "/nix/var/nix/profiles/default/bin",
-  "/opt/homebrew/bin", # Eventually we'll get rid of this in favor of pure nix
+  "/opt/homebrew/bin", # eventually we'll get rid of this in favor of pure nix
 
   $"($env.HOME)/.nix-profile/bin",
   $"($env.HOME)/Developer/scripts",
@@ -35,15 +35,13 @@ $env.PATH = ($env.PATH | append [
   $"($env.GOPATH)/bin",
 ])
 
-# explicitely set go dirs so we can control sandbox access w/ agents
+# explicitely set cache dirs so we can control sandbox access with agents
 load-env {
     "GOCACHE": $"($env.HOME)/Library/Caches/go-build"
     "GOTMPDIR": $"($env.HOME)/Library/Caches/go-tmp"
     "GOMODCACHE": $"($env.GOPATH)/pkg/mod"
     "GOROOT": $"(do { ^brew --prefix go } | str trim)/libexec"
-
     "NPMCACHE": $"($env.HOME)/.npm"
-
     "UV_CACHE_DIR": $"($env.HOME)/.cache/uv"
 }
 

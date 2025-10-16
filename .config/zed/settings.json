@@ -71,35 +71,53 @@
     },
     "Python": {
       "language_servers": ["ruff", "ty"],
-      "formatter": "language_server",
-      "code_actions_on_format": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": true
-      }
+      "formatter": [
+        "language_server",
+        {
+          "code_action": "source.organizeImports.ruff"
+        },
+        {
+          "code_action": "source.fixAll.ruff"
+        }
+      ]
     },
     "JavaScript": {
       "language_servers": ["oxlint", "vtsls", "prettier"],
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "formatter": [
+        "language_server",
+        {
+          "code_action": "source.fixAll.oxc"
+        }
+      ]
     },
     "TypeScript": {
       "language_servers": ["oxlint", "vtsls", "prettier"],
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "formatter": [
+        "language_server",
+        {
+          "code_action": "source.fixAll.oxc"
+        }
+      ]
     },
     "TSX": {
       "language_servers": ["oxlint", "vtsls", "prettier"],
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "formatter": [
+        "language_server",
+        {
+          "code_action": "source.fixAll.oxc"
+        }
+      ]
     },
     "Go": {
-      "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll": true
-      }
+      "formatter": [
+        "language_server",
+        {
+          "code_action": "source.organizeImports"
+        },
+        {
+          "code_action": "source.fixAll"
+        }
+      ]
     }
   },
   "lsp": {
