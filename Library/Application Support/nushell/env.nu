@@ -41,21 +41,13 @@ load-env {
     "GOTMPDIR": $"($env.HOME)/Library/Caches/go-tmp"
     "GOMODCACHE": $"($env.GOPATH)/pkg/mod"
     "GOROOT": $"(do { ^brew --prefix go } | str trim)/libexec"
+
+    "NPMCACHE": $"($env.HOME)/.npm"
+
+    "UV_CACHE_DIR": $"($env.HOME)/.cache/uv"
 }
 
 const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
 } else { null }
 source $local_config
-
-
-# run codex with access to web search, gloabl caches, etc.
-export def codex [...args] {
-  let writeable_roots = ([
-      ($env.GOCACHE | path expand)
-      ($env.GOMODCACHE | path expand)
-      ($env.GOTMPDIR | path expand)
-    ] | to json -r)
-
-  ^codex --search --model=gpt-5-codex -c model_reasoning_effort="high" --sandbox workspace-write -c sandbox_workspace_write.network_access=true -c $'sandbox_workspace_write.writable_roots=($writeable_roots)' ...$args
-}

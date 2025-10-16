@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable }:
+{ pkgs, ... }:
 let
   #
   # required for dotfiles
@@ -17,8 +17,6 @@ let
     ssh-to-age
     nil
     nixd
-    uv
-    bun
     imagemagick
     emacsPackages.pbcopy
   ];
@@ -32,12 +30,6 @@ let
     zsh-autosuggestions
   ];
 
-  guiApplications = with pkgs; [
-    ### gui applications (require allowUnfree = true)
-    # zed-editor
-    # raycast
-  ];
-
-  basePackages = tools ++ fonts ++ zshPlugins ++ guiApplications;
+  basePackages = tools ++ fonts ++ zshPlugins;
 in
 basePackages
