@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  #
+
   # required for dotfiles
   tools = with pkgs; [
     nushell
@@ -12,7 +12,7 @@ let
     starship
     delta
     fzf
-    # bitwarden-cli
+    bitwarden-cli
     age
     ssh-to-age
     nil
