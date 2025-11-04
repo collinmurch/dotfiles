@@ -1,5 +1,6 @@
 {
-  "ui_font_size": 16,
+  "ui_font_size": 14,
+  "ui_font_family": "TX-02",
   "ui_font_fallbacks": ["JetBrains Mono"],
   "buffer_font_size": 14,
   "buffer_font_family": "TX-02",
