@@ -67,7 +67,7 @@
   },
   "languages": {
     "YAML": {
-      "language_servers": []
+      "language_servers": ["yaml-language-server", "!docker-compose"]
     },
     "Python": {
       "language_servers": ["ruff", "ty"],
@@ -75,38 +75,29 @@
         "language_server",
         {
           "code_action": "source.organizeImports.ruff"
-        },
-        {
-          "code_action": "source.fixAll.ruff"
         }
       ]
     },
     "JavaScript": {
-      "language_servers": ["oxlint", "vtsls", "prettier"],
-      "formatter": [
-        "language_server",
-        {
-          "code_action": "source.fixAll.oxc"
-        }
-      ]
+      "language_servers": ["oxlint", "vtsls"],
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
     },
     "TypeScript": {
-      "language_servers": ["oxlint", "vtsls", "prettier"],
-      "formatter": [
-        "language_server",
-        {
-          "code_action": "source.fixAll.oxc"
-        }
-      ]
+      "language_servers": ["oxlint", "vtsls"],
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
     },
     "TSX": {
-      "language_servers": ["oxlint", "vtsls", "prettier"],
-      "formatter": [
-        "language_server",
-        {
-          "code_action": "source.fixAll.oxc"
-        }
-      ]
+      "language_servers": ["oxlint", "vtsls"],
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
     },
     "Go": {
       "formatter": [
@@ -121,6 +112,13 @@
     }
   },
   "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": ["!reference sequence"]
+        }
+      }
+    },
     "gopls": {
       "initialization_options": {
         "gofumpt": true,
