@@ -219,7 +219,7 @@
             "font_weight": null
           },
           "keyword.conditional": {
-            "color": "#5DE4c7",
+            "color": "#a6accd",
             "font_style": null,
             "font_weight": null
           },
@@ -509,7 +509,7 @@
             "font_weight": null
           },
           "keyword.control": {
-            "color": "#5DE4c7",
+            "color": "#a6accd",
             "font_style": null,
             "font_weight": null
           },
@@ -529,7 +529,7 @@
             "font_weight": null
           },
           "keyword.control.flow": {
-            "color": "#5DE4c7",
+            "color": "#a6accd",
             "font_style": null,
             "font_weight": null
           },
