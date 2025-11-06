@@ -79,6 +79,13 @@
         }
       ]
     },
+    "Svelte": {
+      "language_servers": ["oxlint", "svelte-language-server"],
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.fixAll.oxc": true
+      }
+    },
     "JavaScript": {
       "language_servers": ["oxlint", "vtsls"],
       "formatter": "prettier",
