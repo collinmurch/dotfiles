@@ -57,7 +57,7 @@ export def codex [...args] {
       ($env.UV_CACHE_DIR | path expand)
     ] | to json -r)
 
-  ^codex --model=gpt-5-codex -c model_reasoning_effort="high" --enable web_search_request --sandbox workspace-write -c sandbox_workspace_write.network_access=true -c $'sandbox_workspace_write.writable_roots=($writeable_roots)' ...$args
+  ^codex --model=gpt-5.1-codex -c model_reasoning_effort="high" --enable web_search_request --sandbox workspace-write -c sandbox_workspace_write.network_access=true -c $'sandbox_workspace_write.writable_roots=($writeable_roots)' ...$args
 }
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
