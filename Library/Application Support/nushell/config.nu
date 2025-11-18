@@ -47,18 +47,17 @@ $env.config = {
     }
 }
 
-# run codex with access to web search, gloabl caches, etc.
-export def codex [...args] {
-  let writeable_roots = ([
-      ($env.GOCACHE | path expand)
-      ($env.GOMODCACHE | path expand)
-      ($env.GOTMPDIR | path expand)
-      ($env.NPMCACHE | path expand)
-      ($env.UV_CACHE_DIR | path expand)
-    ] | to json -r)
-
-  ^codex --model=gpt-5.1-codex -c model_reasoning_effort="high" --enable web_search_request --sandbox workspace-write -c sandbox_workspace_write.network_access=true -c $'sandbox_workspace_write.writable_roots=($writeable_roots)' ...$args
-}
-
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+
+# Load per-machine overrides first
+const local_config_path = if ($"($nu.default-config-dir)/local.nu" | path exists) {
+    $"($nu.default-config-dir)/local.nu"
+} else {
+    null
+}
+if $local_config_path != null {
+    source $local_config_path
+}
+
+source $"($nu.default-config-dir)/codex.nu"

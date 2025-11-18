@@ -19,8 +19,6 @@ load-env {
         "st=38;2;255;250;194",    # sticky directory
         "ca=38;2;255;250;194"     # file with capability
     ] | str join ":")'
-
-    "ENABLE_BACKGROUND_TASKS": true # for claude code
 }
 
 $env.PATH = ($env.PATH | append [
@@ -34,16 +32,6 @@ $env.PATH = ($env.PATH | append [
 
   $"($env.GOPATH)/bin",
 ])
-
-# explicitely set cache dirs so we can control sandbox access with agents
-load-env {
-    "GOCACHE": $"($env.HOME)/Library/Caches/go-build"
-    "GOTMPDIR": $"($env.HOME)/Library/Caches/go-tmp"
-    "GOMODCACHE": $"($env.GOPATH)/pkg/mod"
-    "GOROOT": $"(do { ^brew --prefix go } | str trim)/libexec"
-    "NPMCACHE": $"($env.HOME)/.npm"
-    "UV_CACHE_DIR": $"($env.HOME)/.cache/uv"
-}
 
 const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
