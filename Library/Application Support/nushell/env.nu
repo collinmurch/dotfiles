@@ -29,6 +29,7 @@ $env.PATH = ($env.PATH | append [
   $"($env.HOME)/.nix-profile/bin",
   $"($env.HOME)/Developer/scripts",
   $"($env.HOME)/.cache/lm-studio/bin",
+  $"($env.HOME)/.local/bin",
 
   $"($env.GOPATH)/bin",
 ])
