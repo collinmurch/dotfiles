@@ -8,6 +8,7 @@
   "theme": "Poimandres (custom)",
   "helix_mode": true,
   "use_system_window_tabs": true,
+  "colorize_brackets": true,
   "vim": {
     "use_system_clipboard": "on_yank"
   },
@@ -23,7 +24,8 @@
     }
   },
   "auto_install_extensions": {
-    "oxlint": true
+    "oxlint": true,
+    "svelte": true
   },
   "features": {
     "edit_prediction_provider": "none"
