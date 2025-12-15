@@ -3,7 +3,6 @@
 
 # editor
 .zed/
-.claude/
 
 # custom environments
 /Library/Application Support/nushell/local.nu
