@@ -3,6 +3,7 @@
 
 # editor
 .zed/
+settings.local.json
 
 # custom environments
 /Library/Application Support/nushell/local.nu
