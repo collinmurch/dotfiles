@@ -1,5 +1,5 @@
 # general
-(^|/)\.DS_Store$
+\.DS_Store$
 .*\.sh
 .*\.md
 .*\.txt
@@ -13,8 +13,8 @@
 ^\.zprofile$
 
 # editor
-(^|/)\.zed(/|$)
-(^|/)\.settings\.local\.json$
+\.zed$
+\.settings\.local\.json$
 
 # nix
 .*\.nix

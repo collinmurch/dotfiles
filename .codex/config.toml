@@ -1,0 +1,8 @@
+model_reasoning_effort = "high"
+sandbox_mode = "workspace-write"
+
+[features]
+web_search_request = true
+
+[sandbox_workspace_write]
+network_access = true
