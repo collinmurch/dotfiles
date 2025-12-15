@@ -14,5 +14,9 @@
   "attribution": {
     "commit": "",
     "pr": ""
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); dir=$(echo \"$input\" | jq -r '.workspace.current_dir'); branch=$(cd \"$dir\" 2>/dev/null && git rev-parse --abbrev-ref HEAD 2>/dev/null); model=$(echo \"$input\" | jq -r '.model.id'); tin=$(echo \"$input\" | jq -r '.context_window.total_input_tokens'); tout=$(echo \"$input\" | jq -r '.context_window.total_output_tokens'); csize=$(echo \"$input\" | jq -r '.context_window.context_window_size'); ttok=$((tin + tout)); pct=$((csize > 0 ? ttok * 100 / csize : 0)); fmt_tok() { local t=$1; if [ $t -ge 1000000 ]; then echo \"$((t/1000000)).$((t%1000000/100000))M\"; elif [ $t -ge 1000 ]; then echo \"$((t/1000))k\"; else echo \"$t\"; fi; }; calc_cost() { case \"$1\" in *opus-4*) ic=15.00; oc=75.00;; *sonnet-4*|*sonnet-3-5*|*sonnet-3.5*) ic=3.00; oc=15.00;; *haiku-3-5*|*haiku-3.5*) ic=1.00; oc=5.00;; *) echo \"\"; return;; esac; c=$(echo \"scale=4; ($2*$ic+$3*$oc)/1000000\" | bc); if [ $(echo \"$c<0.01\" | bc) -eq 1 ]; then printf \"\\$%.4f\" \"$c\"; else printf \"\\$%.2f\" \"$c\"; fi; }; printf \"%s\" \"$(basename \"$dir\")\"; [ -n \"$branch\" ] && printf \" [%s]\" \"$branch\"; printf \" | %d%% %s/%s\" \"$pct\" \"$(fmt_tok $ttok)\" \"$(fmt_tok $csize)\"; cost=$(calc_cost \"$model\" \"$tin\" \"$tout\"); [ -n \"$cost\" ] && printf \" | %s\" \"$cost\""
   }
 }
