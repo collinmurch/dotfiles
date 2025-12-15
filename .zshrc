@@ -38,8 +38,3 @@ fi
 if [ -e /nix/var/nix/profiles/default/etc/profile.d/nix.sh ]; then
   . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
 fi
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/collinmurch/.cache/lm-studio/bin"
-# End of LM Studio CLI section
-
