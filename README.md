@@ -34,7 +34,7 @@ This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally
 If either of these files are present, they will be sourced for the respective shell (not tracked by git):
 
 - **Zsh:** `~/.zprofile`
-- **Nushell:** `$nu.default-config-dir/local.nu`
+- **Nushell:** `$nu.default-config-dir/local.nu` ([overlay](https://www.nushell.sh/book/overlays.html))
 
 ### MacOS System Settings
 
