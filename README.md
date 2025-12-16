@@ -17,7 +17,9 @@ echo 'experimental-features = nix-command flakes' >> ~/.config/nix/nix.conf
 
 ```bash
 nix profile add github:collinmurch/dotfiles#pkg-set
-nix run github:collinmurch/dotfiles#bootstrap # expect stow conflicts on first run
+
+# expect stow conflicts on first run
+nix run github:collinmurch/dotfiles#bootstrap 
 ```
 
 ### Fonts
@@ -45,10 +47,3 @@ All the scripts I use with Raycast and as CLI utilities can be found at: [script
 ### Raycast
 
 Export settings under **Advanced** from previous machine and then import them under the same tab.
-
-### Orion
-
-Sometimes keybindings conflict with extensions, for example Bitwarden conflicting with "Search With DuckDuckGo":
-
-- Open **System Preferences**: **Keyboards** --> **Keyboard Shortcuts** --> **App Shortcuts**
-- Override “Search With DuckDuckGo" to a new keybinding for Orion
