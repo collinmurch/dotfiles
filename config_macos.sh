@@ -83,4 +83,4 @@ git config --global core.editor "hx"
 git config --global core.excludesfile ~/.gitignore
 
 # Quiet ZSH down
-touch .hushlogin
+touch ~/.hushlogin
