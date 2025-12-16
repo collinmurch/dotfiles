@@ -1,6 +1,8 @@
 model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
 
+cursor-style-blink = true
+
 [features]
 web_search_request = true
 
