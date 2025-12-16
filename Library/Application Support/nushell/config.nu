@@ -36,8 +36,6 @@ $env.config = {
     }
     cursor_shape: {
       emacs: "blink_line"
-      vi_insert: "blink_line"
-      vi_normal: "blink_block"
     }
     history: {
         max_size: 10000
