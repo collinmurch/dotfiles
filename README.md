@@ -31,7 +31,7 @@ This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally
 
 ### Custom Environments
 
-If either of these files are present, they will be sourced for the respective shell (not comitted):
+If either of these files are present, they will be sourced for the respective shell (not tracked by git):
 
 - **Zsh:** `~/.zprofile`
 - **Nushell:** `$nu.default-config-dir/local.nu`
@@ -40,10 +40,14 @@ If either of these files are present, they will be sourced for the respective sh
 
 A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running. I'll probably migrate this to [nix-darwin](https://github.com/nix-darwin/nix-darwin) at some point.
 
-### Scripts
-
-All the scripts I use with Raycast and as CLI utilities can be found at: [scripts](https://github.com/collinmurch/scripts).
-
 ### Raycast
 
-Export settings under **Advanced** from previous machine and then import them under the same tab.
+1. Export settings under **Advanced** from previous machine
+2. Import them under the same tab on a new machine
+3. Check to make sure scripts are loaded from `~/Developer/scripts`
+- Since we stow with `--no-folding` you should be able to add scripts as you please without messing with the git state
+
+### NeoVim
+
+- `~/.config/nvim/lua/local.lua` will be sourced if it is present (not tracked by git)
+- Since we stow with `--no-folding` you should be able to add plugins/config as you please without messing with the git state

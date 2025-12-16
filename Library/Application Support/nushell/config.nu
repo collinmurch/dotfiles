@@ -48,7 +48,7 @@ $env.config = {
 mkdir ($nu.data-dir | path join "vendor/autoload")
 starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
-# Load per-machine overrides first
+# Load per-machine overrides
 const local_config_path = if ($"($nu.default-config-dir)/local.nu" | path exists) {
     $"($nu.default-config-dir)/local.nu"
 } else {

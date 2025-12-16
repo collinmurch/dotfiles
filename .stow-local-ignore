@@ -1,23 +1,37 @@
-# general
-\.DS_Store$
-.*\.md
-.*\.txt
-\.git$
-\.gitignore$
-\.gitmodules$
-^fonts$
-result$
-config_macos\.sh$
+# VCS metadata (top-level or submodules)
+(^|/)\.git(/|$)
+(^|/)\.gitmodules$
+(^|/)\.gitignore$
+(^|/)\.gitkeep$
 
-# custom environments
+# OS cruft / transient build outputs
+(^|/)\.DS_Store$
+(^|/)result$
+(^|/)\.direnv(/|$)
+(^|/)\.cache(/|$)
+.*~$
+.*\.log$
+
+# Docs that shouldn't be linked into $HOME
+.*\.md$
+.*\.txt$
+
+# Custom environments
 ^Library/Application Support/nushell/local\.nu$
 ^\.zprofile$
 
-# editor
-\.zed$
-\.settings\.local\.json$
+# Editor-specific noise
+^\.zed(/|$)
+^\.settings\.local\.json$
 
-# nix
+# Nix repo files not meant for stowing
 .*\.nix
 ^flake\.lock$
-^overlays$
+^overlays(/|$)
+
+# Local assets kept in-repo only
+^fonts(/|$)
+
+# Project-specific scripts we keep unstowed
+^config_macos\.sh$
+^bootstrap\.sh$
