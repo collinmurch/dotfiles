@@ -1,4 +1,4 @@
-# Rules 
+# Rules
 
 ## Project
 - No emojis in logs, comments, commit messages, or code unless explicitly requested.
