@@ -1,13 +1,13 @@
 # general
 \.DS_Store$
-.*\.sh
 .*\.md
 .*\.txt
-\.git
-\.gitignore
-\.gitmodules
+\.git$
+\.gitignore$
+\.gitmodules$
 ^fonts$
 result$
+config_macos\.sh$
 
 # custom environments
 ^Library/Application Support/nushell/local\.nu$
