@@ -1,4 +1,10 @@
 [
+  // Unbind collab panel
+  {
+    "bindings": {
+      "cmd-shift-c": null
+    }
+  },
   {
     "context": "Workspace",
     "bindings": {
@@ -6,9 +12,7 @@
       "cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-shift-d": "debug_panel::ToggleFocus",
       "cmd-shift-t": "terminal_panel::ToggleFocus",
-
-      "alt-cmd-b": "workspace::ToggleLeftDock",
-      "cmd-shift-c": null
+      "alt-cmd-b": "workspace::ToggleLeftDock"
     }
   },
 
