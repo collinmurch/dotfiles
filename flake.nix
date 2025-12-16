@@ -18,14 +18,12 @@
           overlays = import ./overlays externalFlakes;
           config = {
             allowUnfree  = true;
-            allowBroken  = true;
           };
         };
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config = {
             allowUnfree  = true;
-            allowBroken  = true;
           };
         };
         wanted  = import ./pkg-set.nix { inherit pkgs pkgs-unstable; } ++ [ agenix.packages.${system}.default ];
@@ -36,7 +34,15 @@
         };
         bootstrap = pkgs.writeShellApplication {
           name          = "collin-bootstrap";
-          runtimeInputs = [ pkgs.git pkgs.stow pkgs.bat ];
+          runtimeInputs = [
+            pkgs.git
+            pkgs.stow
+            pkgs.bat
+            pkgs.nushell
+            pkgs.bitwarden-cli
+            pkgs.age
+            pkgs.ssh-to-age
+          ];
           meta = {
             description = "Bootstrap dotfiles and configure system";
             mainProgram = "collin-bootstrap";
@@ -44,7 +50,8 @@
           text = builtins.readFile ./bootstrap.sh;
         };
       in {
-        packages.pkg-set = pkg-set; # nix profile install .#pkg-set
+        packages.pkg-set   = pkg-set; # nix profile install .#pkg-set
+        packages.bootstrap = bootstrap; # nix build .#bootstrap
         apps.bootstrap   = {
           type = "app";
           program = "${bootstrap}/bin/collin-bootstrap";

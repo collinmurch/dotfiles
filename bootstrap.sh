@@ -95,14 +95,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # Create temporary key file from Bitwarden
     TEMP_KEY=$(mktemp)
-    trap 'rm -f "$TEMP_KEY"' EXIT
 
     # Get SSH key from Bitwarden
     bw get item "GitHub Encryption Secret" | nu -c 'from json | get sshKey.privateKey' >"$TEMP_KEY"
 
     # Convert SSH private key to age format
     AGE_KEY_FILE=$(mktemp)
-    trap 'rm -f "$AGE_KEY_FILE"' EXIT
+
+    # Ensure all temp files are cleaned up
+    trap 'rm -f "$TEMP_KEY" "$AGE_KEY_FILE"' EXIT
     ssh-to-age -private-key -i "$TEMP_KEY" >"$AGE_KEY_FILE"
 
     # Decrypt fonts using age with converted key

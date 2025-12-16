@@ -37,4 +37,6 @@ $env.PATH = ($env.PATH | append [
 const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
 } else { null }
-source $local_config
+if $local_config != null {
+  source $local_config
+}
