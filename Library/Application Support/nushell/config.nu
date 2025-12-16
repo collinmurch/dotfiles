@@ -59,5 +59,3 @@ const local_config_path = if ($"($nu.default-config-dir)/local.nu" | path exists
 if $local_config_path != null {
     source $local_config_path
 }
-
-source $"($nu.default-config-dir)/codex.nu"
