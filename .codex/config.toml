@@ -5,6 +5,9 @@ cursor-style-blink = true
 
 [features]
 web_search_request = true
+apply_patch_freeform = true
+skills = true
+shell_snapshot = true
 
 [sandbox_workspace_write]
 network_access = true
