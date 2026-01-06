@@ -1,11 +1,11 @@
 # VCS metadata (top-level or submodules)
 (^|/)\.git(/|$)
-(^|/)\.gitmodules$
-(^|/)\.gitignore$
-(^|/)\.gitkeep$
+^\.gitmodules$
+^\.gitignore$
+^\.gitkeep$
 
 # OS cruft / transient build outputs
-(^|/)\.DS_Store$
+^\.DS_Store$
 (^|/)result$
 (^|/)\.direnv(/|$)
 (^|/)\.cache(/|$)
@@ -13,7 +13,7 @@
 .*\.log$
 
 # Docs that shouldn't be linked into $HOME
-.*\.md$
+^README\.md$
 .*\.txt$
 
 # Custom environments
