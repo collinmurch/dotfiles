@@ -2,7 +2,7 @@
   description = "Collin's dot-files & package bundle (Nix flakes + Stow)";
 
   inputs = {
-    nixpkgs.url     = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url     = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     agenix.url      = "github:ryantm/agenix";
@@ -38,7 +38,7 @@
             pkgs.git
             pkgs.stow
             pkgs.bat
-            pkgs.nushell
+            pkgs-unstable.nushell
             pkgs.bitwarden-cli
             pkgs.age
             pkgs.ssh-to-age

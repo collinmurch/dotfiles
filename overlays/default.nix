@@ -1,3 +1,1 @@
-externalFlakes: [
-  (import ./nushell.nix)
-]
+_externalFlakes: [ ]

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 let
 
   # required for dotfiles
   tools = with pkgs; [
-    nushell
+    pkgs-unstable.nushell
     stow
     neovim
     helix
