@@ -8,7 +8,7 @@
   },
   "permissions": {
     "defaultMode": "acceptEdits",
-    "allow": ["WebFetch", "WebSearch"],
+    "allow": ["WebFetch", "WebSearch", "LoadSkill(*)"],
     "deny": ["Read(./.env)", "Read(./.env.*)"]
   },
   "attribution": {
