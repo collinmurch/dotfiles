@@ -7,128 +7,214 @@
   "helix_mode": true,
   "use_system_window_tabs": true,
   "colorize_brackets": true,
+  "format_on_save": "on",
   "vim": {
-    "use_system_clipboard": "on_yank"
+    "use_system_clipboard": "on_yank",
   },
   "terminal": {
     "font_size": 14,
     "cursor_shape": "bar",
     "blinking": "on",
     "toolbar": {
-      "breadcrumbs": false
+      "breadcrumbs": false,
     },
     "shell": {
-      "program": "nu"
-    }
+      "program": "nu",
+    },
   },
   "auto_install_extensions": {
-    "oxlint": true,
-    "svelte": true
+    "oxc": true,
+    "svelte": true,
   },
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "none",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
   "agent": {
     "always_allow_tool_actions": true,
     "enabled": false,
-    "dock": "left"
+    "dock": "left",
   },
   "inlay_hints": {
-    "enabled": false
+    "enabled": false,
   },
   "toolbar": {
     "quick_actions": false,
-    "breadcrumbs": false
+    "breadcrumbs": false,
   },
   "git_panel": {
-    "dock": "right"
+    "dock": "right",
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "outline_panel": {
-    "button": false
+    "button": false,
   },
   "project_panel": {
     "dock": "right",
     "scrollbar": {
-      "show": "system"
-    }
+      "show": "system",
+    },
   },
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "languages": {
     "YAML": {
-      "language_servers": ["yaml-language-server", "!docker-compose"]
+      "format_on_save": "on",
+      "language_servers": ["yaml-language-server", "oxfmt"],
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
     },
     "CSS": {
-      "language_servers": ["tailwindcss-language-server"]
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
     },
     "Python": {
       "language_servers": ["ruff", "ty"],
       "formatter": [
         "language_server",
         {
-          "code_action": "source.organizeImports.ruff"
-        }
-      ]
+          "code_action": "source.organizeImports.ruff",
+        },
+      ],
     },
     "Svelte": {
-      "language_servers": ["oxlint", "svelte-language-server"],
+      "format_on_save": "on",
+      "language_servers": ["svelte-language-server"],
       "formatter": "prettier",
       "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+        "source.fixAll.oxc": true,
+      },
     },
     "JavaScript": {
-      "language_servers": ["oxlint", "vtsls"],
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "format_on_save": "on",
+      "language_servers": ["vtsls", "oxlint"],
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+        {
+          "code_action": "source.fixAll.oxc",
+        },
+      ],
+    },
+    "Markdown": {
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "GraphQL": {
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "JSON": {
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
+    },
+    "JSONC": {
+      "prettier": {
+        "allowed": false,
+      },
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+      ],
     },
     "TypeScript": {
-      "language_servers": ["oxlint", "vtsls"],
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "language_servers": ["vtsls", "oxlint", "oxfmt"],
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+        {
+          "code_action": "source.fixAll.oxc",
+        },
+      ],
     },
     "TSX": {
-      "language_servers": ["oxlint", "vtsls"],
-      "formatter": "prettier",
-      "code_actions_on_format": {
-        "source.fixAll.oxc": true
-      }
+      "language_servers": ["vtsls", "oxlint", "oxfmt"],
+      "formatter": [
+        {
+          "language_server": {
+            "name": "oxfmt",
+          },
+        },
+        {
+          "code_action": "source.fixAll.oxc",
+        },
+      ],
     },
     "Go": {
       "formatter": [
         "language_server",
         {
-          "code_action": "source.organizeImports"
+          "code_action": "source.organizeImports",
         },
         {
-          "code_action": "source.fixAll"
-        }
-      ]
-    }
+          "code_action": "source.fixAll",
+        },
+      ],
+    },
   },
   "lsp": {
     "yaml-language-server": {
       "settings": {
         "yaml": {
-          "customTags": ["!reference sequence"]
-        }
-      }
+          "customTags": ["!reference sequence"],
+        },
+      },
     },
     "gopls": {
       "initialization_options": {
@@ -136,9 +222,9 @@
         "buildFlags": ["-tags=integrationtest,integration,manual,wireinject"],
         "hints": {
           "constantValues": true,
-          "parameterNames": true
-        }
-      }
-    }
-  }
+          "parameterNames": true,
+        },
+      },
+    },
+  },
 }
