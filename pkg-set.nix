@@ -4,6 +4,7 @@ let
   # required for dotfiles
   tools = with pkgs; [
     pkgs-unstable.nushell
+    pkgs-unstable.oxlint
     stow
     neovim
     helix
