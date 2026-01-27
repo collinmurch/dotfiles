@@ -3,6 +3,8 @@ sandbox_mode = "workspace-write"
 
 cursor-style-blink = true
 
+suppress_unstable_features_warning = true
+
 [features]
 web_search_request = true
 apply_patch_freeform = true
