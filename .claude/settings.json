@@ -1,22 +1,34 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "awsAuthRefresh": "aws sso login --profile $AWS_PROFILE",
-  "alwaysThinkingEnabled": true,
-  "sandbox": {
-    "enabled": true,
-    "excludedCommands": ["docker"]
-  },
-  "permissions": {
-    "defaultMode": "acceptEdits",
-    "allow": ["WebFetch", "WebSearch", "Skill"],
-    "deny": ["Read(./.env)", "Read(./.env.*)"]
-  },
   "attribution": {
     "commit": "",
     "pr": ""
   },
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebSearch",
+      "Skill"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)"
+    ],
+    "defaultMode": "acceptEdits"
+  },
   "statusLine": {
     "type": "command",
     "command": "input=$(cat); read -r dir model tin tcachec tcacher csize total_cost <<EOF\n$(printf '%s' \"$input\" | jq -r '[.workspace.current_dir // \"\", .model.id // \"\", .context_window.current_usage.input_tokens // empty, .context_window.current_usage.cache_creation_input_tokens // 0, .context_window.current_usage.cache_read_input_tokens // 0, .context_window.context_window_size // 0, .cost.total_cost_usd // empty] | @tsv')\nEOF\nbranch=$(cd \"$dir\" 2>/dev/null && git rev-parse --abbrev-ref HEAD 2>/dev/null); usage_valid=1; if [ -z \"$tin\" ]; then usage_valid=0; tin=0; fi; ttok=$((tin + tcachec + tcacher)); if [ \"$usage_valid\" -eq 1 ] && [ \"$csize\" -gt 0 ]; then pct=$((ttok * 100 / csize)); fi; fmt_tok() { t=$1; if [ \"$t\" -ge 1000000 ]; then echo \"$((t/1000000)).$((t%1000000/100000))M\"; elif [ \"$t\" -ge 1000 ]; then echo \"$((t/1000))k\"; else echo \"$t\"; fi; }; printf \"%s\" \"$(basename \"$dir\")\"; [ -n \"$branch\" ] && printf \" [%s]\" \"$branch\"; if [ \"$usage_valid\" -eq 1 ] && [ \"$csize\" -gt 0 ]; then printf \" | %d%% %s/%s\" \"$pct\" \"$(fmt_tok $ttok)\" \"$(fmt_tok $csize)\"; else printf \" | n/a\"; fi; if [ -n \"$total_cost\" ]; then printf \" | \\$%.4f\" \"$total_cost\"; fi"
+  },
+  "sandbox": {
+    "enabled": true,
+    "excludedCommands": [
+      "docker"
+    ]
+  },
+  "alwaysThinkingEnabled": true,
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
   }
 }
