@@ -4,3 +4,6 @@
 [submodule "Developer/scripts"]
 	path = Developer/scripts
 	url = https://github.com/collinmurch/scripts
+[submodule "Developer/skills"]
+	path = Developer/skills
+	url = https://github.com/collinmurch/skills
