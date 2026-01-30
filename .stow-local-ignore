@@ -27,10 +27,10 @@
 # Nix repo files not meant for stowing
 .*\.nix
 ^flake\.lock$
-^overlays(/|$)
+^/overlays(/|$)
 
 # Local assets kept in-repo only
-^fonts(/|$)
+^/fonts(/|$)
 
 # Project-specific scripts we keep unstowed
 ^config_macos\.sh$

@@ -82,9 +82,6 @@ git config --global core.editor "hx"
 # Git global ignore
 git config --global core.excludesfile ~/.gitignore
 
-# Quiet ZSH down
-touch ~/.hushlogin
-
 # Stop some accessories from opening .dmg installers
 defaults delete com.apple.frameworks.diskimages auto-open-ro-root
 defaults delete com.apple.frameworks.diskimages auto-open-rw-root
