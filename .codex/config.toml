@@ -1,12 +1,12 @@
 model_reasoning_effort = "high"
 sandbox_mode = "workspace-write"
+web_search = "live"
 
 cursor-style-blink = true
 
 suppress_unstable_features_warning = true
 
 [features]
-web_search = true
 apply_patch_freeform = true
 skills = true
 shell_snapshot = true
