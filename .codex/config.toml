@@ -6,7 +6,7 @@ cursor-style-blink = true
 suppress_unstable_features_warning = true
 
 [features]
-web_search_request = true
+web_search = true
 apply_patch_freeform = true
 skills = true
 shell_snapshot = true
