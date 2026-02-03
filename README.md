@@ -45,9 +45,7 @@ A list of defaults & functionality explanations I prefer can be set with `/bin/z
 1. Export settings under **Advanced** from previous machine
 2. Import them under the same tab on a new machine
 3. Check to make sure scripts are loaded from `~/Developer/scripts`
-- Since we stow with `--no-folding` you should be able to add scripts as you please without messing with the git state
 
 ### NeoVim
 
 - `~/.config/nvim/lua/local.lua` will be sourced if it is present (not tracked by git)
-- Since we stow with `--no-folding` you should be able to add plugins/config as you please without messing with the git state
