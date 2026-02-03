@@ -35,3 +35,11 @@
 # Project-specific scripts we keep unstowed
 ^config_macos\.sh$
 ^bootstrap\.sh$
+
+# This one's special: codex-cli doesn't support symlinked files.
+# So we can't symlink to the absolute `~/Developer/skills` folder since
+# after stowing with --no-folding, that will only contain symlinked files.
+# Instead, we symlink to the `~/dotfiles` one directly where we use a gitinclude stragety,
+# which lets us add additional skills without tracking them in git unless explicitely allowed.
+# The only remaining piece is to ensure we don't stow those non-public skills.
+^Developer/skills/.+/
