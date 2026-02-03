@@ -16,7 +16,7 @@ else
 fi
 
 echo
-read -p "Link dot-files with stow? (y/N): " -n 1 -r
+read -p "Link dotfiles with stow? (y/N): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo "→ Linking dot-files with stow…"
