@@ -1,10 +1,20 @@
-model_reasoning_effort = "high"
+#:schema https://developers.openai.com/codex/config-schema.json
+
+profile = "smart"
+personality = "pragmatic"
+
 sandbox_mode = "workspace-write"
 web_search = "live"
-
-cursor-style-blink = true
-
 suppress_unstable_features_warning = true
+
+
+[profiles.smart]
+model = "gpt-5.2-codex"
+model_reasoning_effort = "xhigh"
+[profiles.light]
+model = "gpt-5.2-codex"
+model_reasoning_effort = "medium"
+
 
 [features]
 apply_patch_freeform = true
