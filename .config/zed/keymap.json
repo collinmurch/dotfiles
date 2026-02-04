@@ -1,6 +1,5 @@
 [
   {
-    "context": "Editor",
     "bindings": {
       "cmd-shift-c": null
     }
