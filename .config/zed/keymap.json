@@ -1,6 +1,6 @@
 [
-  // Unbind collab panel
   {
+    "context": "Editor",
     "bindings": {
       "cmd-shift-c": null
     }
@@ -12,8 +12,14 @@
       "cmd-shift-g": "git_panel::ToggleFocus",
       "cmd-shift-d": "debug_panel::ToggleFocus",
       "cmd-shift-t": "terminal_panel::ToggleFocus",
-      "alt-cmd-b": "workspace::ToggleLeftDock"
+      "cmd-?": "agent::ToggleFocus"
     }
+  },
+
+  // Left dock panels: pressing the same key while focused closes the left dock
+  {
+    "context": "AgentPanel",
+    "bindings": { "cmd-?": "workspace::ToggleLeftDock" }
   },
 
   // Right dock panels: pressing the same key while focused closes the right dock
