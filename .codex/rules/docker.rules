@@ -1,0 +1,9 @@
+prefix_rule(
+    pattern = ["docker"],
+    decision = "allow",
+    justification = "Allow Docker CLI to run outside the sandbox.",
+    match = [
+        "docker ps",
+        "docker --help",
+    ],
+)

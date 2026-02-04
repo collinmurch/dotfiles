@@ -1,0 +1,10 @@
+prefix_rule(
+    pattern = ["bun", "run"],
+    decision = "allow",
+    justification = "Allow bun run scripts to run outside the sandbox.",
+    match = [
+        "bun run build",
+        "bun run build:server",
+        "bun run test",
+    ],
+)

@@ -9,11 +9,11 @@
     "allow": [
       "WebFetch",
       "WebSearch",
-      "Skill"
-    ],
-    "deny": [
-      "Read(./.env)",
-      "Read(./.env.*)"
+      "Skill",
+      "Bash(mmdc *)",
+      "Bash(docker *)",
+      "Bash(npm run*)",
+      "Bash(bun run*)"
     ],
     "defaultMode": "acceptEdits"
   },
@@ -24,7 +24,10 @@
   "sandbox": {
     "enabled": true,
     "excludedCommands": [
-      "docker"
+      "docker",
+      "mmdc",
+      "npm",
+      "bun"
     ]
   },
   "alwaysThinkingEnabled": true

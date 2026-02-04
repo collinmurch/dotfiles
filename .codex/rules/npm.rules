@@ -1,0 +1,10 @@
+prefix_rule(
+    pattern = ["npm", "run"],
+    decision = "allow",
+    justification = "Allow npm run scripts to run outside the sandbox.",
+    match = [
+        "npm run build",
+        "npm run build:server",
+        "npm run test",
+    ],
+)
