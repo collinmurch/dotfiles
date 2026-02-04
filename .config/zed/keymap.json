@@ -1,21 +1,18 @@
 [
+  // Disable collab keybind
   {
     "bindings": {
       "cmd-shift-c": null
     }
   },
+
+  // Left dock panels: pressing the same key while focused closes the left dock
   {
-    "context": "Workspace",
+    "context": "!AgentPanel",
     "bindings": {
-      "cmd-shift-e": "project_panel::ToggleFocus",
-      "cmd-shift-g": "git_panel::ToggleFocus",
-      "cmd-shift-d": "debug_panel::ToggleFocus",
-      "cmd-shift-t": "terminal_panel::ToggleFocus",
       "cmd-?": "agent::ToggleFocus"
     }
   },
-
-  // Left dock panels: pressing the same key while focused closes the left dock
   {
     "context": "AgentPanel",
     "bindings": { "cmd-?": "workspace::ToggleLeftDock" }
@@ -23,8 +20,16 @@
 
   // Right dock panels: pressing the same key while focused closes the right dock
   {
+    "context": "!ProjectPanel",
+    "bindings": { "cmd-shift-e": "project_panel::ToggleFocus" }
+  },
+  {
     "context": "ProjectPanel",
     "bindings": { "cmd-shift-e": "workspace::ToggleRightDock" }
+  },
+  {
+    "context": "!GitPanel",
+    "bindings": { "cmd-shift-g": "git_panel::ToggleFocus" }
   },
   {
     "context": "GitPanel",
@@ -33,8 +38,16 @@
 
   // Bottom dock panels: pressing the same key while focused closes the bottom dock
   {
+    "context": "!DebugPanel",
+    "bindings": { "cmd-shift-d": "debug_panel::ToggleFocus" }
+  },
+  {
     "context": "DebugPanel",
     "bindings": { "cmd-shift-d": "workspace::ToggleBottomDock" }
+  },
+  {
+    "context": "!Terminal",
+    "bindings": { "cmd-shift-t": "terminal_panel::ToggleFocus" }
   },
   {
     "context": "Terminal",
