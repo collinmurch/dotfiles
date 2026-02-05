@@ -11,9 +11,6 @@
       "WebSearch",
       "Skill",
       
-      "Read(//tmp/**)",
-      "Edit(//tmp/**)",
-      
       "Bash(make *)",
       "Bash(docker *)",
       "Bash(mmdc *)"
