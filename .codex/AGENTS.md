@@ -6,6 +6,7 @@
 - Comments: only for exported/public function docs or genuinely complex logic; no “organizational” comments.
 
 ## Process
+- Prefer parallel tool calls and subagents for indendent, read-only work (research, scans, lookups).
 - When showing shell commands to the user, use **Nushell** syntax.
   - If you need to show or reason about shell commands, load the `nushell` skill first.
   - Internal execution may use bash, but do not present bash commands to the user.
