@@ -5,6 +5,7 @@ export PATH=$HOMEBREW_PREFIX/bin:$PATH
 export PATH=$PATH:$DEV/scripts
 
 export BAT_THEME="Poimandres"
+export EDITOR="zed --wait"
 
 export GOPATH="$DEV/go"
 export GOROOT="$(brew --prefix go)/libexec"

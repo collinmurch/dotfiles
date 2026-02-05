@@ -1,6 +1,6 @@
 load-env {
     "BAT_THEME": "Poimandres"
-    "GOPATH": $"($env.HOME)/Developer/go"
+    "EDITOR": "zed --wait"
     "LS_COLORS": $'$([
         "di=38;2;141;221;255",    # directory
         "ln=38;2;145;180;213",    # symbolic link
@@ -19,6 +19,8 @@ load-env {
         "st=38;2;255;250;194",    # sticky directory
         "ca=38;2;255;250;194"     # file with capability
     ] | str join ":")'
+    
+    "GOPATH": $"($env.HOME)/Developer/go"
 }
 
 $env.PATH = ($env.PATH | append [
