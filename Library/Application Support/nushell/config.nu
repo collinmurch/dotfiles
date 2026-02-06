@@ -1,6 +1,4 @@
-load-env {
-  "DEV": $"($env.HOME)/Developer"
-}
+$env.DEV = "($env.HOME)/Developer"
 
 load-env {
     "BAT_THEME": "Poimandres"
