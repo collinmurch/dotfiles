@@ -21,6 +21,7 @@ load-env {
     ] | str join ":")'
     
     "GOPATH": $"($env.HOME)/go"
+    "PYTHONPATH": $"($env.DEV)/python"
 }
 
 $env.PATH = ($env.PATH | append [
