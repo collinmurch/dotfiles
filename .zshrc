@@ -6,7 +6,7 @@ alias vim="nvim"
 alias cat="bat -p"
 alias ls="ls --color"
 alias dev='cd $DEV'
-alias godev='cd $DEV/go/src'
+alias godev='cd $DEV/go'
 
 
 #
