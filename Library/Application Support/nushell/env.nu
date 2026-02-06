@@ -1,3 +1,5 @@
+$env.DEV = "($env.HOME)/Developer"
+
 load-env {
     "BAT_THEME": "Poimandres"
     "EDITOR": "zed --wait"
@@ -19,9 +21,9 @@ load-env {
         "st=38;2;255;250;194",    # sticky directory
         "ca=38;2;255;250;194"     # file with capability
     ] | str join ":")'
-    
+
     "GOPATH": $"($env.HOME)/go"
-    "PYTHONPATH": $"($env.HOME)/dev/python"
+    "PYTHONPATH": $"($env.DEV)/python"
 }
 
 $env.PATH = ($env.PATH | append [
@@ -30,7 +32,7 @@ $env.PATH = ($env.PATH | append [
   "/opt/homebrew/bin", # eventually we'll get rid of this in favor of pure nix
 
   $"($env.HOME)/.nix-profile/bin",
-  $"($env.HOME)/Developer/scripts",
+  $"($env.DEV)/scripts",
   $"($env.HOME)/.cache/lm-studio/bin",
   $"($env.HOME)/.local/bin",
 
