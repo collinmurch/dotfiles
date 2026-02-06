@@ -10,6 +10,8 @@ export EDITOR="zed --wait"
 export GOPATH="$HOME/go"
 export GOROOT="$(brew --prefix go)/libexec"
 
+export PYTHONPATH="$DEV/python"
+
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cache/lm-studio/bin
