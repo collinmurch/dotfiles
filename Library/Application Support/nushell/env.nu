@@ -20,7 +20,7 @@ load-env {
         "ca=38;2;255;250;194"     # file with capability
     ] | str join ":")'
     
-    "GOPATH": $"($env.HOME)/Developer/go"
+    "GOPATH": $"($env.HOME)/go"
 }
 
 $env.PATH = ($env.PATH | append [
