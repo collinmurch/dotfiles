@@ -7,7 +7,7 @@ export PATH=$PATH:$DEV/scripts
 export BAT_THEME="Poimandres"
 export EDITOR="zed --wait"
 
-export GOPATH="$DEV/go"
+export GOPATH="$HOME/go"
 export GOROOT="$(brew --prefix go)/libexec"
 
 export PATH=$PATH:$GOROOT/bin
