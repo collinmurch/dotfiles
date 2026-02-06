@@ -4,7 +4,7 @@ alias grep = ^grep --color=always
 alias finder = ^open .
 
 alias dev = cd $"($env.HOME)/Developer"
-alias godev = cd $"($env.HOME)/Developer/go/src"
+alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
 
