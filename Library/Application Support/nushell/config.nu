@@ -1,58 +1,49 @@
-alias vim = nvim
-alias cat = bat -p
-alias grep = ^grep --color=always
-alias finder = ^open .
-
-alias dev = cd $"($env.HOME)/Developer"
-alias godev = cd $"($env.HOME)/Developer/go"
-alias jsdev = cd $"($env.HOME)/Developer/javascript"
-alias nuconfig = cd $"($nu.default-config-dir)"
-
-let poimandres = {
-    background: "#1b1e28"
-    foreground: "#e4f0fb"
-    muted: "#767c9d"
-    primary: "#5de4c7"
-    secondary: "#add7ff"
-    tertiary: "#f087bd"
-    warning: "#fffac2"
-    error: "#d0679d"
-    border: "#303340"
-    hint: "#506477"
-    operator: "#89ddff"
-    attribute: "#5fb3a1"
-    type: "#91b4d5"
-    comment: "#a6accd"
-    surface: "#252b37"
+load-env {
+  "DEV": $"($env.HOME)/Developer"
 }
 
-$env.config = {
-    show_banner: false
-    buffer_editor: "hx"
-    highlight_resolved_externals: true
-    color_config: {
-        separator: $poimandres.border
-        row_index: $poimandres.hint
-    }
-    cursor_shape: {
-      emacs: "blink_line"
-    }
-    history: {
-        max_size: 10000
-    },
-    completions: {
-        algorithm: "fuzzy"
-    }
+load-env {
+    "BAT_THEME": "Poimandres"
+    "EDITOR": "zed --wait"
+    "LS_COLORS": $'$([
+        "di=38;2;141;221;255",    # directory
+        "ln=38;2;145;180;213",    # symbolic link
+        "ex=38;2;240;135;189",    # executable
+        "fi=38;2;228;240;251",    # regular file
+        "pi=38;2;145;180;213",    # named pipe
+        "so=38;2;145;180;213",    # socket
+        "bd=38;2;208;103;157",    # block device
+        "cd=38;2;208;103;157",    # character device
+        "or=38;2;208;103;157",    # orphan (broken) symlink
+        "mi=38;2;208;103;157",    # missing file
+        "su=38;2;255;250;194",    # setuid
+        "sg=38;2;255;250;194",    # setgid
+        "tw=38;2;255;250;194",    # sticky + other-writable directory
+        "ow=38;2;255;250;194",    # other-writable directory
+        "st=38;2;255;250;194",    # sticky directory
+        "ca=38;2;255;250;194"     # file with capability
+    ] | str join ":")'
+
+    "GOPATH": $"($env.HOME)/go"
+    "PYTHONPATH": $"($env.DEV)/python"
 }
 
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+$env.PATH = ($env.PATH | append [
+  "/usr/local/bin",
+  "/nix/var/nix/profiles/default/bin",
+  "/opt/homebrew/bin", # eventually we'll get rid of this in favor of pure nix
 
-# Load per-machine overrides
-const local = if ($"($nu.default-config-dir)/local.nu" | path exists) {
+  $"($env.HOME)/.nix-profile/bin",
+  $"($env.DEV)/scripts",
+  $"($env.HOME)/.cache/lm-studio/bin",
+  $"($env.HOME)/.local/bin",
+
+  $"($env.GOPATH)/bin",
+])
+
+const local_config = if ($"($nu.default-config-dir)/local.nu" | path exists) {
   $"($nu.default-config-dir)/local.nu"
-} else {
-  null
+} else { null }
+if $local_config != null {
+  source $local_config
 }
-
-overlay use $local --reload
