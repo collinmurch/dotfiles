@@ -1,3 +1,5 @@
+use std/util "path add"
+
 $env.DEV = "($env.HOME)/Developer"
 
 load-env {
@@ -26,15 +28,14 @@ load-env {
     "PYTHONPATH": $"($env.DEV)/python"
 }
 
-$env.PATH = ($env.PATH | append [
-  "/usr/local/bin",
-  "/nix/var/nix/profiles/default/bin",
-  "/opt/homebrew/bin", # eventually we'll get rid of this in favor of pure nix
+path add "/usr/local/bin"
+path add  "/nix/var/nix/profiles/default/bin"
+path add  "/opt/homebrew/bin" # eventually we'll get rid of this in favor of pure nix
 
-  $"($env.HOME)/.nix-profile/bin",
-  $"($env.DEV)/scripts",
-  $"($env.HOME)/.cache/lm-studio/bin",
-  $"($env.HOME)/.local/bin",
+path add  $"($env.HOME)/.nix-profile/bin"
+path add  $"($env.DEV)/scripts"
+path add  $"($env.HOME)/.cache/lm-studio/bin"
+path add  $"($env.HOME)/.local/bin"
 
-  $"($env.GOPATH)/bin",
-])
+path add  $"($env.GOPATH)/bin"
+path add $"($nu.home-path)/.cargo/bin"

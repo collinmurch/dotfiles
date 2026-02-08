@@ -19,7 +19,7 @@ let
     nixd
     imagemagick
     emacsPackages.pbcopy
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
   ];
 
   fonts = with pkgs; [

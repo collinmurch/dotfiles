@@ -12,6 +12,8 @@ export GOROOT="$(brew --prefix go)/libexec"
 
 export PYTHONPATH="$DEV/python"
 
+export PATH="$HOME/.cargo/bin:$PATH"
+
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/.cache/lm-studio/bin
