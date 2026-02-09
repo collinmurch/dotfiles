@@ -13,10 +13,10 @@
     hunk-header-file-style = "#5DE4c7" ul bold
     hunk-header-line-number-style = "#ADD7FF" box bold
     hunk-header-style = file line-number syntax bold italic
-    plus-style = "#5DE4c7"
-    plus-emph-style = "#1b1e28" "#5DE4c7"
-    minus-style = "#d0679d"
-    minus-emph-style = "#1b1e28" "#d0679d"
+    plus-style = syntax "#1d2b26"
+    plus-emph-style = syntax "#264a40"
+    minus-style = syntax "#2b1d27"
+    minus-emph-style = syntax "#4a2640"
     line-numbers = true
     line-numbers-minus-style = "#d0679d"
     line-numbers-plus-style = "#5DE4c7"
