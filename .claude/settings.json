@@ -28,5 +28,6 @@
       "mmdc"
     ]
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "preferredNotifChannel": "none"
 }
