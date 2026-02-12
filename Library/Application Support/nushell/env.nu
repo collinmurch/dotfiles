@@ -1,6 +1,6 @@
 use std/util "path add"
 
-$env.DEV = "($env.HOME)/Developer"
+$env.DEV = $"($env.HOME)/Developer"
 
 load-env {
     "BAT_THEME": "Poimandres"
