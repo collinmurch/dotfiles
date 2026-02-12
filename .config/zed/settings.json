@@ -36,7 +36,7 @@
   },
   "agent": {
     "always_allow_tool_actions": true,
-    "enabled": true,
+    "enabled": false,
     "dock": "left"
   },
   "inlay_hints": {
