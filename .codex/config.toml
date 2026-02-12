@@ -22,5 +22,8 @@ apply_patch_freeform = true
 skills = true
 shell_snapshot = true
 
+[tui]
+notifications = false
+
 [sandbox_workspace_write]
 network_access = true
