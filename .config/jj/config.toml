@@ -1,3 +1,4 @@
 [ui]
+editor = "hx"
 pager = "delta"
 diff-formatter = ":git"

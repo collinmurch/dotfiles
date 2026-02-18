@@ -1,7 +1,0 @@
-format = "$directory$character"
-right_format = "$git_branch"
-
-add_newline = false
-
-[line_break]
-disabled = true

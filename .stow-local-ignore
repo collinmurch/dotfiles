@@ -1,6 +1,6 @@
 # VCS metadata (top-level or submodules)
-(^|/)\.git(/|$)
-(^|/)\.jj(/|$)
+^\.git$
+^\.jj$
 ^^\.gitmodules$
 ^\.gitignore$
 ^\.gitkeep$
@@ -23,11 +23,11 @@
 
 # Editor-specific noise
 ^\.zed(/|$)
-^\.settings\.local\.json$
+^settings\.local\.json$
 
 # Nix repo files not meant for stowing
-.*\.nix
-^flake\.lock$
+^/[^/]*\.nix$
+^/flake\.lock$
 ^/overlays(/|$)
 
 # Local assets kept in-repo only

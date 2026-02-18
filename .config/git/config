@@ -1,0 +1,27 @@
+[core]
+	editor = hx
+	pager = delta
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[merge]
+	conflictStyle = zdiff3
+
+[diff]
+	colorMoved = default
+
+[interactive]
+	diffFilter = delta --color-only
+
+[include]
+	path = ~/.config/delta-themes.gitconfig
+
+[delta]
+	features = poimandres
+	navigate = true
+	hyperlinks = true
+	hyperlinks-file-link-format = "zed://file/{path}:{line}"
