@@ -2,3 +2,7 @@
 editor = "hx"
 pager = "delta"
 diff-formatter = ":git"
+
+[git]
+auto-local-bookmark = true
+push-new-bookmarks = true

@@ -1,0 +1,16 @@
+*
+!.gitignore
+!README.md
+
+!scripts/
+!scripts/caffeinate.sh
+!scripts/format-json.sh
+!scripts/git-link.py
+!scripts/plain-text.sh
+!scripts/uuid.sh
+
+!skills/
+!skills/nushell/
+!skills/nushell/**
+!skills/mermaid-diagrams/
+!skills/mermaid-diagrams/**

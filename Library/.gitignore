@@ -1,0 +1,13 @@
+*
+!.gitignore
+!README.md
+
+!Application Support/
+!Application Support/Code/
+!Application Support/Code/**
+!Application Support/nushell/
+!Application Support/nushell/**
+Application Support/nushell/local.nu
+
+!KeyBindings/
+!KeyBindings/**

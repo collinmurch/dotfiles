@@ -1,8 +1,0 @@
-*
-!.gitignore
-!README.md
-
-!nushell
-!nushell/**
-!mermaid-diagrams
-!mermaid-diagrams/**
