@@ -16,10 +16,6 @@
     ],
     "defaultMode": "acceptEdits"
   },
-  "statusLine": {
-    "type": "command",
-    "command": "$HOME/.claude/statusline.sh"
-  },
   "sandbox": {
     "enabled": true,
     "excludedCommands": [

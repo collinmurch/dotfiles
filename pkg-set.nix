@@ -26,11 +26,6 @@ let
     jetbrains-mono
   ];
 
-  zshPlugins = with pkgs; [
-    zsh-syntax-highlighting
-    zsh-autosuggestions
-  ];
-
-  basePackages = tools ++ fonts ++ zshPlugins;
+  basePackages = tools ++ fonts;
 in
 basePackages

@@ -7,5 +7,4 @@ result
 settings.local.json
 
 # custom environments
-/Library/Application Support/nushell/local.nu
 /.zprofile
