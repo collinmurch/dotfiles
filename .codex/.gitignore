@@ -1,0 +1,9 @@
+*
+!.gitignore
+!README.md
+!AGENTS.md
+!config.toml
+!skills
+!rules
+!rules/**
+rules/default.rules

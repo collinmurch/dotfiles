@@ -11,6 +11,7 @@ let
     ripgrep
     starship
     delta
+    jujutsu
     fzf
     bitwarden-cli
     age

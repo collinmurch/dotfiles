@@ -1,6 +1,7 @@
 # VCS metadata (top-level or submodules)
 (^|/)\.git(/|$)
-^\.gitmodules$
+(^|/)\.jj(/|$)
+^^\.gitmodules$
 ^\.gitignore$
 ^\.gitkeep$
 

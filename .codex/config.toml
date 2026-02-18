@@ -17,9 +17,7 @@ model_reasoning_effort = "medium"
 
 
 [features]
-apply_patch_freeform = true
-skills = true
-shell_snapshot = true
+multi_agent = true
 
 [tui]
 notifications = false
