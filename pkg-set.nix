@@ -5,7 +5,6 @@ let
   tools = with pkgs; [
     pkgs-unstable.nushell
     stow
-    neovim
     helix
     bat
     ripgrep
