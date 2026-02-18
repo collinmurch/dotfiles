@@ -29,13 +29,25 @@ load-env {
 }
 
 path add "/usr/local/bin"
-path add  "/nix/var/nix/profiles/default/bin"
-path add  "/opt/homebrew/bin" # eventually we'll get rid of this in favor of pure nix
+path add "/nix/var/nix/profiles/default/bin"
+path add "/opt/homebrew/bin" # eventually we'll get rid of this in favor of pure nix
 
-path add  $"($env.HOME)/.nix-profile/bin"
-path add  $"($env.DEV)/scripts"
-path add  $"($env.HOME)/.cache/lm-studio/bin"
-path add  $"($env.HOME)/.local/bin"
+path add $"($env.HOME)/.nix-profile/bin"
+path add $"($env.DEV)/scripts"
+path add $"($env.HOME)/.cache/lm-studio/bin"
+path add $"($env.HOME)/.local/bin"
 
-path add  $"($env.GOPATH)/bin"
+path add $"($env.GOPATH)/bin"
 path add $"($nu.home-path)/.cargo/bin"
+
+# Add prompts
+source ($nu.default-config-dir | path join "prompt.nu")
+$env.PROMPT_COMMAND = {|| $"(ansi blue_bold)(dir-prompt)(ansi reset)" }
+$env.PROMPT_COMMAND_RIGHT = {|| vcs-prompt }
+$env.PROMPT_INDICATOR = {||
+    if $env.LAST_EXIT_CODE == 0 {
+        $" (ansi green_bold)❯(ansi reset) "
+    } else {
+        $" (ansi red_bold)❯(ansi reset) "
+    }
+}

@@ -9,9 +9,8 @@ let
     helix
     bat
     ripgrep
-    starship
-    delta
     jujutsu
+    delta
     fzf
     bitwarden-cli
     age

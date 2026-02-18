@@ -43,10 +43,8 @@ $env.config = {
     completions: {
         algorithm: "fuzzy"
     }
+    render_right_prompt_on_last_line: true
 }
-
-mkdir ($nu.data-dir | path join "vendor/autoload")
-starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 
 # Load per-machine overrides
 const local = if ($"($nu.default-config-dir)/local.nu" | path exists) {

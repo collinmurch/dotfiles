@@ -6,7 +6,7 @@ if [ ! -d "$HOME/dotfiles/.git" ]; then
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "→ Cloning git repository..."
-    git clone --recurse-submodules https://github.com/collinmurch/dotfiles "$HOME/dotfiles"
+    git clone https://github.com/collinmurch/dotfiles "$HOME/dotfiles"
   else
     echo "✓ Nothing to do."
     exit 0
@@ -122,27 +122,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   fi
 else
   echo "✓ Skipping TX-02 font installation."
-fi
-
-echo
-read -p "Set Git global defaults? (y/N): " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  echo "→ Setting Git defaults…"
-  git config --global core.editor hx 2>/dev/null || true
-  git config --global pull.rebase true 2>/dev/null || true
-  git config --global push.autoSetupRemote true 2>/dev/null || true
-  git config --global include.path ~/.config/delta-themes.gitconfig 2>/dev/null || true
-  git config --global core.pager delta 2>/dev/null || true
-  git config --global interactive.diffFilter 'delta --color-only' 2>/dev/null || true
-  git config --global delta.features poimandres 2>/dev/null || true
-  git config --global delta.navigate true 2>/dev/null || true
-  git config --global merge.conflictStyle zdiff3 2>/dev/null || true
-  git config --global delta.hyperlinks true 2>/dev/null || true
-  git config --global delta.hyperlinks-file-link-format 'zed://file/{path}:{line}' 2>/dev/null || true
-  git config --global delta.colorMoved default 2>/dev/null || true
-else
-  echo "✓ Skipping Git configuration."
 fi
 
 echo
