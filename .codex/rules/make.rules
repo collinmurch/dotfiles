@@ -1,9 +1,0 @@
-prefix_rule(
-    pattern = ["make"],
-    decision = "allow",
-    justification = "Allow Make commands to run outside the sandbox.",
-    match = [
-        "make build",
-        "make test",
-    ],
-)

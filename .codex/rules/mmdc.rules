@@ -1,9 +1,0 @@
-prefix_rule(
-    pattern = ["mmdc"],
-    decision = "allow",
-    justification = "Allow Mermaid CLI to run outside the sandbox.",
-    match = [
-        "mmdc -i diagram.mmd -o diagram.svg",
-        "mmdc --help",
-    ],
-)
