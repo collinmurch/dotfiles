@@ -38,7 +38,7 @@ path add $"($env.HOME)/.cache/lm-studio/bin"
 path add $"($env.HOME)/.local/bin"
 
 path add $"($env.GOPATH)/bin"
-path add $"($nu.home-path)/.cargo/bin"
+path add $"($nu.home-dir)/.cargo/bin"
 
 # Add prompts
 source ($nu.default-config-dir | path join "prompt.nu")
