@@ -35,13 +35,24 @@ def vcs-prompt [] {
             let head_file = if (($git_path | path type) == "dir") {
                 $git_path | path join "HEAD"
             } else {
-                try { open $git_path | str trim | str replace "gitdir: " "" } catch { return "" } | path join "HEAD"
+                let gitdir = (try { open $git_path | str trim | str replace "gitdir: " "" } catch { return "" })
+                let gitdir_path = if ($gitdir | str starts-with "/") {
+                    $gitdir
+                } else {
+                    $d | path join $gitdir
+                }
+                $gitdir_path | path join "HEAD"
             }
             let head = (try { open $head_file | str trim } catch { return "" })
-            let ref = if ($head | str starts-with "ref: refs/heads/") {
-                $head | str replace "ref: refs/heads/" ""
+            let ref = if ($head | str starts-with "ref: ") {
+                let ref_path = ($head | str replace "ref: " "")
+                if ($ref_path | str starts-with "refs/heads/") {
+                    $ref_path | str replace "refs/heads/" ""
+                } else {
+                    $"detached@($ref_path | path basename)"
+                }
             } else {
-                $head | str substring 0..7
+                $"detached@($head | str substring 0..7)"
             }
             return $"(ansi purple_bold) ($ref)(ansi reset)"
         }
