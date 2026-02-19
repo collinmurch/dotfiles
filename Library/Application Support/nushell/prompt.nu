@@ -43,7 +43,7 @@ def vcs-prompt [] {
             } else {
                 $head | str substring 0..7
             }
-            return $"(ansi purple_bold) ($ref)(ansi reset)"
+            return $"(ansi purple_bold) ($ref)(ansi reset)"
         }
         let parent = ($d | path dirname)
         if $parent == $d { break }
