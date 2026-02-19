@@ -10,18 +10,14 @@
       "WebFetch",
       "WebSearch",
       "Skill",
-      "Bash(make *)",
       "Bash(docker *)",
-      "Bash(mmdc *)"
     ],
     "defaultMode": "acceptEdits"
   },
   "sandbox": {
     "enabled": true,
     "excludedCommands": [
-      "make",
       "docker",
-      "mmdc"
     ]
   },
   "alwaysThinkingEnabled": true,
