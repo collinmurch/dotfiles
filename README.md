@@ -36,6 +36,11 @@ If either of these files are present, they will be sourced for the respective sh
 - **Zsh:** `~/.zprofile`
 - **Nushell:** `$nu.default-config-dir/local.nu` ([overlay](https://www.nushell.sh/book/overlays.html))
 
+Additional sandbox permissions can be added for Codex and Claude Code:
+
+- **Codex:** `~/.codex/rules/*.rules` (any name but `base.rules`)
+- **Claude Code:** `./.claude/settings.local.json` (must be project-level)
+
 ### MacOS System Settings
 
 A list of defaults & functionality explanations I prefer can be set with `/bin/zsh config_macos.sh`, which I wouldn't recommend just running. I'll probably migrate this to [nix-darwin](https://github.com/nix-darwin/nix-darwin) at some point.
