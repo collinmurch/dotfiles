@@ -1,6 +1,4 @@
-prefix_rule(
-    pattern = ["docker"],
-    decision = "allow",
+prefix_rule(pattern = ["docker"], decision = "allow",
     match = [
         "docker ps",
         "docker --help",
