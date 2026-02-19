@@ -1,7 +1,7 @@
 def vcs-root [] {
     mut d = $env.PWD
     loop {
-        if (($d | path join ".jj" | path exists) or ($d | path join ".git" | path exists)) {
+        if ($d | path join ".git" | path exists) {
             return $d
         }
         let parent = ($d | path dirname)
@@ -30,10 +30,6 @@ def dir-prompt [] {
 def vcs-prompt [] {
     mut d = $env.PWD
     loop {
-        if ($d | path join ".jj" | path exists) {
-            let info = (do { ^jj log -r@ -n1 --no-graph --ignore-working-copy -T 'separate(" ", change_id.shortest(), parents.map(|p| p.local_bookmarks().map(|x| x.name()).join(" ")).join(" "))' } | complete | get stdout | str trim)
-            return (if ($info | is-not-empty) { $"(ansi purple_bold)◆ ($info)(ansi reset)" } else { "" })
-        }
         let git_path = ($d | path join ".git")
         if ($git_path | path exists) {
             let head_file = if (($git_path | path type) == "dir") {
@@ -47,7 +43,7 @@ def vcs-prompt [] {
             } else {
                 $head | str substring 0..7
             }
-            return $"(ansi purple_bold) ($ref)(ansi reset)"
+            return $"(ansi purple_bold) ($ref)(ansi reset)"
         }
         let parent = ($d | path dirname)
         if $parent == $d { break }

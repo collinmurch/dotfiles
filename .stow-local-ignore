@@ -1,6 +1,5 @@
 # VCS metadata (top-level or submodules)
 ^\.git$
-^\.jj$
 ^^\.gitmodules$
 ^\.gitignore$
 ^\.gitkeep$
@@ -28,7 +27,6 @@
 # Nix repo files not meant for stowing
 ^/[^/]*\.nix$
 ^/flake\.lock$
-^/overlays(/|$)
 
 # Local assets kept in-repo only
 ^/fonts(/|$)
