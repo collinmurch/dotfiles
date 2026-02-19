@@ -10,14 +10,14 @@
       "WebFetch",
       "WebSearch",
       "Skill",
-      "Bash(docker *)",
+      "Bash(docker *)"
     ],
     "defaultMode": "acceptEdits"
   },
   "sandbox": {
     "enabled": true,
     "excludedCommands": [
-      "docker",
+      "docker"
     ]
   },
   "alwaysThinkingEnabled": true,
