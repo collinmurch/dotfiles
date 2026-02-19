@@ -12,10 +12,8 @@
   outputs = {self, nixpkgs, nixpkgs-unstable, flake-utils, agenix }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        externalFlakes = { inherit agenix; };
         pkgs = import nixpkgs {
           inherit system;
-          overlays = import ./overlays externalFlakes;
           config = {
             allowUnfree  = true;
           };
@@ -55,10 +53,6 @@
         apps.bootstrap   = {
           type = "app";
           program = "${bootstrap}/bin/collin-bootstrap";
-          meta = {
-            description = "Bootstrap dotfiles and configure system";
-            mainProgram = "collin-bootstrap";
-          };
         };  # nix run .#bootstrap
       });
 }

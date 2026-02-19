@@ -1,5 +1,4 @@
 {
-  
   "edit_predictions": {
     "provider": "none"
   },
@@ -12,9 +11,6 @@
   "use_system_window_tabs": true,
   "colorize_brackets": true,
   "format_on_save": "on",
-  "vim": {
-    "use_system_clipboard": "on_yank"
-  },
   "terminal": {
     "font_size": 14,
     "cursor_shape": "bar",
@@ -35,7 +31,6 @@
     "metrics": false
   },
   "agent": {
-    "always_allow_tool_actions": true,
     "enabled": false,
     "dock": "left"
   },
