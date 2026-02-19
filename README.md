@@ -31,7 +31,7 @@ This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally
 
 ### Custom Environments
 
-If either of these files are present, they will be sourced for the respective shell:
+If either of these files are present, they will be sourced by the respective shell:
 
 - **Zsh:** `~/.zprofile`
 - **Nushell:** `$nu.default-config-dir/local.nu` ([overlay](https://www.nushell.sh/book/overlays.html))
