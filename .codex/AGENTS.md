@@ -7,6 +7,7 @@
 
 ## Process
 - Prefer parallel tool calls and subagents for indendent, read-only work (research, scans, lookups)
+- Use `jj` for all version control operations unless the user explicitly requests git
 - When showing shell commands to the user, use `nushell` syntax
   - If you need to show or reason about shell commands, load the `nushell` skill first
   - Internal execution may use bash, but do not present bash commands to the user

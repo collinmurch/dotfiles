@@ -4,6 +4,14 @@
 
 alias cat="bat -p"
 alias ls="ls --color"
+jj() {
+    if [[ "$1" == "workspace" && ("$2" == "rm" || "$2" == "remove") ]]; then
+        command jj workspace forget "$3" && rm -rf "../$3"
+    else
+        command jj "$@"
+    fi
+}
+
 alias dev='cd $DEV'
 alias godev='cd $DEV/go'
 

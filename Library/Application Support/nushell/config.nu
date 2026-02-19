@@ -7,6 +7,15 @@ alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
 
+def "jj workspace rm" [name: string] {
+    ^jj workspace forget $name
+    rm -rf $"../($name)"
+}
+
+def "jj workspace remove" [name: string] {
+    jj workspace rm $name
+}
+
 let poimandres = {
     background: "#1b1e28"
     foreground: "#e4f0fb"

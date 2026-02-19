@@ -8,6 +8,7 @@ let
     helix
     bat
     ripgrep
+    jujutsu
     delta
     fzf
     bitwarden-cli
