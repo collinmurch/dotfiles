@@ -31,12 +31,12 @@ This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally
 
 ### Custom Environments
 
-If either of these files are present, they will be sourced for the respective shell (not tracked by git):
+If either of these files are present, they will be sourced for the respective shell:
 
 - **Zsh:** `~/.zprofile`
 - **Nushell:** `$nu.default-config-dir/local.nu` ([overlay](https://www.nushell.sh/book/overlays.html))
 
-Additional sandbox permissions can be added for Codex and Claude Code:
+Additional sandbox permissions for Codex and Claude Code:
 
 - **Codex:** `~/.codex/rules/*.rules` (any name but `base.rules`)
 - **Claude Code:** `./.claude/settings.local.json` (must be project-level)
