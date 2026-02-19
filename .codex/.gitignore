@@ -4,6 +4,9 @@
 !AGENTS.md
 !config.toml
 !skills
-!rules
-!rules/**
+!rules/
+!rules/docker.rules
+!rules/make.rules
+!rules/mmdc.rules
 rules/default.rules
+rules/custom.rules
