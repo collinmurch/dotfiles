@@ -7,4 +7,5 @@ result
 settings.local.json
 
 # custom environments
-/.zprofile
+.zprofile
+local.nu
