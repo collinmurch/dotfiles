@@ -22,11 +22,6 @@ nix profile add github:collinmurch/dotfiles#pkg-set
 nix run github:collinmurch/dotfiles#bootstrap 
 ```
 
-### Fonts
-
-This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally decrypted during `bootstrap.sh` using my Bitwarden SSH key.
-**JetBrains Mono** is installed and is a fallback font for all configs if **TX-02** isn't found.
-
 ## Additional Optional Config
 
 ### Custom Environments
@@ -40,6 +35,11 @@ Additional sandbox permissions for Codex and Claude Code:
 
 - **Codex:** `~/.codex/rules/*.rules` (any name but `base.rules`)
 - **Claude Code:** `./.claude/settings.local.json` (must be project-level)
+
+### Fonts
+
+This setup includes encrypted **TX-02 (Berkely Mono)** fonts that are optionally decrypted during `bootstrap.sh` using my Bitwarden SSH key.
+**JetBrains Mono** is installed and is a fallback font for all configs if **TX-02** isn't found.
 
 ### MacOS System Settings
 
