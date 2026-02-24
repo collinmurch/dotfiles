@@ -21,7 +21,7 @@ multi_agent = true
 
 [tui]
 notifications = false
-status_line = ["current-dir", "git-branch", "context-remaining", "context-window-size", "used-tokens"]
+status_line = ["current-dir", "git-branch", "context-remaining"]
 
 [sandbox_workspace_write]
 network_access = true
