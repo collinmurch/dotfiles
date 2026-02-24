@@ -22,7 +22,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "./statusline.sh"
+    "command": "~/.claude/statusline.sh"
   },
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
