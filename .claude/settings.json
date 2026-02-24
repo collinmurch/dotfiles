@@ -22,7 +22,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/Users/collinmurch/dotfiles/.claude/statusline.sh"
+    "command": "./statuslins.sh"
   },
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
