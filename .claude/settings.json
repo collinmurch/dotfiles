@@ -20,6 +20,10 @@
       "docker"
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/collinmurch/dotfiles/.claude/statusline.sh"
+  },
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
   "preferredNotifChannel": "none"
