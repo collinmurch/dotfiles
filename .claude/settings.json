@@ -26,5 +26,6 @@
   },
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
-  "preferredNotifChannel": "none"
+  "preferredNotifChannel": "none",
+  "effortLevel": "high"
 }
