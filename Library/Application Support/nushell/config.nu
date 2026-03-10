@@ -19,8 +19,8 @@ def claude [...args: string] {
     } else {
         open $base_path
     }
-
     $settings | save -f $settings_path
+
     ^claude ...$args
 }
 

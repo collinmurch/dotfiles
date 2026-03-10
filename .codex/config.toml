@@ -1,20 +1,13 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-profile = "smart"
 personality = "pragmatic"
+
+model = "gpt-5.4"
+model_reasoning_effort = "xhigh"
 
 sandbox_mode = "workspace-write"
 web_search = "live"
 suppress_unstable_features_warning = true
-
-
-[profiles.smart]
-model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
-[profiles.light]
-model = "gpt-5.4"
-model_reasoning_effort = "medium"
-
 
 [features]
 multi_agent = true
