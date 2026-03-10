@@ -1,3 +1,5 @@
+use utils.nu [deep-merge]
+
 alias cat = bat -p
 alias grep = ^grep --color=always
 alias finder = ^open .
@@ -6,6 +8,14 @@ alias dev = cd $"($env.HOME)/Developer"
 alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
+
+# Merge settings.base.json & settings.local.json into settings.json before we start claude
+def claude [...args: string] {
+    (open ($env.HOME | path join .claude settings.base.json)
+          | deep-merge (open ($env.HOME | path join .claude local.json))
+          | save -f ($env.HOME | path join .claude settings.json))
+    ^claude ...$args
+}
 
 let poimandres = {
     background: "#1b1e28"

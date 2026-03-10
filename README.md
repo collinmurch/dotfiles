@@ -34,7 +34,7 @@ If either of these files are present, they will be sourced by the respective she
 Additional sandbox permissions for Codex and Claude Code:
 
 - **Codex:** `~/.codex/rules/*.rules` (any name but `base.rules`)
-- **Claude Code:** `./.claude/settings.local.json` (must be project-level)
+- **Claude Code:** `~/.claude/local.json` (merged to create `~/.claude/settings.json` at initialization)
 
 ### Fonts
 
