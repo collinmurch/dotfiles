@@ -1,17 +1,5 @@
 use std/util "path add"
 
-# Load shared env vars (KEY=VALUE format) into both zsh and nushell from one file
-let env_file = ($env.HOME | path join .env)
-if ($env_file | path exists) {
-    open --raw $env_file
-    | lines
-    | where { |line| $line !~ '^\s*#' and $line =~ '=' }
-    | parse --regex '(?P<key>[^=]+)=(?P<value>.*)'
-    | update value { |row| $row.value | str trim -c '"' }
-    | reduce -f {} { |row, acc| $acc | merge { ($row.key): $row.value } }
-    | load-env
-}
-
 $env.DEV = $"($env.HOME)/Developer"
 
 load-env {
@@ -40,17 +28,20 @@ load-env {
     "PYTHONPATH": $"($env.DEV)/python"
 }
 
-path add "/usr/local/bin"
-path add "/nix/var/nix/profiles/default/bin"
-path add "/opt/homebrew/bin" # eventually we'll get rid of this in favor of pure nix
-
-path add $"($env.HOME)/.nix-profile/bin"
 path add $"($env.DEV)/scripts"
+
+path add "/usr/local/bin"
+path add "/opt/homebrew/bin"
+
 path add $"($env.HOME)/.cache/lm-studio/bin"
 path add $"($env.HOME)/.local/bin"
 
 path add $"($env.GOPATH)/bin"
 path add $"($nu.home-dir)/.cargo/bin"
+
+# Nix setup
+path add "/nix/var/nix/profiles/default/bin"
+path add $"($env.HOME)/.nix-profile/bin"
 
 # Add prompts
 source ($nu.default-config-dir | path join "prompt.nu")
@@ -62,4 +53,16 @@ $env.PROMPT_INDICATOR = {||
     } else {
         $" (ansi red_bold)❯(ansi reset) "
     }
+}
+
+# Load shared env vars (KEY=VALUE format)
+let env_file = ($env.HOME | path join .env)
+if ($env_file | path exists) {
+    open --raw $env_file
+    | lines
+    | where { |line| $line !~ '^\s*#' and $line =~ '=' }
+    | parse --regex '(?P<key>[^=]+)=(?P<value>.*)'
+    | update value { |row| $row.value | str trim -c '"' }
+    | reduce -f {} { |row, acc| $acc | merge { ($row.key): $row.value } }
+    | load-env
 }
