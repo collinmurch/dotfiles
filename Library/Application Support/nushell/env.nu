@@ -33,15 +33,14 @@ path add $"($env.DEV)/scripts"
 path add "/usr/local/bin"
 path add "/opt/homebrew/bin"
 
+path add "/nix/var/nix/profiles/default/bin"
+path add $"($env.HOME)/.nix-profile/bin"
+
 path add $"($env.HOME)/.cache/lm-studio/bin"
 path add $"($env.HOME)/.local/bin"
 
 path add $"($env.GOPATH)/bin"
 path add $"($nu.home-dir)/.cargo/bin"
-
-# Nix setup
-path add "/nix/var/nix/profiles/default/bin"
-path add $"($env.HOME)/.nix-profile/bin"
 
 # Add prompts
 source ($nu.default-config-dir | path join "prompt.nu")
