@@ -9,17 +9,28 @@ alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
 
-# Merge settings.base.json with optional local.json into settings.json before we start claude
+def codex [...args: string] {
+    let base_path = ($env.HOME | path join .codex config.base.toml)
+    let config_path = ($env.HOME | path join .codex config.toml)
+    let current = if ($config_path | path exists) {
+        open $config_path
+    } else {
+        {}
+    }
+    open $base_path | deep-merge $current | save -f $config_path
+
+    ^codex ...$args
+}
+
 def claude [...args: string] {
     let base_path = ($env.HOME | path join .claude settings.base.json)
-    let local_path = ($env.HOME | path join .claude local.json)
     let settings_path = ($env.HOME | path join .claude settings.json)
-    let settings = if ($local_path | path exists) {
-        open $base_path | deep-merge (open $local_path)
+    let current = if ($settings_path | path exists) {
+        open $settings_path
     } else {
-        open $base_path
+        {}
     }
-    $settings | save -f $settings_path
+    open $base_path | deep-merge $current | save -f $settings_path
 
     ^claude ...$args
 }

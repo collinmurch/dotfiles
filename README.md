@@ -33,8 +33,10 @@ If either of these files are present, they will be sourced by the respective she
 
 Additional sandbox permissions for Codex and Claude Code:
 
-- **Codex:** `~/.codex/rules/*.rules` (any name but `base.rules`)
-- **Claude Code:** `~/.claude/local.json` (merged to create `~/.claude/settings.json` at initialization)
+- **Codex:**
+  - `~/.codex/rules/*.rules` (any name but `base.rules`)
+  - `~/.codex/config.toml` (`config.base.toml` is merged in at initialization)
+- **Claude Code:** `~/.claude/settings.json` (`~/.claude/settings.base.json` is merged in at initialization)
 
 ### Fonts
 

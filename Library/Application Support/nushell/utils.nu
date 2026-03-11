@@ -7,7 +7,7 @@ export def deep-merge [override: record] {
         if ($bv | describe | str starts-with record) and ($ov | describe | str starts-with record) {
             $acc | upsert $col ($bv | deep-merge $ov)
         } else if ($bv | describe | str starts-with list) and ($ov | describe | str starts-with list) {
-            $acc | upsert $col ($bv | append $ov)
+            $acc | upsert $col ($bv | append $ov | uniq)
         } else {
             $acc | upsert $col $ov
         }
