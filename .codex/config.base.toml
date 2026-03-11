@@ -19,6 +19,3 @@ theme = "Poimandres"
 
 [sandbox_workspace_write]
 network_access = true
-
-[projects."~/Developer"]
-trust_level = "trusted"
