@@ -26,6 +26,17 @@ nix run github:collinmurch/dotfiles#bootstrap
 
 ### Custom Environments
 
+#### Shared environment variables (`~/.env`)
+
+Both `env.nu` and `.zshenv` load `~/.env` on startup if it exists. Use standard `KEY=VALUE` (dotenv) format with double-quoted values. This file is gitignored so it stays local to each machine.
+
+```
+EXAMPLE_VARIABLE="some-value"
+ANOTHER_VARIABLE="another-value"
+```
+
+#### Shell-specific overrides
+
 If either of these files are present, they will be sourced by the respective shell:
 
 - **Zsh:** `~/.zprofile`

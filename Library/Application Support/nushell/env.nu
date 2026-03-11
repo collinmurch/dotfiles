@@ -1,5 +1,17 @@
 use std/util "path add"
 
+# Load shared env vars (KEY=VALUE format) into both zsh and nushell from one file
+let env_file = ($env.HOME | path join .env)
+if ($env_file | path exists) {
+    open --raw $env_file
+    | lines
+    | where { |line| $line !~ '^\s*#' and $line =~ '=' }
+    | parse --regex '(?P<key>[^=]+)=(?P<value>.*)'
+    | update value { |row| $row.value | str trim -c '"' }
+    | reduce -f {} { |row, acc| $acc | merge { ($row.key): $row.value } }
+    | load-env
+}
+
 $env.DEV = $"($env.HOME)/Developer"
 
 load-env {
