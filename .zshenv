@@ -1,3 +1,8 @@
+# Load shared env vars (KEY=VALUE format) into both zsh and nushell from one file
+set -a
+[ -f "$HOME/.env" ] && source "$HOME/.env"
+set +a
+
 export HOMEBREW_PREFIX=/opt/homebrew
 export DEV=$HOME/Developer
 
