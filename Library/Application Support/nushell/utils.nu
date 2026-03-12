@@ -1,3 +1,4 @@
+# Recursively merge a record into the input record
 export def deep-merge [override: record] {
     let base = $in
     $override | columns | reduce --fold $base {|col, acc|

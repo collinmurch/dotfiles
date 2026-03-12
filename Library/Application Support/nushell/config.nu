@@ -9,6 +9,7 @@ alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
 
+# Launch codex with merged base + local config
 def codex [...args: string] {
     let base_path = ($env.HOME | path join .codex config.base.toml)
     let config_path = ($env.HOME | path join .codex config.toml)
@@ -22,6 +23,7 @@ def codex [...args: string] {
     ^codex ...$args
 }
 
+# Launch claude with merged base + local settings
 def claude [...args: string] {
     let base_path = ($env.HOME | path join .claude settings.base.json)
     let settings_path = ($env.HOME | path join .claude settings.json)
