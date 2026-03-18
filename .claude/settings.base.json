@@ -6,9 +6,6 @@
   },
   "permissions": {
     "allow": [
-      "WebFetch",
-      "WebSearch",
-      "Skill",
       "Bash(docker *)"
     ],
     "defaultMode": "acceptEdits"
@@ -17,7 +14,9 @@
     "enabled": true,
     "excludedCommands": [
       "docker"
-    ]
+    ],
+    "allowUnsandboxedCommands": false,
+    "enableWeakerNetworkIsolation": true
   },
   "statusLine": {
     "type": "command",
