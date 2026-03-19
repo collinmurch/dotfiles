@@ -11,7 +11,7 @@ def vcs-root [] {
     null
 }
 
-def dir-prompt [] {
+export def dir-prompt [] {
     let root = (vcs-root)
     if $root != null {
         let repo = ($root | path basename)
@@ -27,7 +27,7 @@ def dir-prompt [] {
     }
 }
 
-def vcs-prompt [] {
+export def vcs-prompt [] {
     mut d = $env.PWD
     loop {
         let git_path = ($d | path join ".git")
@@ -54,7 +54,7 @@ def vcs-prompt [] {
             } else {
                 $"detached@($head | str substring 0..7)"
             }
-            return $"(ansi purple_bold) ($ref)(ansi reset)"
+            return $"(ansi purple_bold) ($ref)(ansi reset)"
         }
         let parent = ($d | path dirname)
         if $parent == $d { break }
