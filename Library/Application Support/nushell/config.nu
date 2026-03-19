@@ -1,4 +1,5 @@
-use utils.nu [deep-merge]
+use agents.nu *
+use request.nu
 
 alias cat = bat -p
 alias grep = ^grep --color=always
@@ -8,34 +9,6 @@ alias dev = cd $"($env.HOME)/Developer"
 alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
-
-# Launch codex with merged base + local config
-def codex [...args: string] {
-    let base_path = ($env.HOME | path join .codex config.base.toml)
-    let config_path = ($env.HOME | path join .codex config.toml)
-    let current = if ($config_path | path exists) {
-        open $config_path
-    } else {
-        {}
-    }
-    open $base_path | deep-merge $current | save -f $config_path
-
-    ^codex ...$args
-}
-
-# Launch claude with merged base + local settings
-def claude [...args: string] {
-    let base_path = ($env.HOME | path join .claude settings.base.json)
-    let settings_path = ($env.HOME | path join .claude settings.json)
-    let current = if ($settings_path | path exists) {
-        open $settings_path
-    } else {
-        {}
-    }
-    open $base_path | deep-merge $current | save -f $settings_path
-
-    ^claude ...$args
-}
 
 let poimandres = {
     background: "#1b1e28"

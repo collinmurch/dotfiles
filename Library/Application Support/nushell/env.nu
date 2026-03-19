@@ -43,7 +43,7 @@ path add $"($env.GOPATH)/bin"
 path add $"($nu.home-dir)/.cargo/bin"
 
 # Add prompts
-source ($nu.default-config-dir | path join "prompt.nu")
+use prompt.nu *
 $env.PROMPT_COMMAND = {|| $"(ansi blue_bold)(dir-prompt)(ansi reset)" }
 $env.PROMPT_COMMAND_RIGHT = {|| vcs-prompt }
 $env.PROMPT_INDICATOR = {||

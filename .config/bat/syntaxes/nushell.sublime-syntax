@@ -224,6 +224,7 @@ contexts:
       push: string-interpolated-single-body
 
   string-interpolated-double-body:
+    - meta_include_prototype: false
     - meta_scope: string.interpolated.double.nushell
     - match: '"'
       scope: punctuation.definition.string.end.nushell
@@ -235,6 +236,7 @@ contexts:
       push: interpolation-expr
 
   string-interpolated-single-body:
+    - meta_include_prototype: false
     - meta_scope: string.interpolated.single.nushell
     - match: "'"
       scope: punctuation.definition.string.end.nushell
@@ -257,6 +259,7 @@ contexts:
       push: string-raw-body
 
   string-raw-body:
+    - meta_include_prototype: false
     - meta_scope: string.raw.nushell
     - match: "'#+|'"
       scope: punctuation.definition.string.end.nushell
@@ -274,18 +277,21 @@ contexts:
       push: string-double-body
 
   string-single-body:
+    - meta_include_prototype: false
     - meta_scope: string.quoted.single.nushell
     - match: "'"
       scope: punctuation.definition.string.end.nushell
       pop: 1
 
   string-backtick-body:
+    - meta_include_prototype: false
     - meta_scope: string.quoted.other.nushell
     - match: '`'
       scope: punctuation.definition.string.end.nushell
       pop: 1
 
   string-double-body:
+    - meta_include_prototype: false
     - meta_scope: string.quoted.double.nushell
     - match: '"'
       scope: punctuation.definition.string.end.nushell

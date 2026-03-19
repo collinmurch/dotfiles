@@ -8,6 +8,7 @@
 !Application Support/nushell/
 !Application Support/nushell/**
 Application Support/nushell/local.nu
+Application Support/nushell/scripts/local.nu
 
 !KeyBindings/
 !KeyBindings/**
