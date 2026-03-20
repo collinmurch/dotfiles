@@ -16,7 +16,12 @@
       "docker"
     ],
     "allowUnsandboxedCommands": false,
-    "enableWeakerNetworkIsolation": true
+    "enableWeakerNetworkIsolation": true,
+    "filesystem": {
+      "allowWrite": [
+        "~/Library/Caches/go-build"
+      ]
+    }
   },
   "statusLine": {
     "type": "command",
