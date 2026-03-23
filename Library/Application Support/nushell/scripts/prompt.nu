@@ -1,3 +1,4 @@
+# Walk up from PWD to find the nearest .git root; returns null if not in a repo
 def vcs-root [] {
     mut d = $env.PWD
     loop {
@@ -11,6 +12,7 @@ def vcs-root [] {
     null
 }
 
+# Return a short display path: repo-relative inside a git repo, or last 3 path segments otherwise
 export def dir-prompt [] {
     let root = (vcs-root)
     if $root != null {
@@ -27,6 +29,7 @@ export def dir-prompt [] {
     }
 }
 
+# Return a colored branch name (or detached HEAD ref) for the nearest git repo, or "" if none
 export def vcs-prompt [] {
     mut d = $env.PWD
     loop {
