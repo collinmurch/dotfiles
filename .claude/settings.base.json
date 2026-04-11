@@ -27,6 +27,7 @@
     "type": "command",
     "command": "$HOME/.claude/statusline.sh"
   },
+  "lsp": false,
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
   "preferredNotifChannel": "none",
