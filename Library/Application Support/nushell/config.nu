@@ -4,6 +4,7 @@ use request.nu
 alias cat = bat -p
 alias grep = ^grep --color=always
 alias finder = ^open .
+alias nixdev = nix develop --command nu
 
 alias dev = cd $"($env.HOME)/Developer"
 alias godev = cd $"($env.HOME)/Developer/go"
