@@ -14,7 +14,7 @@ multi_agent = true
 
 [tui]
 notifications = false
-status_line = ["current-dir", "git-branch", "context-remaining"]
+status_line = ["current-dir", "git-branch", "context-usage"]
 theme = "Poimandres"
 
 [sandbox_workspace_write]
