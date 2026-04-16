@@ -33,6 +33,7 @@
   "lsp": false,
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
+  "effortLevel": "high",
   "preferredNotifChannel": "none",
-  "effortLevel": "high"
+  "awaySummaryEnabled": false
 }
