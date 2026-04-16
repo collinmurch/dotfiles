@@ -35,5 +35,6 @@
   "alwaysThinkingEnabled": true,
   "effortLevel": "high",
   "preferredNotifChannel": "none",
-  "awaySummaryEnabled": false
+  "awaySummaryEnabled": false,
+  "autoMemoryEnabled": false
 }
