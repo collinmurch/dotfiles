@@ -19,7 +19,8 @@
     "enableWeakerNetworkIsolation": true,
     "filesystem": {
       "allowWrite": [
-        "~/Library/Caches/go-build"
+        "~/Library/Caches/go-build",
+        "~/go"
       ]
     }
   },
