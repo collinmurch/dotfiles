@@ -17,6 +17,7 @@
       "docker"
     ],
     "allowUnsandboxedCommands": false,
+    "autoAllowBashIfSandboxed": true,
     "enableWeakerNetworkIsolation": true,
     "filesystem": {
       "allowWrite": [
