@@ -6,6 +6,7 @@
   },
   "permissions": {
     "allow": [
+      "Skill",
       "Bash(docker *)"
     ],
     "defaultMode": "acceptEdits"
