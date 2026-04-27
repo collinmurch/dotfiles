@@ -6,7 +6,6 @@ profile = "default"
 
 sandbox_mode = "workspace-write"
 web_search = "live"
-memories = false
 suppress_unstable_features_warning = true
 
 [profiles.default]
@@ -16,6 +15,7 @@ model_reasoning_effort = "medium"
 model_reasoning_effort = "xhigh"
 
 [features]
+memories = false
 multi_agent = true
 
 [tui]
