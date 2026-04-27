@@ -16,7 +16,6 @@ model_reasoning_effort = "xhigh"
 
 [features]
 memories = false
-multi_agent = true
 
 [tui]
 notifications = false
