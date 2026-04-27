@@ -2,12 +2,17 @@
 
 personality = "pragmatic"
 
-model = "gpt-5.4"
-model_reasoning_effort = "xhigh"
+profile = "default"
 
 sandbox_mode = "workspace-write"
 web_search = "live"
 suppress_unstable_features_warning = true
+
+[profiles.default]
+model_reasoning_effort = "medium"
+
+[profiles.smart]
+model_reasoning_effort = "xhigh"
 
 [features]
 multi_agent = true

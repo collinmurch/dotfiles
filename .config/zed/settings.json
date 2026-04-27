@@ -45,12 +45,14 @@
     "dock": "right"
   },
   "collaboration_panel": {
+    "dock": "left",
     "button": false
   },
   "notification_panel": {
     "button": false
   },
   "outline_panel": {
+    "dock": "left",
     "button": false
   },
   "project_panel": {
