@@ -14,9 +14,6 @@ model_reasoning_effort = "medium"
 [profiles.smart]
 model_reasoning_effort = "xhigh"
 
-[features]
-memories = false
-
 [tui]
 notifications = false
 status_line = ["current-dir", "git-branch", "context-usage"]
