@@ -9,7 +9,7 @@ suppress_unstable_features_warning = true
 plan_mode_reasoning_effort = "xhigh"
 
 [profiles.default]
-reasoning_effort = "low"
+model_reasoning_effort = "low"
 
 [tui]
 notifications = false
