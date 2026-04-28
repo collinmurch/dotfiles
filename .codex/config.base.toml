@@ -6,6 +6,11 @@ sandbox_mode = "workspace-write"
 web_search = "live"
 suppress_unstable_features_warning = true
 
+plan_mode_reasoning_effort = "xhigh"
+
+[profiles.default]
+reasoning_effort = "low"
+
 [tui]
 notifications = false
 status_line = ["current-dir", "git-branch", "context-usage"]
