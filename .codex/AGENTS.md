@@ -7,9 +7,6 @@
 
 ## Process
 - Prefer parallel tool calls and subagents for indendent, read-only work (research, scans, lookups)
-- When showing shell commands to the user, use `nushell` syntax
-  - If you need to show or reason about shell commands, load the `nushell` skill first
-  - Internal execution may use bash, but do not present bash commands to the user
 - Always request escalaton when commands fail due to sandbox permissions
   - No temporary cache directories or other workarounds unless explicitely requested
-- Always use `python3` as the Python interpreter binary unless directed otherwise
+- Never try to start the local/dev server for any project unless explicitely requested
