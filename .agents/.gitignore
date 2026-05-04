@@ -1,6 +1,4 @@
 *
 !.gitignore
-!skills/
-skills/*
 !skills/nushell/
 !skills/nushell/**
