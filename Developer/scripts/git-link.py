@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Script to generate GitLab and GitHub links to current line/selection in Helix editor.
-Uses Helix's expansion variables to get file path, line numbers, and git info.
+Generate GitLab and GitHub links to files in the current git repository.
 """
 
+import argparse
 import os
 import re
 import subprocess
@@ -11,11 +11,10 @@ import sys
 from urllib.parse import quote
 
 
-def get_git_remote_url():
-    """Get the remote URL from git config."""
+def git_output(*args):
     try:
         result = subprocess.run(
-            ["git", "config", "--get", "remote.origin.url"],
+            ["git", *args],
             capture_output=True,
             text=True,
             check=True,
@@ -25,15 +24,14 @@ def get_git_remote_url():
         return None
 
 
+def get_git_remote_url():
+    """Get the remote URL from git config."""
+    return git_output("config", "--get", "remote.origin.url")
+
+
 def get_current_commit():
     """Get the current commit hash."""
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True
-        )
-        return result.stdout.strip()
-    except subprocess.CalledProcessError:
-        return None
+    return git_output("rev-parse", "HEAD")
 
 
 def parse_remote_url(remote_url):
@@ -61,8 +59,8 @@ def parse_remote_url(remote_url):
     return None, None, None
 
 
-def generate_link(file_path, start_line, end_line=None):
-    """Generate link to file at specific line(s) for GitLab or GitHub."""
+def generate_link(file_path, start_line=None, end_line=None):
+    """Generate link to a file or line range for GitLab or GitHub."""
     remote_url = get_git_remote_url()
     if not remote_url:
         print(
@@ -80,81 +78,88 @@ def generate_link(file_path, start_line, end_line=None):
         print("Error: Could not get current commit hash", file=sys.stderr)
         return None
 
-    # Make file path relative to git root
-    try:
-        git_root = subprocess.run(
-            ["git", "rev-parse", "--show-toplevel"],
-            capture_output=True,
-            text=True,
-            check=True,
-        ).stdout.strip()
+    git_root = git_output("rev-parse", "--show-toplevel")
+    if git_root:
         abs_file_path = os.path.abspath(file_path)
-        if abs_file_path.startswith(git_root):
+        if os.path.commonpath([abs_file_path, git_root]) == git_root:
             rel_file_path = os.path.relpath(abs_file_path, git_root)
         else:
             rel_file_path = file_path
-    except subprocess.CalledProcessError:
+    else:
         rel_file_path = file_path
 
-    # URL encode the file path
     encoded_file_path = quote(rel_file_path)
 
-    # Build the appropriate URL based on platform
     if platform == "github":
-        if end_line and end_line != start_line:
-            line_fragment = f"L{start_line}-L{end_line}"
-        else:
+        url = f"{base_url}/{project_path}/blob/{commit_hash}/{encoded_file_path}"
+        if start_line is not None:
             line_fragment = f"L{start_line}"
-        url = f"{base_url}/{project_path}/blob/{commit_hash}/{encoded_file_path}#{line_fragment}"
-    else:  # gitlab
-        if end_line and end_line != start_line:
-            line_fragment = f"L{start_line}-{end_line}"
-        else:
+            if end_line is not None and end_line != start_line:
+                line_fragment = f"{line_fragment}-L{end_line}"
+            url = f"{url}#{line_fragment}"
+    else:
+        url = f"{base_url}/{project_path}/-/blob/{commit_hash}/{encoded_file_path}"
+        if start_line is not None:
             line_fragment = f"L{start_line}"
-        url = f"{base_url}/{project_path}/-/blob/{commit_hash}/{encoded_file_path}#{line_fragment}"
+            if end_line is not None and end_line != start_line:
+                line_fragment = f"{line_fragment}-{end_line}"
+            url = f"{url}#{line_fragment}"
 
     return url
 
 
-def main():
-    """Main function - expects file_path, start_line, and optional end_line as arguments."""
-    # Debug: log all arguments to a file
-    with open("/tmp/helix-debug.log", "a") as f:
+def parse_line(value):
+    try:
+        line = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"invalid line number: {value!r}")
+    if line < 1:
+        raise argparse.ArgumentTypeError("line number must be greater than 0")
+    return line
+
+
+def debug_enabled():
+    executable = os.path.basename(sys.argv[0])
+    return executable == "git-link-debug" or os.environ.get("GIT_LINK_DEBUG")
+
+
+def write_debug_log():
+    if not debug_enabled():
+        return
+    with open("/tmp/git-link-debug.log", "a") as f:
         f.write(f"Args: {sys.argv}\n")
         f.write(f"CWD: {os.getcwd()}\n")
         f.write("---\n")
-    if len(sys.argv) < 3:
-        print(
-            "Usage: gitlab-link.py <file_path> <start_line> [end_line]",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-    file_path = sys.argv[1]
-    # Handle case where Helix expansions aren't working
-    try:
-        start_line = int(sys.argv[2])
-    except ValueError:
-        print(
-            f"Error: Invalid line number '{sys.argv[2]}' - Helix expansions may not be supported",
-            file=sys.stderr,
-        )
-        print(
-            "Try using: python3 git-link.py <file> <line>",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-    try:
-        end_line = int(sys.argv[3]) if len(sys.argv) > 3 else None
-    except ValueError:
-        end_line = start_line
-    link = generate_link(file_path, start_line, end_line)
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Generate a GitHub or GitLab link for a file in the current repository."
+    )
+    parser.add_argument("file_path")
+    parser.add_argument("start_line", nargs="?", type=parse_line)
+    parser.add_argument("end_line", nargs="?", type=parse_line)
+    args = parser.parse_args()
+    if args.start_line is None and args.end_line is not None:
+        parser.error("end_line requires start_line")
+    if (
+        args.start_line is not None
+        and args.end_line is not None
+        and args.end_line < args.start_line
+    ):
+        parser.error("end_line must be greater than or equal to start_line")
+    return args
+
+
+def main():
+    write_debug_log()
+    args = parse_args()
+    link = generate_link(args.file_path, args.start_line, args.end_line)
     if link:
         print(link)
-        # Copy to clipboard if available
         try:
             subprocess.run(["pbcopy"], input=link, text=True, check=True)
         except (subprocess.CalledProcessError, FileNotFoundError):
-            # pbcopy not available, just print the link
             pass
     else:
         sys.exit(1)
