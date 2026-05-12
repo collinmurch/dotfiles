@@ -17,7 +17,7 @@ memories = false
 external_migration = false
 apps = false
 prevent_idle_sleep = true
-goal = true
+goals = true
 
 [tui]
 notifications = false
