@@ -40,5 +40,6 @@
   "preferredNotifChannel": "none",
   "awaySummaryEnabled": false,
   "autoMemoryEnabled": false,
-  "theme": "custom:poimandres"
+  "theme": "custom:poimandres",
+  "syntaxHighlightingDisabled": true
 }
