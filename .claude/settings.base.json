@@ -14,7 +14,7 @@
   "sandbox": {
     "enabled": true,
     "excludedCommands": [
-      "docker"
+      "docker *"
     ],
     "allowUnsandboxedCommands": false,
     "autoAllowBashIfSandboxed": true,
