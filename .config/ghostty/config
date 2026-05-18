@@ -1,5 +1,5 @@
 # Theming
-theme = Poimandres
+theme = Poimandres-Custom
 font-family = TX-02
 font-family = JetBrains Mono
 custom-shader = shaders/cursor_warp.glsl
