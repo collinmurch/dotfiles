@@ -39,5 +39,6 @@
   "effortLevel": "high",
   "preferredNotifChannel": "none",
   "awaySummaryEnabled": false,
-  "autoMemoryEnabled": false
+  "autoMemoryEnabled": false,
+  "theme": "custom:poimandres"
 }

@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "poimandres",
+  "workbench.colorTheme": "Light Modern",
   "editor.fontSize": 14,
   "terminal.integrated.fontSize": 15,
   "terminal.integrated.fontFamily": "TX-02, 'JetBrains Mono'",
@@ -7,7 +7,9 @@
   "editor.fontLigatures": true,
   "explorer.confirmDelete": false,
   "editor.minimap.enabled": false,
-  "yaml.customTags": ["!reference sequence"],
+  "yaml.customTags": [
+    "!reference sequence"
+  ],
   "explorer.confirmDragAndDrop": false,
   "editor.formatOnSave": true,
   "editor.scrollbar.vertical": "auto",
@@ -51,8 +53,14 @@
       "vendor": false,
       "test": true
     },
-    "build.buildFlags": ["-tags=integration"],
-    "build.standaloneTags": ["wireinject", "!wireinject", "tools"]
+    "build.buildFlags": [
+      "-tags=integration"
+    ],
+    "build.standaloneTags": [
+      "wireinject",
+      "!wireinject",
+      "tools"
+    ]
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "go.survey.prompt": false,
@@ -64,19 +72,36 @@
   "vim.useSystemClipboard": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["y", "y"],
-      "commands": ["editor.action.clipboardCopyAction"]
+      "before": [
+        "y",
+        "y"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
     },
     {
-      "before": ["y", "w"],
-      "after": ["y", "w"],
-      "commands": ["editor.action.clipboardCopyAction"]
+      "before": [
+        "y",
+        "w"
+      ],
+      "after": [
+        "y",
+        "w"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["y"],
-      "commands": ["editor.action.clipboardCopyAction"]
+      "before": [
+        "y"
+      ],
+      "commands": [
+        "editor.action.clipboardCopyAction"
+      ]
     }
   ],
   "[javascript]": {
