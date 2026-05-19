@@ -5,6 +5,8 @@
 !Application Support/
 !Application Support/Code/
 !Application Support/Code/**
+!Application Support/TablePro/
+!Application Support/TablePro/**
 !Application Support/nushell/
 !Application Support/nushell/**
 Application Support/nushell/local.nu

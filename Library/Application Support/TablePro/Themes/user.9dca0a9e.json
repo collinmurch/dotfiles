@@ -1,0 +1,66 @@
+{
+  "appearance" : "dark",
+  "author" : "TablePro",
+  "dataGrid" : {
+    "alternateRow" : "#E4F0FB08",
+    "background" : "#1B1E28",
+    "boolFalse" : "#D0679D",
+    "boolTrue" : "#5DE4C7",
+    "deleted" : "#D0679D26",
+    "deletedText" : "#D0679D80",
+    "focusBorder" : "#5DE4C7",
+    "inserted" : "#5DE4C726",
+    "modified" : "#FFFAC24D",
+    "nullValue" : "#767C9D",
+    "rowNumber" : "#767C9D",
+    "text" : "#E4F0FB"
+  },
+  "editor" : {
+    "background" : "#1B1E28",
+    "currentLineHighlight" : "#717CB425",
+    "currentStatementHighlight" : "#E4F0FB",
+    "cursor" : "#E4F0FB",
+    "invisibles" : "#A6ACCD66",
+    "lineNumber" : "#767C9D",
+    "selection" : "#50647780",
+    "syntax" : {
+      "comment" : "#767C9D",
+      "function" : "#ADD7FF",
+      "keyword" : "#A6ACCD",
+      "null" : "#D0679D",
+      "number" : "#89DDFF",
+      "operator" : "#89DDFF",
+      "string" : "#5DE4C7",
+      "type" : "#91B4D5"
+    },
+    "text" : "#E4F0FB"
+  },
+  "fonts" : {
+    "dataGridFontFamily" : "TX-02",
+    "dataGridFontSize" : 14,
+    "editorFontFamily" : "TX-02",
+    "editorFontSize" : 14
+  },
+  "id" : "user.9dca0a9e",
+  "name" : "Poimandres",
+  "sidebar" : {
+
+  },
+  "toolbar" : {
+
+  },
+  "ui" : {
+    "badges" : {
+      "autoIncrement" : "#F087BD26",
+      "background" : "#303340",
+      "primaryKey" : "#ADD7FF26"
+    },
+    "status" : {
+      "error" : "#D0679D",
+      "info" : "#91B4D5",
+      "success" : "#5DE4C7",
+      "warning" : "#FFFAC2"
+    }
+  },
+  "version" : 1
+}
