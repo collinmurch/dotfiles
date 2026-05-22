@@ -1,6 +1,6 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
-personality = "pragmatic"
+personality = "friendly"
 
 sandbox_mode = "workspace-write"
 web_search = "live"
@@ -9,7 +9,7 @@ suppress_unstable_features_warning = true
 plan_mode_reasoning_effort = "xhigh"
 
 [profiles.default]
-model_reasoning_effort = "low"
+model_reasoning_effort = "medium"
 
 [features]
 terminal_resize_reflow = true
