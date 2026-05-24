@@ -14,7 +14,7 @@
 # @raycast.authorURL https://collinmurch.com
 
 caller=$(ps -o comm= $PPID)
-if [[ "$caller" == *"Raycast" ]]; then
+if [[ "$caller" == *"Raycast"* ]]; then
     pbpaste | jq | pbcopy
 else
     cat - | jq

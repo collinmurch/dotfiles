@@ -14,7 +14,7 @@
 # @raycast.authorURL https://collinmurch.com
 
 caller=$(ps -o comm= $PPID)
-if [[ "$caller" == *"Raycast" ]]; then
+if [[ "$caller" == *"Raycast"* ]]; then
     uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n' | tee >(pbcopy)
 else
     uuidgen | tr '[:upper:]' '[:lower:]' | tr -d '\n'
