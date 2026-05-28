@@ -21,6 +21,7 @@
     "enableWeakerNetworkIsolation": true,
     "filesystem": {
       "allowWrite": [
+        "/tmp",
         "~/Library/Caches/go-build",
         "~/go"
       ]

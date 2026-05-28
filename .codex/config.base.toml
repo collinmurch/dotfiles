@@ -20,3 +20,4 @@ theme = "Poimandres"
 
 [sandbox_workspace_write]
 network_access = true
+writable_roots = [ "/private/tmp" ]
