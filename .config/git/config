@@ -12,7 +12,11 @@
 	conflictStyle = zdiff3
 
 [diff]
-	colorMoved = default
+	colorMoved = blocks
+
+[color "diff"]
+	oldMoved = magenta bold
+	newMoved = cyan bold
 
 [interactive]
 	diffFilter = delta --color-only

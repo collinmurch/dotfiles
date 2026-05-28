@@ -24,7 +24,7 @@
     line-numbers-right-style = "#767c9d"
     line-numbers-zero-style = "#a6accd"
     zero-style = syntax
-    map-styles = bold purple => syntax "#2b281d", bold cyan => syntax "#1b2a30"
+    map-styles = bold purple => "#fffac2" "#2d242f", bold cyan => "#ADD7FF" "#252b37"
     whitespace-error-style = "#d0679d" reverse
     blame-code-style = syntax
     blame-format = "{author:<18} {commit:<6} {timestamp:<15}"

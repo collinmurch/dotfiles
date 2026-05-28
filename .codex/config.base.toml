@@ -1,23 +1,17 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 
 personality = "friendly"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "xhigh"
 
 sandbox_mode = "workspace-write"
 web_search = "live"
 suppress_unstable_features_warning = true
 
-plan_mode_reasoning_effort = "xhigh"
-
-[profiles.default]
-model_reasoning_effort = "medium"
-
 [features]
-terminal_resize_reflow = true
 memories = false
-external_migration = false
 apps = false
 prevent_idle_sleep = true
-goals = true
 
 [tui]
 notifications = false
