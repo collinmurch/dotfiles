@@ -27,7 +27,7 @@ prevent_idle_sleep = true
 
 [tui]
 notifications = false
-status_line = ["current-dir", "git-branch", "context-usage"]
+status_line = ["current-dir", "git-branch", "context-remaining"]
 theme = "Poimandres"
 
 [sandbox_workspace_write]
