@@ -5,35 +5,36 @@
     "pr": ""
   },
   "permissions": {
-    "allow": [
-      "Skill",
-      "Bash(docker *)"
-    ],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "bypassPermissions"
   },
   "sandbox": {
     "enabled": true,
-    "excludedCommands": [
-      "docker *"
-    ],
-    "allowUnsandboxedCommands": false,
     "autoAllowBashIfSandboxed": true,
+    "allowUnsandboxedCommands": false,
     "enableWeakerNetworkIsolation": true,
+    "network": {
+      "allowedDomains": [
+        "api.github.com"
+      ]
+    },
     "filesystem": {
       "allowWrite": [
-        "/tmp",
-        "~/Library/Caches/go-build",
-        "~/go"
+        "/tmp"
       ]
-    }
+    },
+    "excludedCommands": [
+      "docker *"
+    ]
   },
   "statusLine": {
     "type": "command",
     "command": "$HOME/.claude/statusline.sh"
   },
   "env": {
-    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1"
-  }
+    "CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY": "1",
+    "ENABLE_CLAUDEAI_MCP_SERVERS": false
+  },
+  "skipDangerousModePermissionPrompt": true
   "lsp": false,
   "promptSuggestionEnabled": false,
   "alwaysThinkingEnabled": true,
@@ -42,5 +43,7 @@
   "awaySummaryEnabled": false,
   "autoMemoryEnabled": false,
   "theme": "custom:poimandres",
-  "syntaxHighlightingDisabled": true
-}
+  "syntaxHighlightingDisabled": true,
+  "preferredNotifChannel": "notifications_disabled",
+  "awaySummaryEnabled": false
+  }
