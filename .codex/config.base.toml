@@ -4,9 +4,21 @@ personality = "friendly"
 model_reasoning_effort = "medium"
 plan_mode_reasoning_effort = "xhigh"
 
-sandbox_mode = "workspace-write"
 web_search = "live"
 suppress_unstable_features_warning = true
+
+default_permissions = "sandbox"
+
+[permissions.sandbox]
+extends = ":workspace"
+network = {
+  enabled = true
+}
+workspace_roots = {
+  "/private/tmp" = true,
+  "~/.config/gws" = true,
+  "~/.claude" = true
+}
 
 [features]
 memories = false
