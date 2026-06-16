@@ -18,7 +18,7 @@
     },
     "filesystem": {
       "allowWrite": [
-        "/tmp"
+        "/private/tmp"
       ]
     },
     "excludedCommands": [
