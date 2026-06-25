@@ -4,3 +4,9 @@ prefix_rule(pattern = ["docker"], decision = "allow",
         "docker --help",
     ],
 )
+prefix_rule(pattern = ["git", "fetch"], decision = "allow",
+    match = [
+        "git fetch",
+        "git fetch --all",
+    ],
+)

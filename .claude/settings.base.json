@@ -22,7 +22,8 @@
       ]
     },
     "excludedCommands": [
-      "docker *"
+      "docker *",
+      "git fetch *"
     ]
   },
   "statusLine": {
@@ -44,5 +45,6 @@
   "theme": "custom:poimandres",
   "syntaxHighlightingDisabled": true,
   "preferredNotifChannel": "notifications_disabled",
-  "awaySummaryEnabled": false
+  "awaySummaryEnabled": false,
+  "tui": "fullscreen"
 }
