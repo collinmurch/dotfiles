@@ -45,6 +45,5 @@
   "theme": "custom:poimandres",
   "syntaxHighlightingDisabled": true,
   "preferredNotifChannel": "notifications_disabled",
-  "awaySummaryEnabled": false,
-  "tui": "fullscreen"
+  "awaySummaryEnabled": false
 }
