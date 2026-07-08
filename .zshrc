@@ -18,4 +18,3 @@ setopt no_list_ambiguous
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/collinmurch/.cache/lm-studio/bin"
 # End of LM Studio CLI section
-
