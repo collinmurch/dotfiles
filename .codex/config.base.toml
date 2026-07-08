@@ -15,21 +15,16 @@ network = {
   enabled = true
 }
 workspace_roots = {
-  "/private/tmp" = true,
-  "~/.config/gws" = true,
-  "~/.claude" = true
+  "/private/tmp" = true
 }
 
 [features]
 memories = false
 apps = false
 prevent_idle_sleep = true
+undo = true
 
 [tui]
 notifications = false
 status_line = ["current-dir", "git-branch", "context-remaining"]
 theme = "Poimandres"
-
-[sandbox_workspace_write]
-network_access = true
-writable_roots = [ "/private/tmp" ]
