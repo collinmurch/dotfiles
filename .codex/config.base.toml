@@ -23,6 +23,9 @@ memories = false
 apps = false
 prevent_idle_sleep = true
 undo = true
+multi_agent_v2 = {
+  enabled = true
+}
 
 [tui]
 notifications = false

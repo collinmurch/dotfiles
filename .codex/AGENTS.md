@@ -6,7 +6,6 @@
 - Comments: only for exported/public function docs or genuinely complex logic; no “organizational” comments
 
 ## Process
-- Prefer parallel tool calls and subagents for indendent, read-only work (research, scans, lookups)
-- Always request escalaton when commands fail due to sandbox permissions
+- When commands fail due to sandbox permissions, either request escalation or pause there
   - No temporary cache directories or other workarounds unless explicitely requested
-- Never try to start the local/dev server for any project unless explicitely requested
+- Never try to start the local/dev server for any project
