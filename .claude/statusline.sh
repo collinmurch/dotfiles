@@ -12,9 +12,11 @@ fi
 
 current_dir=""
 remaining_pct=""
+effort=""
 
 if command -v jq >/dev/null 2>&1; then
   current_dir="$(jq -r '.workspace.current_dir // ""' <<<"$json")"
+  effort="$(jq -r '.effort.level // ""' <<<"$json")"
   remaining_pct="$(jq -r '
     if (.context_window.remaining_percentage | type) == "number" then
       (.context_window.remaining_percentage | tostring)
@@ -66,7 +68,10 @@ parts+=("$display_dir")
 if [[ -n "$branch" ]]; then
   parts+=("$branch")
 fi
-parts+=("$(format_number "$remaining_pct")% left")
+parts+=("Context $(format_number "$remaining_pct")% left")
+if [[ -n "$effort" ]]; then
+  parts+=("$effort")
+fi
 
 joined=""
 for part in "${parts[@]}"; do

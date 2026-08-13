@@ -28,5 +28,5 @@ multi_agent_v2 = {
 
 [tui]
 notifications = false
-status_line = ["current-dir", "git-branch", "context-remaining"]
+status_line = ["current-dir", "git-branch", "context-remaining", "reasoning"]
 theme = "Poimandres"
