@@ -11,20 +11,14 @@ default_permissions = "sandbox"
 
 [permissions.sandbox]
 extends = ":workspace"
-network = {
-  enabled = true
-}
-workspace_roots = {
-  "/private/tmp" = true
-}
+network = { enabled = true }
+workspace_roots = { "/private/tmp" = true }
 
 [features]
 memories = false
 apps = false
 prevent_idle_sleep = true
-multi_agent_v2 = {
-  enabled = true
-}
+multi_agent_v2 = { enabled = true }
 
 [tui]
 notifications = false
