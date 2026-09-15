@@ -2,7 +2,6 @@
 
 personality = "friendly"
 model_reasoning_effort = "medium"
-plan_mode_reasoning_effort = "xhigh"
 
 web_search = "live"
 suppress_unstable_features_warning = true
@@ -18,7 +17,7 @@ workspace_roots = { "/private/tmp" = true }
 memories = false
 apps = false
 prevent_idle_sleep = true
-multi_agent_v2 = { enabled = true }
+multi_agent = true
 
 [tui]
 notifications = false
