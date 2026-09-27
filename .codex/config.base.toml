@@ -23,3 +23,4 @@ multi_agent = true
 notifications = false
 status_line = ["current-dir", "git-branch", "context-remaining", "reasoning"]
 theme = "Poimandres"
+fullscreen_transcript = false

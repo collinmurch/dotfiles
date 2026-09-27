@@ -11,6 +11,10 @@ alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
 
+alias wtadd = git worktree add
+alias wtls = git worktree list
+alias wtrm = git worktree remove
+
 let poimandres = {
     background: "#1b1e28"
     foreground: "#e4f0fb"
