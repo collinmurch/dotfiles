@@ -36,5 +36,8 @@
   "theme": "custom:poimandres",
   "syntaxHighlightingDisabled": true,
   "preferredNotifChannel": "notifications_disabled",
-  "awaySummaryEnabled": false
+  "awaySummaryEnabled": false,
+  "disableBundledSkills": true,
+  "syncClaudeAiSkills": false,
+  "syncClaudeAiPlugins": false
 }
