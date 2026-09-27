@@ -17,7 +17,7 @@
     "filesystem": {
       "allowWrite": ["/private/tmp"]
     },
-    "excludedCommands": ["docker *", "git fetch *"]
+    "excludedCommands": ["docker *", "git fetch *", "make *"]
   },
   "statusLine": {
     "type": "command",
