@@ -46,8 +46,6 @@ keybind = cmd+backspace=text:\x15
 keybind = opt+delete=esc:d
 
 # Keybinds -- ignore sequences
-keybind = option+up=ignore
-keybind = option+down=ignore
 keybind = ctrl+shift+right=ignore
 keybind = ctrl+shift+left=ignore
 keybind = shift+enter=text:\n

@@ -8,6 +8,9 @@
 [push]
 	autoSetupRemote = true
 
+[branch]
+    autoSetupMerge = simple
+
 [merge]
 	conflictStyle = zdiff3
 
