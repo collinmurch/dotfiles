@@ -11,7 +11,8 @@ export def --wrapped codex [...args: string] {
     }
     open $base_path | deep-merge $current | save -f $config_path
 
-    ^codex ...$args
+    # Map Codex's accent to Ghostty's generated 256-color palette.
+    with-env { FORCE_COLOR: "2" } { ^codex ...$args }
 }
 
 # Launch claude with merged base + local settings

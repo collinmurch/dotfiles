@@ -35,7 +35,15 @@ if [[ -z "${current_dir}" ]]; then
 fi
 
 display_dir="$current_dir"
-if [[ -n "${HOME:-}" ]]; then
+git_root="$(git -C "$current_dir" rev-parse --show-toplevel 2>/dev/null || true)"
+if [[ -n "$git_root" ]]; then
+  git_prefix="$(git -C "$current_dir" rev-parse --show-prefix 2>/dev/null || true)"
+  git_prefix="${git_prefix%/}"
+  display_dir="${git_root##*/}"
+  if [[ -n "$git_prefix" ]]; then
+    display_dir="$display_dir/$git_prefix"
+  fi
+elif [[ -n "${HOME:-}" ]]; then
   case "$current_dir" in
     "$HOME")
       display_dir="~"
