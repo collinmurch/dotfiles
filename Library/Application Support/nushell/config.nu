@@ -7,6 +7,7 @@ alias finder = ^open .
 alias nixdev = nix develop --command nu
 
 alias dev = cd $"($env.HOME)/Developer"
+alias docs = cd $"($env.HOME)/Documents"
 alias godev = cd $"($env.HOME)/Developer/go"
 alias jsdev = cd $"($env.HOME)/Developer/javascript"
 alias nuconfig = cd $"($nu.default-config-dir)"
