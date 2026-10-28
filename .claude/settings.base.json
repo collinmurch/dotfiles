@@ -39,5 +39,6 @@
   "awaySummaryEnabled": false,
   "disableBundledSkills": true,
   "syncClaudeAiSkills": false,
-  "syncClaudeAiPlugins": false
+  "syncClaudeAiPlugins": false,
+  "feedbackDrafts": "off"
 }
