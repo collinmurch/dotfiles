@@ -5,19 +5,24 @@
     "pr": ""
   },
   "permissions": {
-    "defaultMode": "bypassPermissions"
+    "defaultMode": "auto",
+    "denyInsteadOfPrompting": true,
+    "blockWritesOutsideWorkingDirectories": true
   },
   "sandbox": {
     "enabled": true,
-    "allowUnsandboxedCommands": false,
+    "allowUnsandboxedCommands": true,
+    "autoAllowBashIfSandboxed": true,
     "enableWeakerNetworkIsolation": true,
     "network": {
       "allowedDomains": ["api.github.com"]
     },
     "filesystem": {
       "allowWrite": ["/private/tmp"]
-    },
-    "excludedCommands": ["docker *", "git fetch *", "make *"]
+    }
+  },
+  "autoMode": {
+    "environment": ["$defaults"]
   },
   "statusLine": {
     "type": "command",
