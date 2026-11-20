@@ -11,6 +11,8 @@
 !git/**
 !helix/
 !helix/**
+!rex/
+!rex/**
 !zed/
 !zed/**
 !zsh/

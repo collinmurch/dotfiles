@@ -12,6 +12,9 @@
 .*~$
 .*\.log$
 
+# Claude Code per-directory write markers (<dir>/.claude/.cc-writes)
+^\.cc-writes$
+
 # Docs that shouldn't be linked into $HOME
 ^README\.md$
 .*\.txt$

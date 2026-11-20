@@ -27,7 +27,7 @@ macos-titlebar-style = tabs
 
 # Keybinds -- tabs, panes, etc.
 keybind = global:ctrl+shift+/=toggle_quick_terminal
-keybind = ctrl+enter=new_split:auto
+keybind = cmd+enter=new_split:auto
 keybind = ctrl+h=goto_split:left
 keybind = ctrl+j=goto_split:bottom
 keybind = ctrl+k=goto_split:top
